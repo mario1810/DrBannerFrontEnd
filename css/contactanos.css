@@ -1,0 +1,33 @@
+@font-face {
+    font-family: BetterGradeFont;
+    src: url(fuentes/BetterGrade-519DV.ttf);
+    
+}
+#Dr{
+    font-family: BetterGradeFont;
+    font-size: 50;
+}
+
+
+
+.contenedor-principal{
+    background-image: url(https://i.ibb.co/4WFwfh1/lluvia-fondo.jpg);
+    margin: 0;
+    padding: 0;
+    /*height: 100%; /*vh es viewport-height adapta la altura e la ventana */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    
+}
+
+
+.form{
+    background-color: #f2f2f2;
+    width:50%;
+    /*margin: auto; */
+    max-width: 400px;
+    border-radius:1em;
+    padding: 3.5em 1.5em;
+    left: 3000px;
+}
