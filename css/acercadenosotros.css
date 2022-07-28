@@ -1,0 +1,13 @@
+body{
+    background-image:url("https://i.ibb.co/YZ44JJ1/foto.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+footer{
+    background-color: #0D0D0D;
+}
+
+.githubitosFooter{
+    color: white;
+}
