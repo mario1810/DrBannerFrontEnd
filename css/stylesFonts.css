@@ -1,0 +1,36 @@
+@font-face {
+    font-family: BetterGradeFont;
+    src: url(/assets/fuentes/BetterGrade-519DV.ttf);
+    
+}
+
+
+#Dr{
+    font-family: BetterGradeFont;
+    font-size: 60px;
+}
+
+body{
+    background: #D9D0BF    ;
+}
+
+.form{
+    background-color: #f2f2f2;
+    width:90%;
+    margin: auto;
+    max-width: 400px;
+    border-radius:1em;
+    padding: 3.5em 1.5em;
+}
+
+.form_container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+}
+
+
+
+
+
