@@ -1,15 +1,36 @@
+<<<<<<< HEAD
+.Mbody {
+  height: 100%;
+  background-color: #f2f2f2;
+=======
 .container-fluid {
   height: 100vh;
   width: 100%;
   padding: 0px 0px 00px 0px;
+>>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
 }
 
 #fotos {
   color: rgb(170, 11, 170);
 }
+<<<<<<< HEAD
+.Mbody {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+=======
 body {
   padding-top: 100px;
 
+>>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
   background-color: #f2f2f2;
 }
 
