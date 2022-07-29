@@ -1,101 +1,100 @@
+
 .row {
-    padding-right: 0px;
-    margin-right: 0px;
-  }
-
-/* Otorgándole tamaño a las imagenes */
-
-#img1, #img2, #img3{
-  /* width: 364px !important; */
-  width: 450px !important;
-  height: 557px;
-} 
-
-/* Alineando el texto */
-
-/* h1, h2, p{
-  text-align: justify;
-} */
+  padding-right: 0px;
+  margin-right: 0px;
+}
 
 
 /* propiedades del carousel */
 .bg-img-1 {
-  background-image: url('https://i.ibb.co/JnFtkMG/MG-0089.jpg');
+background-image: url('https://i.ibb.co/sHFy3Mx/IMG-4664.jpg');
 }
 
 .bg-img-2 {
-  background-image: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+background-image: url('https://i.ibb.co/vBpWXXJ/IMG-2564.jpg');
 }
 
 .bg-img-3 {
-  background-image: url('https://images.unsplash.com/photo-1605050825077-289f85b6cf43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+background-image: url('https://i.ibb.co/NS6XhNV/IMG-8659.jpg');
 }
 
 .carousel-image {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+height: 100vh;
 }
 
 #testimonials{
-  background-color: #d9bfd1;
- 
+background-color: #D9D0BF;
+/* border: solid 1px black; */
+
+
+}
+
+#derecha-comment{
+
+
 }
 
 .avatar{
-   width: 80px;
-   height: 80px;
-   object-fit: cover;
-   border-radius: 50%;
-   box-shadow: 7px 7px 7px rgba(0 0 0 /0.5);
-   border: 3px ridge #fff;
+ width: 80px;
+ height: 80px;
+ object-fit: cover;
+ border-radius: 50%;
+ box-shadow: 7px 7px 7px rgba(0 0 0 /0.5);
+ border: 3px ridge #fff;
 }
 
 #opinion{
-  text-align: center;
+text-align: center;
 }
 
-#seccion{
-  height: 12rem;
-  width: 100%;
+#espacio{
+height: 12rem;
+width: 100%;
 }
 
 .stars i{
-  padding: 10px;
+padding: 10px;
 }
 
-#Dr{
-  color: #fff;
-}
 
 #elementos-lista a{
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  padding: 10px;
+color: rgb(255, 255, 255);
+text-decoration: none;
+padding: 10px;
+
 }
 
 #redes-sociales a{
-  color: rgb(255, 255, 255);
-  padding: 1rem;
-  font-size: 20pt;
+color: #F2F2F2;
+padding: 1rem;
+font-size: 20pt;
 
 }
 
 .flex-container{
-  display: flex;
-  /* flex-direction: column;
-  flex-wrap: wrap; */
-  background-color: #404040;
-  flex-flow: column wrap; 
-  /* border: solid 1px black; */
-  padding: 2rem;
+display: flex;
+/* flex-direction: column;
+flex-wrap: wrap; */
+background-color: #404040;
+flex-flow: column wrap; 
+/* border: solid 1px black; */
+padding: 2rem;
 
 }
 
-.flex-item{
-  text-align: center;
+
+#Dr, #derechos, #sig{
+color: #F2F2F2;
+text-align: center;
 }
+
+p{
+text-align: justify;
+}
+
 
 
 
