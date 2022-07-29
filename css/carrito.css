@@ -1,0 +1,81 @@
+.row{
+    padding-right: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+.color1{
+    background-color: #010D00;
+}
+.color2{
+    background-color: #D9D0BF;
+}
+.color3{
+    background-color: #F2F2F2;
+}
+.color4{
+    background-color: #404040;
+}
+.color5{
+    background-color: #0D0D0D;
+}
+.colorTextTH{
+    color:#F2F2F2;
+}
+.colorTextTB{
+    color: #0D0D0D;
+}
+
+.celdaPadding{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.contenedorPago{
+    margin:auto;
+    padding: 10px;
+    padding-top:15px;
+    margin-bottom: 20px;
+}
+.imagen{
+    width:80%; 
+    margin:auto;
+}
+.textoDescripcion{
+    margin-left:15px;
+    margin-right:15px;
+    text-align: justify;
+}
+.textlink{
+    color:black;
+}
+.costoTotal{
+    font-size: 40px;
+    font-weight: 700;
+
+}
+
+.secctionTabla{
+    padding-right:0;
+    padding-left:0;
+    background-color: white;
+}
+
+.encabezado{
+    padding: 20px;
+    font-weight: 700;
+}
+
+@media(max-width:992px){
+    .imagen{
+        width:40%; 
+        margin:auto;
+    }
+    .contenedorPago{
+        margin:auto;
+        width: 90%;
+        padding: 10px;
+        padding-top:15px;
+    }   
+    
+}
+
