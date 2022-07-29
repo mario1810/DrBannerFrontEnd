@@ -53,3 +53,21 @@
     padding-right:0;
     padding-left:0;
 }
+.marginControl{
+    padding:0;
+    margin:0;
+}
+.ocultar{
+    display:block;
+}
+.ubicacionBotones{
+    margin-top:75px;
+}
+@media(max-width:992px){
+    .ocultar{
+        display:none;
+    }
+    .containerForm{
+        width: 80%;
+    }
+}
