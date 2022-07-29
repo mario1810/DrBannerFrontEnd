@@ -1,3 +1,6 @@
+
+
+
 @font-face {
     font-family: BetterGradeFont;
     src: url(/assets/fuentes/BetterGrade-519DV.ttf);
@@ -10,9 +13,7 @@
     font-size: 60px;
 }
 
-body{
-    background: #D9D0BF    ;
-}
+
 
 .form{
     background-color: #f2f2f2;
@@ -29,6 +30,11 @@ body{
     gap: 1em;
     grid-auto-columns: 100%;
 }
+
+
+
+
+
 
 
 
