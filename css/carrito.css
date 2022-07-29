@@ -36,4 +36,40 @@
     padding: 10px;
     padding-top:15px;
 }
+.imagen{
+    width:80%; 
+    margin:auto;
+}
+.textoDescripcion{
+    margin-left:15px;
+    margin-right:15px;
+    text-align: justify;
+}
+.textlink{
+    color:black;
+}
+.costoTotal{
+    font-size: 40px;
+    font-weight: 700;
+
+}
+
+.encabezado{
+    padding: 20px;
+    font-weight: 700;
+}
+
+@media(max-width:992px){
+    .imagen{
+        width:40%; 
+        margin:auto;
+    }
+    .contenedorPago{
+        margin:auto;
+        width: 90%;
+        padding: 10px;
+        padding-top:15px;
+    }   
+    
+}
 
