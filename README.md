@@ -1,10 +1,10 @@
-EQUIPO GITHUBITOS 
+EQUIPO GITHUBITOS el mero mero
 
-INTEGRAGO POR: 
+INTEGRADO POR: 
 
-Gerardo 
-Azucena
-Coromoto
-Mario
-Aaron
-Marco
+Gerardo Ruiz
+Azucena Ceniceros
+Coromoto Malave 
+Mario Alvarez
+Aaron Fernandez
+Marco Antonio Flores
