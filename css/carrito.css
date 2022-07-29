@@ -1,6 +1,8 @@
 .row{
     padding-right: 0px;
     margin-right: 0px;
+    padding-left: 0px;
+    margin-left: 0px;
   }
 .color1{
     background-color: #010D00;
@@ -23,10 +25,7 @@
 .colorTextTB{
     color: #0D0D0D;
 }
-.tablaMargin{
-    margin-left: 10px;
-    margin-right:10px;
-}
+
 .celdaPadding{
     padding-left: 2px;
     padding-right: 2px;
@@ -35,6 +34,7 @@
     margin:auto;
     padding: 10px;
     padding-top:15px;
+    margin-bottom: 20px;
 }
 .imagen{
     width:80%; 
@@ -52,6 +52,12 @@
     font-size: 40px;
     font-weight: 700;
 
+}
+
+.secctionTabla{
+    padding-right:0;
+    padding-left:0;
+    background-color: white;
 }
 
 .encabezado{
