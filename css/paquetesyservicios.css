@@ -1,0 +1,118 @@
+/*1. PRINCIPIO DEL CARRUSEL*/
+/*clase principal del carrusel*/
+
+body {
+    background-color:#F2F2F2;
+}
+
+#carousel {
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.card {
+    background-color: unset;
+}
+.card-text {
+    border: 1px;
+    display: inline-block;
+    width: auto;
+    margin: 0 20px;
+    text-align: justify;
+
+}
+
+
+.carousel-inner {
+    border: 10px solid #f7f9f9;
+    margin-top: 60px;
+    padding-bottom: 10px;
+    background-color: rgba(254,255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+    -webkit-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+    -moz-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+
+}
+.list-group {
+    background-color: rgba(254,255, 255, 0.5);
+    border-radius: 12px;
+    box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+    -webkit-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+    -moz-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
+}
+/*titulo de los paquetes-forman parte del carrusel*/
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    top: -75px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    color: #fff;
+    text-align: center;
+    color: black;
+}
+
+
+
+.carousel-control-prev-icon {
+    background-image: url("https://img.icons8.com/sf-black-filled/64/000000/double-left.png");
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -9px;
+}
+
+.carousel-control-next-icon {
+    background-image: url("https://img.icons8.com/sf-black-filled/64/000000/double-right.png");
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    margin-top: -9px;
+}
+
+
+/*cambio de botones*/
+
+
+
+
+/*FINAL DEL CARRUSEL*/
+
+
+/*2. SEGUNDA SECCION*/
+
+ul.list {
+
+    list-style-position: inside;
+}
+
+boton-pr {
+
+    padding-top: 18px;
+}
+
+.ps3 {
+
+    padding-top: 20px;
+}
+
+.list-group-item {
+    padding: .1rem 1rem;
+}
+footer .list-group-flush .list-group-item {
+    background-color:#F2F2F2;
+}
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 960px
+    }
+}
