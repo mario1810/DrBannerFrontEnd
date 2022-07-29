@@ -1,0 +1,39 @@
+.row{
+    padding-right: 0px;
+    margin-right: 0px;
+  }
+.color1{
+    background-color: #010D00;
+}
+.color2{
+    background-color: #D9D0BF;
+}
+.color3{
+    background-color: #F2F2F2;
+}
+.color4{
+    background-color: #404040;
+}
+.color5{
+    background-color: #0D0D0D;
+}
+.colorTextTH{
+    color:#F2F2F2;
+}
+.colorTextTB{
+    color: #0D0D0D;
+}
+.tablaMargin{
+    margin-left: 10px;
+    margin-right:10px;
+}
+.celdaPadding{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.contenedorPago{
+    margin:auto;
+    padding: 10px;
+    padding-top:15px;
+}
+
