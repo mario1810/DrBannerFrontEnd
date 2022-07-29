@@ -11,23 +11,32 @@
 
 
 .contenedor-principal{
-    background-image: url(https://i.ibb.co/4WFwfh1/lluvia-fondo.jpg);
+    background-image: url(https://i.ibb.co/RCXNzF2/278395349-283017204026070-6688651571158032914-n.jpg);
     margin: 0;
     padding: 0;
     /*height: 100%; /*vh es viewport-height adapta la altura e la ventana */
     background-size: cover;
     background-position: center;
     width: 100%;
-    
+   
 }
 
 
 .form{
     background-color: #f2f2f2;
-    width:50%;
-    /*margin: auto; */
+    width:50%; 
+    margin-left: 200; 
+    margin-bottom: 100;
     max-width: 400px;
     border-radius:1em;
     padding: 3.5em 1.5em;
     left: 3000px;
+}
+
+
+.form_container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
 }
