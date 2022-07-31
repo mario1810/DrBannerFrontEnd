@@ -1,3 +1,6 @@
+const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
+const SERVICE_TYPE = "Json";
+
 /**
  * 
  *                                                                      SOLICITUD FETCH GET
@@ -9,10 +12,9 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
     if (proveedor == "Fetch") {
         return new Promise((resolve, reject) => {
         fetch(direccionhttp)
-          .then((responseJSON) => responseJSON.json())
-          .then((usuarios) => {
-            //console.log("Fetch: "+JSON.stringify(usuarios));
-            resolve(usuarios.data)
+          .then((responseJSON) =>{ return responseJSON.json()})
+          .then((usuarioObject) => {
+            resolve(usuarioObject.usuario)
           })
           .catch((error) => {
             //console.log(error);
@@ -24,9 +26,9 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
     else{
       return new Promise((resolve, reject) => {
         fetch(direccionhttp)
-          .then((responseJSON) => responseJSON.json())
-          .then((usuarios) => {
-                resolve(usuarios.data)}
+          .then((responseJSON) => { return responseJSON.json()})
+          .then((usuarioObject) => {
+                resolve(usuarioObject.usuario)}
             )
           .catch((error) => {
             //console.log(error);
@@ -37,16 +39,34 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
     }
   }
   
-
-
-
  async function solicitudDatosForm() {
-    //datos = await adquirirDatos("Fetch", "https://reqres.in/api/users?delay=3");
-    datos = await adquirirDatos("Json", "./assets/json/users.json");
-    console.log("Solicitud Json:" + JSON.stringify(datos));
+    let usuario = await adquirirDatos(SERVICE_TYPE,USER_INFO_GET_URL);
+    
+    if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
+        //Relleno los campos de mi formulario.
+        inputNombre.value=usuario.nombre+" "+usuario.apellido;
+        console.log(usuario.tarjeta.numeroTarjeta);
+        inputTarjeta.value=usuario.tarjeta.numeroTarjeta;
+        inputMes.value=usuario.tarjeta.mes;
+        inputYear.value=usuario.tarjeta.anio;
+        if(usuario.tarjeta.tipo=="debito"){
+            rbTC.checked=false;
+            inputGroupMeses.disabled=true;
+            rbTD.checked=true;
+        }else{
+            rbTD.checked=false;
+            inputGroupMeses.disabled=false;
+            rbTC.checked=true;
+        } 
+        totPagar.value=usuario.total;
 
+    }
   }
 
+
+window.addEventListener('load', function() {
+    solicitudDatosForm();
+});
 
 /**
  * 
@@ -480,6 +500,7 @@ const formPago=document.getElementById("formPago");
 const inputGroupMeses=document.getElementById("inputGroupMeses");
 const rbTC=document.getElementById("TC");
 const rbTD=document.getElementById("TD");
+const totPagar=document.getElementById("totalPagar");
 //Elemento modal
 let myModal = new bootstrap.Modal(document.getElementById('myModal'));
 
