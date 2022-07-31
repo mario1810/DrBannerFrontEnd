@@ -46,8 +46,9 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
         //Relleno los campos de mi formulario.
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
         console.log(usuario.tarjeta.numeroTarjeta);
-        inputTarjeta.value=usuario.tarjeta.numeroTarjeta;
+        inputTarjeta.value=addSpacesTarjeta(usuario.tarjeta.numeroTarjeta);
         inputMes.value=usuario.tarjeta.mes;
+        addCeroMes();
         inputYear.value=usuario.tarjeta.anio;
         if(usuario.tarjeta.tipo=="debito"){
             rbTC.checked=false;
@@ -58,8 +59,8 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
             inputGroupMeses.disabled=false;
             rbTC.checked=true;
         } 
-        totPagar.value=usuario.total;
-
+        totPagar.value=Number.parseFloat(usuario.total).toFixed(2);
+        corroborarCampos();
     }
   }
 
@@ -67,6 +68,18 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
 window.addEventListener('load', function() {
     solicitudDatosForm();
 });
+
+//FUnción para agregar espacios cada cuatro digitos
+function addSpacesTarjeta(numero){
+    let newNumero="";
+    for(let i=0; i<numero.length;i++){
+        if(i>0 && i%4==0){
+            newNumero+=" ";    
+        }
+        newNumero+=numero.charAt(i);
+    }
+    return newNumero;
+}
 
 /**
  * 
@@ -440,7 +453,10 @@ function corroborarMes(flag){
 }
 function corroborarYear(flag){
     clear(inputYear);
-    if(inputYear.value.length<=1){
+    let fecha =new Date();
+    let anio=parseInt(fecha.getFullYear())-2000;
+
+    if(inputYear.value.length<=1 || parseInt(inputYear.value)<anio){
         inputYear.classList.add("is-invalid");
          return false;
     }else{
@@ -475,16 +491,17 @@ function procesoPago(){
         flag=corroborarMes(flag);        
         //Comprobación año (Que sean dos digitos)
         flag=corroborarYear(flag);
-        
-        if(flag==false){
-            //Algo fallo, no proseguimos
-            return;
-        }
-
-        //Realizamos el Post
-       procesoPago();
+        return flag;
  }
 
+ function procesoCompra(){
+    let flag=corroborarCampos();
+    if(flag){
+        //Realizamos el Post
+        procesoPago();
+    }
+    // No se puede realizar el proceso, porque hay un campo mal
+ }
 
  
 
@@ -528,7 +545,7 @@ inputTarjeta.addEventListener("focusout",()=>{focusTarjeta()});
 inputNombre.addEventListener("focusout",()=>{focusNombre()});
 
 //Eventos de botones
-buttonComprar.addEventListener("click",()=>{corroborarCampos()});
+buttonComprar.addEventListener("click",()=>{procesoCompra()});
 buttonCancelar.addEventListener("click",()=>{window.location.assign("/html/carrito.html"); });
 
 
