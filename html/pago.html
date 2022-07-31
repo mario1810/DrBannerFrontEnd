@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Favicon-->
-    <!--<link rel="icon" href="https://cdn-icons.flaticon.com/png/512/2668/premium/2668896.png?token=exp=1659039036~hmac=7ccab9c1c7ebdeff0b15f0429b3c96e7">-->
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <!--Bootstrap-->
@@ -38,54 +37,91 @@
           </div>
         </div>
       </header>
-    <main class="container-max-width text-center color3">
+    <main class="container-max-width text-center mainBackground">
         <div class="row">
-            <section class="container col-12 col-lg-6 justify-content-center align-items-center color2 containerForm">
+            <section class="container col-12 col-lg-6 justify-content-center align-items-center color2 tamContainerForm">
                 <h2 class="encabezado">Proceso de compra</h2>
-                <form class="row">
+                <form class="row" id="formPago">
                   <div class="col-12">
-                    <label for="fullName" class="form-label">Nombre Completo</label>
-                    <input type="text" class="form-control" id="fullName" value="Mark" required>
+                    <label for="fullName" class="form-label">Nombre completo</label>
+                    <input type="text" class="form-control textInputPos" id="fullName" >
                   </div>
                   <label class="subEncabezado">Datos de la tarjeta</label>
                   <div class="col-12">
                     <label for="cardNumber" class="form-label">Número de tarjeta</label>
-                    <input type="number" class="form-control" id="cardNumber" value="Otto" required>
+                    <input type="text" class="form-control textInputPos" id="cardNumber">
                   </div>
-                  <div class="col-6 col-md-4">
+                  <div class="col-12  col-sm-4">
                       <label for="cardMonth" class="form-label labelData">Mes</label>
-                      <input type="number" class="form-control" id="cardMonth"  placeholder="mm" required max="12" min="1">
+                      <input type="text" class="form-control tamInput textInputPos" id="cardMonth"  placeholder="mm">
                   </div>
-                  <div class="col-6 col-md-4">
+                  <div class="col-12  col-sm-4">
                       <label for="cardYear" class="form-label labelData">Año</label>
-                      <input type="number" class="form-control" id="cardYear" placeholder="yy" required>
+                      <input type="text" class="form-control tamInput textInputPos" id="cardYear" placeholder="yy">
                   </div>
                   
-                  <div class="col-6 col-md-4" style="text-align: center;">
+                  <div class="col-12 col-sm-4">
                       <label for="cvvNumber" class="form-label labelData">CVV</label>
-                      <input type="number" class="form-control" id="cvvNumber" required>
+                      <input type="text" class="form-control tamInput textInputPos" id="cvvNumber" placeholder="cvv">
                   </div>
-                  <div class="col-12">
+                  <div class="col-12 col-sm-6">
                       <label class="form-label subEncabezado2">Tipo de tarjeta</label>
                       <br>
-                      <input type="radio"  name="card">Crédito
-                      <input type="radio"  name="card"> Débito
+                      <input class="form-check-input" type="radio" name="tarjeta" value="Credito" id="TC" checked="checked"> Crédito
+                      <br>
+                      <input  class="form-check-input" type="radio" name="tarjeta" value="Debito" id="TD"> Débito
                   </div>
-                  <div class="col-12">
-                    <button class="btn btn-dark ubicacionBotones" type="submit">Comprar</button>
+                  <div class="col-12 col-sm-6 align-items-center">
+                    <div class=" input-group contenedorList">                        
+                      
+                      <label class="input-group-text text-bg-dark" for="inputGroupSelect01">Meses</label>
+                      <select class="form-select" id="inputGroupMeses">
+                        <option value="1">3</option>
+                        <option value="2">6</option>
+                        <option value="3">12</option>
+                      </select>
+                    </div>
                   </div>
-                  </form>
+                  <div class="col-12 ">
+                    <div class="input-group mb-3 totalP">
+                      <span class="input-group-text text-bg-dark" id="totalPagar">Total $</span>
+                      <input type="text" class="form-control" disabled style="background-color: white;">
+                    </div>
+                  </div>                  
                   <div class="col-12">
-                    <br>
-                    <a href="/html/carrito.html"><button class="btn btn-dark botonMargin" type="submit">Cancelar</button></a>
-                </div>
-                  
-            </section>
+                    <button class="btn btn-dark marginBotones" type="button" id="bComprar"> Pagar</button>
+                    <button class="btn btn-dark marginBotones" type="button" id="bCancelar">Cancelar</button>
+                  </div>
+                </form>              
+              </section>
             <section class="col-12 col-lg-6 paddingContenedorImagen ocultar">
-                <p class="marginControl"><img src="https://i.ibb.co/23y2VdS/IMG-9942.jpg" class="imagen"></p>
+                <p class="marginControl"><img src="https://i.ibb.co/bJDffXZ/XV.jpg" class="imagen"></p>
             </section>
         </div>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" data-bs-backdrop="static">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Dr Banner Photography</h5>
+              </div>
+              <div class="modal-body text-center contenedorPadre">
+                  <p class="textoCompraF" id="mensajeCompra">El pago se está procesando</p>   
+                  <div class="spinner-border tamSpinner" role="status" id="checkProceso">
+                    <span class="visually-hidden"></span>
+                  </div>
+                  <div>
+                    <i class="bi bi-check-circle-fill tamCheck" id="checkCompra"></i>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary btn-dark btnCompraFin" data-bs-dismiss="modal" id="botonFinCompra">Continuar</button>
+              </div>
+          </div>
+      </div>
+    </div>
+  
     <footer id="footer">
       <div class="flex-container">
         <!-- Logo -->
@@ -121,5 +157,6 @@
       
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/pago.js"></script>
 </body>
 </html>
