@@ -45,7 +45,6 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
         //Relleno los campos de mi formulario.
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
-        console.log(usuario.tarjeta.numeroTarjeta);
         inputTarjeta.value=addSpacesTarjeta(usuario.tarjeta.numeroTarjeta);
         inputMes.value=usuario.tarjeta.mes;
         addCeroMes();
@@ -465,15 +464,7 @@ function corroborarYear(flag){
     }
 }
 
-function procesoPago(){
-    myModal.show();
-    spinner.style.display="none";
-    messageC.innerHTML="El pago se ha realizado con éxito. Gracias por tu compra."
-    checkC.style.display="inline-block";
-    btnFinCompra.style.visibility="visible";
-}
-
- function corroborarCampos(){
+function corroborarCampos(){
     if(buttonComprar.classList.contains("data-bs-toggle")){
         buttonComprar.classList.remove("data-bs-toggle");    
     }
@@ -493,6 +484,62 @@ function procesoPago(){
         flag=corroborarYear(flag);
         return flag;
  }
+
+/**
+ * 
+ *                                              PROCESO DE PAGO
+ * 
+ */
+
+/**
+ * Función que realiza un post a la API para almacenar la información
+ * @returns Valor booleano indicando si la información se envio a la API o no (Si la compra se realizó o no)
+ */
+ function pagoEnvioPost(){
+    console.log("Hola");
+    return false;
+}
+
+/**
+ * Función que actualiza el modal, para indicar que la compra se realizó con exito o no
+ */
+function postPago(flag){
+    if(flag){
+        spinner.style.display="none";
+        messageC.innerHTML="El pago se ha realizado con éxito. Gracias por tu compra.";
+        checkC.style.display="inline-block";
+        
+    }else{
+        spinner.style.display="none";
+        messageC.innerHTML="El pago no se puedo concretar. Lamentamos las molestias";
+    }
+    btnFinCompra.style.visibility="visible";
+    btnFinCompra.addEventListener("click",()=>{
+        console.log("Inside"+flag);
+        if(flag){
+            window.location.assign("/index.html"); 
+        }else{
+            myModal.hide();
+        }
+        
+    });
+}
+
+function procesoPago(){
+    //Antes de hacer el pago, abrimos el modal
+    myModal.show();
+    //Enviamos la info de pago al servidor
+    let flag=pagoEnvioPost();
+    //Actualizamos el modal despues de hacer el pago
+    postPago(flag);
+}
+
+
+/**
+ * 
+ *                                              PROCESO DE COMPRA
+ * 
+ */
 
  function procesoCompra(){
     let flag=corroborarCampos();
@@ -527,7 +574,7 @@ const spinner=document.getElementById("checkProceso");
 const checkC= document.getElementById("checkCompra");
 const messageC=document.getElementById("mensajeCompra");
 //Envento de boton de compra finalizada
-btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
+//btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
 
 //eventos de ingreso de texto
 inputNombre.addEventListener("keydown",(event)=>{filtroTexto(event)});
@@ -560,6 +607,8 @@ rbTD.addEventListener("click",()=>{
         inputGroupMeses.disabled=true;;
     }    
 });
+
+
 
 
 
