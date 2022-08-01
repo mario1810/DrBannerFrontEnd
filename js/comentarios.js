@@ -1,30 +1,87 @@
 
 
-/** 
- REFERENCIA 
-function requestApi(url,page){
-    fetch(url)
-    .then(responseIsJSON =>{return responseIsJSON.json()})
-    .then(dataJSON =>{ 
-                        if(page==1){
-                            //Almacenamos los datos de manera local
-                            localStorage.setItem("localUserData",JSON.stringify({ userArray:dataJSON.data, time:Date.now()}));
-                        }
-                        clearTable();
-                        return showUsers(dataJSON.data);
-                    })
-    .catch(err => {alert(" No se pudo mostrar contenido deseado");console.log('Solicitud fallida', err);});        
+const URL_COMENT_LOCAL="/assets/json/comentarios.json";
+
+function solicitudBtn() {
+
+    fetch(URL_COMENT_LOCAL)
+    
+    //Cuando los llegue la info de fetch, esa info se transforma en formato json
+    .then((respuesta) => respuesta.json())
+    
+    //info es la información de la instrucción anterior, es el resultado de respuesta.json()
+    .then((info) => {
+        //Se imprime la informacion en consola
+        console.log(info.data)
+        //Se guarda la informacion en localstorage
+        localStorage.setItem("Información de comentarios",JSON.stringify(info.data));
+        //se muestra la información en el html con la siguiente función (ver más abajo la función)
+        return mostrarInfo(info.data);
+    })
+
+    //Instrucción en caso de que haya un error 
+    .catch((error) => console.log(error));
+
 }
 
-*/
+function mostrarInfo(arreglo){
+    let comentarios = "";
+     for(let usuario of arreglo){
+         //Es el código que comparten todos los comentarios en html
+            let contenidoEtiquetas=
+            `<div class="container">
+                <div class="row pt-3">
 
-const URL_COMENTARIOS="https://azucenacg.github.io/jsonapi/comentarios.json";
+                  <div class="col-2" id="izquierta-comment"></div>
 
-async function getComment() {
-    const response = await fetch(URL_COMENTARIOS);
-    // convertir esa response en formato json:
-    const data = await response.json();
-    console.log(data.nombre+" "+data.apellido);
+                  <blockquote class="col-8 text-center">
+            
+                    <img src="${usuario.foto}" alt="avatar"
+                    class="avatar">
+                    
+                    
+                    <div class="d-flex flex-row justify-content-center p-3 stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                    </div>
+                    
+                    <p>
+                        ${usuario.comentario}
+                    </p>
+            
+                    
+                    <footer class="blockquote-footer pt-2 fs-3">
+                      <cite>
+                      ${usuario.nombre+" "+usuario.apellido}
+                      </cite>
+                    </footer>
+                  </blockquote>
+                </div>
+            </div> `;
+        
+            if(usuario.id==1){
+                /**Ingresar nuevos datos en el objeto con id "primer_comentario"
+                Solo se imprime el comentario del primer usuario en este id porque
+                el bootstrap indica que solo el 1er coment tiene la clase active
+                */
+               document.getElementById("primer_comentario").innerHTML=contenidoEtiquetas;
+            }
+
+            else{
+                comentarios=comentarios+
+                `<div class="carousel-item"> `+contenidoEtiquetas+` </div>`;
+            }
+        }
+        
+        document.getElementById("otros_comentarios").innerHTML=comentarios;
+
 }
 
-getComment();
+
+
+solicitudBtn();
+
+
