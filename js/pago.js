@@ -1,5 +1,5 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
-const USER_INFO_POST_URL = "/assets/json/pagoInfoUserPost.json";
+const USER_INFO_POST_URL = "https://a75973a6-cd56-4429-816a-7f6527bc347e.mock.pstmn.io";
 const SERVICE_TYPE = "Json";
 const SIMULAR_POST=true;
 const PAGO_EXITOSO=true;
@@ -313,7 +313,10 @@ function filtroNumeroMes(e){
  *                                          FUNCIONES AUXILIARES
  * 
  */
-
+/**
+ * Limpia las clases  que indican si la entrada es correcta o no
+ * @param {*} elemento 
+ */
 function clear(elemento){
 
     if(elemento.classList.contains("is-valid")){
@@ -494,7 +497,7 @@ function corroborarMes1(flag){
      let mes=parseInt(fecha.getMonth())+1;
      let anio=parseInt(fecha.getFullYear())-2000;
      if(inputMes.value.length<2 || (parseInt(inputMes.value)<mes && parseInt(inputYear.value)==anio)){
-        alert("Fecha de tarjeta invalida");
+        //alert("Fecha de tarjeta invalida");
         inputMes.classList.add("is-invalid");
         return false;
      }else{
