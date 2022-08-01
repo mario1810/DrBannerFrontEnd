@@ -1,5 +1,10 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
+const USER_INFO_POST_URL = "/assets/json/pagoInfoUserPost.json";
 const SERVICE_TYPE = "Json";
+const SIMULAR_POST=true;
+const PAGO_EXITOSO=true;
+
+let idUser=0; //temporalmente global xD
 
 /**
  * 
@@ -44,6 +49,7 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
     
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
         //Relleno los campos de mi formulario.
+        idUser=usuario.id;
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
         inputTarjeta.value=addSpacesTarjeta(usuario.tarjeta.numeroTarjeta);
         inputMes.value=usuario.tarjeta.mes;
@@ -491,15 +497,80 @@ function corroborarCampos(){
  * 
  */
 
+ /**
+  *     FUnción que realiza un post a la api
+  * @param {*} direccionhttp  // dirección de la API
+  * @param {*} json  // JSON que se adjunta en el post
+  */
+  async function enviarDatos(direccionhttp, data){
+        return new Promise((resolve, reject) => {
+          fetch(direccionhttp,{
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers:{
+              'Content-Type': 'application/json'
+            }
+
+          }).then((responseJSON) =>{responseJSON.json()})
+            .catch((error) => {
+              console.log(error);
+              reject(false);
+            })
+            .then((response) => {
+                console.log('Success:', response);
+                resolve(true);
+              })
+        });
+  }
+
 /**
  * Función que realiza un post a la API para almacenar la información
  * @returns Valor booleano indicando si la información se envio a la API o no (Si la compra se realizó o no)
  */
- function pagoEnvioPost(){
-    console.log("Hola");
-    return false;
+ async function pagoEnvioPost(){
+    let tT="";
+    let tMeses=inputGroupMeses.value;
+    if(rbTC.checked){
+        tT=rbTC.value;
+    }else{
+        tT=rbTD.value;
+    }
+
+    //Creamos un objeto con la información a enviar
+    let user = {
+        id: Number(idUser),
+        nombre: String(inputNombre.value),
+        tarjeta:{
+            numeroTarjeta:String(inputTarjeta.value.replace(/ /g, "")),
+            mes:Number(inputMes.value),
+            anio:Number(inputYear.value),
+            cvv:Number(inputCVV),
+            tipo:String(tT),
+            meses:Number(tMeses)
+        },
+        total: Number(totPagar.value)
+    };
+    let flag=PAGO_EXITOSO;
+    if(SIMULAR_POST){
+        console.log(JSON.stringify(user));
+    }else{
+        let flag = await enviarDatos(USER_INFO_POST_URL,user);
+    }
+    //Retraso para ver la aimación
+    syncDelay(5000);
+    //Actualizamos el modal despues de hacer el pago
+    postPago(flag);
 }
 
+
+//Funcion para ssimular un tiempo de espera. (temporal)
+function syncDelay(milliseconds){
+    var start = new Date().getTime();
+    var end=0;
+    while( (end-start) < milliseconds){
+        end = new Date().getTime();
+    }
+}
 /**
  * Función que actualiza el modal, para indicar que la compra se realizó con exito o no
  */
@@ -515,7 +586,6 @@ function postPago(flag){
     }
     btnFinCompra.style.visibility="visible";
     btnFinCompra.addEventListener("click",()=>{
-        console.log("Inside"+flag);
         if(flag){
             window.location.assign("/index.html"); 
         }else{
@@ -525,14 +595,13 @@ function postPago(flag){
     });
 }
 
+
+//función que despliega el modal, su evento de despliegue, encadea el envio del post
 function procesoPago(){
     //Antes de hacer el pago, abrimos el modal
     myModal.show();
-    //Enviamos la info de pago al servidor
-    let flag=pagoEnvioPost();
-    //Actualizamos el modal despues de hacer el pago
-    postPago(flag);
 }
+
 
 
 /**
@@ -566,8 +635,9 @@ const rbTC=document.getElementById("TC");
 const rbTD=document.getElementById("TD");
 const totPagar=document.getElementById("totalPagar");
 //Elemento modal
-let myModal = new bootstrap.Modal(document.getElementById('myModal'));
-
+myModal = new bootstrap.Modal(document.getElementById('myModal')); // Para poder llamar el metodo show del modal
+myModal2 = document.getElementById('myModal'); // Para poder acceder a los eventos del modal
+myModal2.addEventListener("shown.bs.modal",()=>{pagoEnvioPost();});
 //Elementos dentro del modal
 const btnFinCompra=document.getElementById("botonFinCompra");
 const spinner=document.getElementById("checkProceso");
