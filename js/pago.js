@@ -122,7 +122,8 @@ function filtroTexto(e){
 function filtroNumeroTarjeta(e){
 
 //Si el caracter es back space lo dejamos pasar al input
-    if(e.key.charCodeAt(0)==66) 
+    
+     if(e.key.charCodeAt(0)==66) 
     {
         let len=inputTarjeta.value.length-1;
         //Una posición antes de la que quiero eliminar
@@ -283,9 +284,8 @@ function filtroNumeroMes(e){
  */
 
  function filtroNumeroCVV(e){
-
     //Si el caracter es back space lo dejamos pasar al input
-    if(e.key.charCodeAt(0)==66) 
+    if(e.key.charCodeAt(0)==66 || e.key=='ArrowLeft' || e.key=='ArrowRight') 
     {
         return;
     }
@@ -362,6 +362,7 @@ function clear(elemento){
             inputYear.value=inputYear.value+"0";
         }
     }
+    
     val=inputYear.value;
     if(val.length<2){
         inputYear.classList.add("is-invalid");
@@ -369,7 +370,7 @@ function clear(elemento){
         inputYear.classList.add("is-valid");
     }
  }
-
+/*
  function focusCVV(){
     clear(inputCVV)
     if(inputCVV.value.length==3){
@@ -379,6 +380,7 @@ function clear(elemento){
         inputCVV.classList.add("is-invalid");
     }
  }
+
 
  function focusTarjeta(){
     clear(inputTarjeta)
@@ -399,7 +401,7 @@ function clear(elemento){
             }
         }
         inputNombre.classList.add("is-invalid");  
-}
+}*/
 /**
  * 
  *                                      FUNCIONES DE BOTONES
@@ -407,6 +409,7 @@ function clear(elemento){
  * 
  */
 
+//Corrobora el texto ya ingresado
 function corroborarNombre(flag){
     clear(inputNombre);
     const nombres=inputNombre.value.split(" ");
@@ -420,16 +423,46 @@ function corroborarNombre(flag){
     return false;
 }
 
+//Corrobora conforme se ingresa el texto
+function corroborarNombreRT(){
+    clear(inputNombre);
+    const nombres=inputNombre.value.split(" ");
+    if(nombres.length>=2){
+        if(nombres[0].length>0 && nombres[1].length>0){
+            inputNombre.classList.add("is-valid");
+            return;
+        }
+    }
+    inputNombre.classList.add("is-invalid");  
+    return;
+}
+
+
+//Corrobora el texto ya ingresado
 function corroborarTarjeta(flag){
+    clear(inputTarjeta);
+    if(inputTarjeta.value.replace(/ /g, "").length==16){
+        inputTarjeta.classList.add("is-valid");
+        return flag
+    }
+    else{
+        inputTarjeta.classList.add("is-invalid");
+        return false;
+    }
+}
+
+//Corrobora conforme se ingresa el texto
+function corroborarTarjetaRT(){
     clear(inputTarjeta);
     if(inputTarjeta.value.replace(/ /g, "").length<16){
         inputTarjeta.classList.add("is-invalid");
-        return false;
+        return;
     }else{
         inputTarjeta.classList.add("is-valid");
-        return flag;
     }
 }
+
+//Corrobora el texto ya ingresado
 function corroborarCVV(flag){
     clear(inputCVV);
     if(inputCVV.value.length<3){
@@ -441,22 +474,50 @@ function corroborarCVV(flag){
     }
 }
 
-function corroborarMes(flag){
+//Corrobora conforme se ingresa el texto
+function corroborarCVVRT(){
+    clear(inputCVV);
+    if(inputCVV.value.length<3){
+        inputCVV.classList.add("is-invalid");
+        return;
+    }else{
+        inputCVV.classList.add("is-valid");
+        return;
+    }
+}
+
+//Corrobora el texto ya ingresado
+function corroborarMes1(flag){
      //Comporbación de fecha de caducidad a lo más igual a la actual
      clear(inputMes);
      let fecha =new Date();
      let mes=parseInt(fecha.getMonth())+1;
      let anio=parseInt(fecha.getFullYear())-2000;
      if(inputMes.value.length<2 || (parseInt(inputMes.value)<mes && parseInt(inputYear.value)==anio)){
-         inputMes.classList.add("is-invalid");
-         return false;
-     }
-     else{
+        alert("Fecha de tarjeta invalida");
+        inputMes.classList.add("is-invalid");
+        return false;
+     }else{
         inputMes.classList.add("is-valid");
-        return flag
+        return flag;
      }
 }
-function corroborarYear(flag){
+//Corrobora conforme se ingresa el texto
+function corroborarMes(){
+    //Comporbación de fecha de caducidad a lo más igual a la actual
+    clear(inputMes);
+    if(inputMes.value.length<2){
+        inputMes.classList.add("is-invalid");
+        return;
+    }
+    else{
+       inputMes.classList.add("is-valid");
+       return;
+    }
+}
+
+//Corrobora el texto ya ingresado
+function corroborarYear1(flag){
     clear(inputYear);
     let fecha =new Date();
     let anio=parseInt(fecha.getFullYear())-2000;
@@ -470,6 +531,19 @@ function corroborarYear(flag){
     }
 }
 
+//Corrobora conforme se ingresa el texto
+function corroborarYear(){
+    clear(inputYear);
+    if(inputYear.value.length<2) {
+        inputYear.classList.add("is-invalid");
+         return;
+    }else{
+        inputYear.classList.add("is-valid");
+        return;
+    }
+}
+
+//Corrobora campos antes de proseguir con la compra(fecha de caducidad de la tarjeta)
 function corroborarCampos(){
     if(buttonComprar.classList.contains("data-bs-toggle")){
         buttonComprar.classList.remove("data-bs-toggle");    
@@ -485,9 +559,9 @@ function corroborarCampos(){
         //Comprobación de CVV (Que sean tres digitos)
         flag=corroborarCVV(flag);
         //Comprobación de mes  
-        flag=corroborarMes(flag);        
+        flag=corroborarMes1(flag);     
         //Comprobación año (Que sean dos digitos)
-        flag=corroborarYear(flag);
+        flag=corroborarYear1(flag);
         return flag;
  }
 
@@ -646,7 +720,17 @@ const messageC=document.getElementById("mensajeCompra");
 //Envento de boton de compra finalizada
 //btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
 
-//eventos de ingreso de texto
+//eventos de ingreso de texto (despues de que el valor ha llegado al input)
+inputNombre.addEventListener("keyup",(event)=>{corroborarNombreRT()});
+inputTarjeta.addEventListener("keyup",(event)=>{corroborarTarjetaRT()});
+inputMes.addEventListener("keyup",(event)=>{corroborarMes()});
+inputYear.addEventListener("keyup",(event)=>{corroborarYear(event)});
+inputCVV.addEventListener("keyup",(event)=>{corroborarCVVRT()});
+
+
+
+
+//eventos de ingreso de texto (antes de que el valor llegue al input)
 inputNombre.addEventListener("keydown",(event)=>{filtroTexto(event)});
 inputTarjeta.addEventListener("keydown",(event)=>{filtroNumeroTarjeta(event)});
 inputMes.addEventListener("keydown",(event)=>{filtroNumeroMes(event)});
@@ -657,9 +741,9 @@ inputCVV.addEventListener("keydown",(event)=>{filtroNumeroCVV(event)});
 //Eventos de formato
 inputMes.addEventListener("focusout",()=>{addCeroMes()});
 inputYear.addEventListener("focusout",()=>{addCeroYear()});
-inputCVV.addEventListener("focusout",()=>{focusCVV()});
-inputTarjeta.addEventListener("focusout",()=>{focusTarjeta()});
-inputNombre.addEventListener("focusout",()=>{focusNombre()});
+//inputCVV.addEventListener("focusout",()=>{focusCVV()});
+//inputTarjeta.addEventListener("focusout",()=>{focusTarjeta()});
+//inputNombre.addEventListener("focusout",()=>{focusNombre()});
 
 //Eventos de botones
 buttonComprar.addEventListener("click",()=>{procesoCompra()});
