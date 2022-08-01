@@ -1,0 +1,56 @@
+{
+"data":[ 
+{
+    "id":1,
+    "nombre": "Cristofer",
+    "apellido": "Pineda",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": "Las mejores fotografias están aqui",
+    "stars": "5"
+},
+
+{
+    "id":2,
+    "nombre": "Gerardo",
+    "apellido": "Ruiz",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "stars": "5"
+},
+
+{
+    "id":3,
+    "nombre": "Aaron",
+    "apellido": "Fdz",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": "icing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "stars": "5"
+},
+
+{
+    "id":4,
+    "nombre": "Cori",
+    "apellido": "Malave",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": "icinit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "stars": "5"
+},
+{
+    "id":5,
+    "nombre": "Mario",
+    "apellido": "Alvarez",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": " quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "stars": "5"
+},
+{
+    "id":6,
+    "nombre": "Marco",
+    "apellido": "Flores",
+    "foto": "https://reqres.in/img/faces/8-image.jpg",
+    "comentario": "quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magniquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni loremquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "stars": "5"
+}
+]
+}
+
