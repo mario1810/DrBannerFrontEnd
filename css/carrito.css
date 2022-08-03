@@ -85,3 +85,37 @@ h2{
 .centrarTexto{
     text-align: center;
 }
+
+
+@media(min-width:1400px){
+    .contenedorDos{
+        width: 983.63px;
+    }
+    .contenedorUno{
+        width: 421.56px;
+    }    
+}
+@media(max-width:992px){
+    .TablaM{
+        
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+.contenedorTabla{
+    background-color:white;
+    margin-bottom: 20px;
+    min-height:675px;
+    overflow-y: scroll;    
+}
+
+.textoCarrito{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+}
+
