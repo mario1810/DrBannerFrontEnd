@@ -112,3 +112,11 @@ h2{
         overflow-y: scroll;    
     }
 }
+
+.textoCarrito{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 700;    
+}

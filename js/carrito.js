@@ -3,8 +3,21 @@ const USER_INFO_POST_URL = "https://a75973a6-cd56-4429-816a-7f6527bc347e.mock.ps
 const SERVICE_TYPE = "Json"; //Fetch
 const KEY_LS= "userLS";
 
+const tablaBody=document.getElementById("tablaBody");
+const mensajeCarritoVacio=document.getElementById("carritoVacio");
+const totalPagar=document.getElementById("totalPagar");
+const btnPagar=document.getElementById("btnPagar");
 
+/**
+ * Se lamma la función tan pronto se cargue el documento HTML
+ */
+ window.addEventListener('load', ()=> {solicitudPaquetesCarrito()});
 
+ /**
+  * Cuando se da click en el botón de pagar
+  */
+ btnPagar.addEventListener("click",()=>{window.location.assign("/html/pago.html")});
+ 
 /**
  * 
  * Función que realiza el fetch para obtener los paquetes que el usuario agrego al carrito
@@ -48,6 +61,7 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
 function muestraPaquetesTabla(arrayPaquetes){
     let pagar=0;
     let id=0;
+    mensajeCarritoVacio.innerHTML="";
     tablaBody.innerHTML="";
     totalPagar.innerHTML="$"+Number.parseFloat(0).toFixed(2);
     if(arrayPaquetes.length>0){
@@ -68,7 +82,7 @@ function muestraPaquetesTabla(arrayPaquetes){
         totalPagar.innerHTML="$"+Number.parseFloat(pagar).toFixed(2);
     }else{
         btnPagar.disabled=true;
-        tablaBody.innerHTML=`<tr><td class="textoCarrito" colspan="5">Tu carrito de compras está vacio</td></tr>`;
+        mensajeCarritoVacio.innerHTML=`Tu carrito de compras está vacio`;
     }
 }
 
@@ -87,6 +101,9 @@ function borrarRow(id){
         arrayCarrito.splice(id,1); 
         localStorage.setItem(KEY_LS,JSON.stringify({ carrito:arrayCarrito}));
         muestraPaquetesTabla(arrayCarrito);
+    }else{
+        //Condición de protección
+        mensajeCarritoVacio.innerHTML=`Tu carrito de compras está vacio`;
     }
 }
 
@@ -99,27 +116,20 @@ async function solicitudPaquetesCarrito() {
     let usuario = await adquirirDatos(SERVICE_TYPE,USER_INFO_GET_URL);
     // El fetch se realizó de manera correcta?
     if(usuario!=null){ 
-        //Tenemos paquetes agregados en el carrito?
-        if(usuario.carrito.length>0){
-            //Guardamos al información del carrito localmente
-            localStorage.setItem(KEY_LS,JSON.stringify({ carrito:usuario.carrito}));
-            //Mostramos la info en la tabla
-            muestraPaquetesTabla(usuario.carrito);
-        }
-        else{
-            //Mensaje de no hay elementos en el carrito
-        }
+        //Guardamos al información del carrito localmente
+        localStorage.setItem(KEY_LS,JSON.stringify({ carrito:usuario.carrito}));
+        //Mostramos la info en la tabla
+        muestraPaquetesTabla(usuario.carrito);
+    }else{
+        //Condición de protección
+        mensajeCarritoVacio.innerHTML=`Tu carrito de compras está vacio`;
     }
 }
-/**
- * Se lamma la función tan pronto se cargue el documento HTML
- */
- window.addEventListener('load', ()=> {solicitudPaquetesCarrito()});
 
-const tablaBody=document.getElementById("tablaBody");
-const totalPagar=document.getElementById("totalPagar");
-const btnPagar=document.getElementById("btnPagar");
 
-btnPagar.addEventListener("click",()=>{window.location.assign("/html/pago.html")});
+
+
+
+
 
   
