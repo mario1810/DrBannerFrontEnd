@@ -23,55 +23,132 @@
     
 </head>
 <body>
-    <header class="container-max-width text-center color5 colorTextNavBar">
-        <!--Renglón que contiene todos los elementos de la navBar-->
-        <div class="row align-items-center">
-          <!--Columna del nombre de la empresa-->
-          <div class="col-12 col-lg-5">
-            <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+  <header class="container-max-width text-center color5 colorTextNavBar">
+    <!--Renglón que contiene todos los elementos de la navBar-->
+    <div class="row align-items-center">
+      <!--Columna del nombre de la empresa-->
+      <div class="col-12 col-lg-5">
+        <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+      </div>
+      <!--Columna que contiene el resto de elementos del navbar
+              carrito, user, menu-->
+      <div class="col-12 col-lg-7">
+        <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
+        <div class="row align-items-center justify-content-end">
+          <!--Carrito-->
+          <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
+            <!--<a href="/html/carrito.html" class="nav-item"
+              ><i class="bi bi-cart-check colorTextNavBar"></i
+              ><span class="badge color4 rounded-pill">0</span></a
+            >-->
           </div>
-          <!--Columna que contiene el resto de elementos del navbar
-                  carrito, user, menu-->
-          <div class="col-12 col-lg-7">
+          <!--User-->
+          <div class="col-4 col-lg-1 text-lg-end  text-center">
+            <a href="/html/login.html" class="nav-item"
+              ><i class="bi bi-person-circle colorTextNavBar"></i
+            ></a>
+          </div>
+          <!--Menu-->
+          <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
+            <nav class="navbar navbar-expand-lg color5">
+              <div class="container-fluid justify-content-end">
+                <button
+                  class="navbar-toggler color3"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasDarkNavbar"
+                  aria-controls="offcanvasDarkNavbar"
+                >
+                <div class="color3">
+                  <span class="navbar-toggler-icon"></span>
+                </div>
+                  
+                </button>
+                <div
+                  class="offcanvas offcanvas-end colortextNavBar"
+                  tabindex="-1"
+                  id="offcanvasDarkNavbar"
+                  aria-labelledby="offcanvasDarkNavbarLabel"
+                >
+                  <div class="offcanvas-body color5">
+                    <ul
+                      class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
+                    >
+                      <li class="nav-item">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/contactanos.html">Contacto</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/acercadenosotros.html">Acerca</a>
+                      </li>
+                      <li class="nav-item dropdown ">
+                        <a
+                          class="nav-link dropdown-toggle colorTextNavBar colorNavH colorNavF"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Paquetes
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesxv.html">XV años</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesboda.html">Bodas</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesfamiliares.html">Familiar</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
-      </header>
+      </div>
+    </div>
+  </header>
     <main class="container-max-width text-center color3">
         <div class="row">
             <section class="col-12 col-ls-12">
                 <h2 class="encabezado">Tu carrito de compras</h2>
             </section>
-            <section class="col-12 col-lg-7 color3">
-                <div class="table-responsive-lg secctionTabla" >
+            <section class="col-12 col-lg-7 color3 contenedorDos ">
+                <div class="table-responsive-lg secctionTabla contenedorTabla TablaM ">
                     <table class="table align-middle">
                         <thead class="color4 colorTextTH">
                             <tr>
                                 <th scope="col">Paquete</th>
-                                <th scope="col">Descripción</th>
+                                <th scope="col">Tipo</th>
                                 <th scope="col">Costo</th>
-                                <th scope="col">Cantidad</th>
+                                <th scope="col">Agendado</th>
                                 <!--No tiene contenido-->
                                 <th scope="col"></th>
                               </tr>
                           </thead>
-                          <tbody>
+                          <tbody id="tablaBody">
+                            <!--
                             <tr>
                                 <th scope="row">XV años</th>
                                 <td>Básico</td>
                                 <td>$500</td>
                                 <td> 2 </td>
                                 <td> <i class="bi bi-trash3"></i></td>
-                              </tr>
+                              </tr>-->
                           </tbody>
                     </table>
                 </div>
             </section>
-            <section class="col-12 col-lg-3 color2 contenedorPago">
+            <section class="col-12 col-lg-3 color2 contenedorPago contenedorUno">
               <h3>Total de compra</h3>
               <br>
-              <p class="costoTotal">$1200</p>
+              <p class="costoTotal" id="totalPagar"></p>
               <br>
-              <a href="/html/pago.html"><button type="button" class="btn btn-dark">Continuar con la compra</button></a>
+              <button type="button" class="btn btn-dark" id="btnPagar">Continuar con la compra</button>
               <br>
               <div>
                 <br>
@@ -120,5 +197,6 @@
       
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/carrito.js"></script>
 </body>
 </html>
