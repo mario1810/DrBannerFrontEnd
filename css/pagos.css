@@ -25,6 +25,7 @@
 .encabezado{
     padding: 20px;
     font-weight: 700;
+    margin-bottom: 0;
 }
 .subEncabezado{
     font-size: 30px;
@@ -48,6 +49,10 @@
 }
 .imagen{
     width:100%;
+<<<<<<< HEAD
+=======
+    margin:0;
+>>>>>>> f978d6a (Add: Se añaden elementos HTML y su estilo css para tarjeta credito)
 }
 .paddingContenedorImagen{
     padding-right:0;
@@ -67,7 +72,121 @@
     .ocultar{
         display:none;
     }
-    .containerForm{
-        width: 80%;
+}
+<<<<<<< HEAD
+=======
+
+
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainBackground{
+    background-color: #D9D0BF;
+}
+
+@media(min-width:576px){
+    .tamContainerForm{ 
+        width:500px;    
     }
 }
+
+@media(min-width:992px){
+    .tamContainerForm{ 
+        box-sizing:content-box;
+        width:480px;    
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media(min-width:1400px){
+    .tamContainerForm{ 
+        width:660px;    
+    }
+}
+
+@media(max-width:576px){
+    .tamContainerForm{ 
+        width: 90%;    
+    }
+    .tamInput{
+        width: 100px;
+        margin: auto;
+    }
+}
+
+.textInputPos{
+    text-align: center;
+}
+
+
+.contenedorList{
+    text-align: center;
+    margin: auto;
+    margin-top:60px;
+    width: 210px;
+}
+
+@media(max-width:576px){
+    .contenedorList{
+        text-align: center;
+        margin: auto;
+        margin-top:25px;
+        width: 210px;
+    }
+}
+
+.totalP{
+    text-align: center;
+    margin: auto;
+    margin-top:10px;
+    width: 300px;
+}
+@media(max-width:576px){
+    .totalP{
+        text-align: center;
+        margin: auto;
+        margin-top:10px;
+        width: 210px;
+    }
+}
+
+.marginBotones{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+@media(min-width:1200px){
+    .marginBotones{
+        margin-top: 100px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+.contenedorPadre{
+    width: 500px;
+    height: 180px;
+}
+.tamSpinner{
+    width: 3rem; 
+    height: 3rem;
+    display:inline-block;
+}
+.tamCheck{
+    font-size: 3rem;
+    display:none;
+}
+.btnCompraFin{
+    visibility:hidden;
+}
+.textoCompraF{
+    margin-bottom:5px;
+}
+
+
+
+>>>>>>> f978d6a (Add: Se añaden elementos HTML y su estilo css para tarjeta credito)
