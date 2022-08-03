@@ -9,42 +9,42 @@
                 "paquete": "XV años",
                 "tipo": "Básico",
                 "costo": "500",
-                "fecha": "1/02/23"
+                "fecha": "01/02/23"
             },
             {
                 "id": 2,
                 "paquete": "XV años",
                 "tipo": "Premium",
                 "costo": "800",
-                "fecha": "1/02/23"
+                "fecha": "01/04/23"
             },
             {
                 "id": 3,
                 "paquete": "Familiar",
                 "tipo": "Premium",
                 "costo": "900",
-                "fecha": "1/02/23"
+                "fecha": "12/03/23"
             },
             {
                 "id": 4,
                 "paquete": "XV años",
                 "tipo": "Básico",
                 "costo": "500",
-                "fecha": "1/02/23"
+                "fecha": "30/05/23"
             },
             {
                 "id": 5,
                 "paquete": "Familiar",
                 "tipo": "Normal",
                 "costo": "900",
-                "fecha": "1/02/23"
+                "fecha": "01/12/22"
             },
             {
                 "id": 6,
                 "paquete": "Familiar",
                 "tipo": "Chido",
                 "costo": "300",
-                "fecha": "1/02/23"
+                "fecha": "21/11/23"
             }
         ],
         "support": {

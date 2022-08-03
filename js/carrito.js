@@ -59,10 +59,10 @@ function muestraPaquetesTabla(arrayPaquetes){
                                     <td scope="row" >${paquete.paquete}</td>
                                     <td>${paquete.tipo}</td>
                                     <td>$${Number.parseFloat(paquete.costo).toFixed(2)}</td>
-                                    <td>${paquete.cantidad}</td>
+                                    <td>${paquete.fecha}</td>
                                     <td onclick="borrarRow(${id})"><i class="bi bi-trash3"></i></td>
                                 <tr>`;
-            pagar+=Number(paquete.costo)*Number(paquete.cantidad);
+            pagar+=Number(paquete.costo);//*Number(paquete.cantidad);
             id++;
         }
         totalPagar.innerHTML="$"+Number.parseFloat(pagar).toFixed(2);
