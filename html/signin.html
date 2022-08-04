@@ -7,7 +7,7 @@
     <title>Registrate</title>
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
     <link rel="stylesheet" href="/css/login.css">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/stylesFonts.css" />
@@ -26,8 +26,6 @@
     />
   </head>
 
-<<<<<<< HEAD
-</head>
 
 <body>
   <header class="container-max-width text-center color5 colorTextNavBar">
@@ -45,232 +43,136 @@
   </header>
    
    <!-- Section: Design Block -->
-<section class="idk" >
+   <section class="container-fluid" id="section">
+    <div class="mx-4 my-5 px-md-5 text-center text-lg-start">
+      <div class="container-">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Las mejores fotos están en <br />
+              <span class="fw-bold" id="fotos">Dr. Banner Photography</span>
+            </h1>
+            <p id="paquetes">BODAS - XV AÑOS - GRADUACIONES - EVENTOS</p>
+          </div>
 
-  <div class="mx-4 my-5 px-md-5 text-center text-lg-start" style="background-color: #f2f2f2">
-    <div class="container">
-      <div class="row gx-lg-5 align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <h1 class="my-5 display-3 fw-bold ls-tight">
-            Las mejores fotos están en <br />
-            <span class="fw-bold" id="fotos" >Dr. Banner Photography</span>
-          </h1>
-          <p style="color: hsl(217, 10%, 50.8%)">
-            BODAS - XV AÑOS - GRADUACIONES - EVENTOS
-          </p>
-        </div>
-
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="card">
-            <div class="card-body py-5 px-md-5">
-              <form method="GET" action="/html/perfil.html">
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
-                      <label class="form-label" for="form3Example1">Nombre(s)</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
-                      <label class="form-label" for="form3Example2">Apellidos</label>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
-                  <label class="form-label" for="form3Example3">Correo Electrónico</label>
-                </div>
-
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Contraseña</label>
-                </div>
-
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2 bg-dark
-                  " type="checkbox" value="" id="form2Example33" checked />
-                  <label class="form-check-label" for="form2Example33">
-                    Acepto términos y condiciones
-                  </label>
-                </div>
-
-                <!-- Submit button -->
-                <div class="text-center">
-                <button type="submit" class="btn btn-dark btn-block mb-4">
-                  Registrarme 
-                </button>
-            </div>
-
-                <!-- Register buttons 
-                <div class="text-center">
-                  <p>o inicia sesión con:</p>
-                  <button type="button" class="btn btn-dark btn-floating my-1">
-                    <i class="fab fa-facebook-f"></i>
-                  </button>
-=======
-  <body>
-    <!-- Section: Design Block -->
-    <section class="container-fluid" id="section">
-      <div class="mx-4 my-5 px-md-5 text-center text-lg-start">
-        <div class="container-">
-          <div class="row gx-lg-5 align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-              <h1 class="my-5 display-3 fw-bold ls-tight">
-                Las mejores fotos están en <br />
-                <span class="fw-bold" id="fotos">Dr. Banner Photography</span>
-              </h1>
-              <p id="paquetes">BODAS - XV AÑOS - GRADUACIONES - EVENTOS</p>
-            </div>
-
-            <div class="col-lg-6 mb-5 mb-lg-0">
-              <div class="card">
-                <div class="card-body py-5 px-md-5">
-                  <form>
-                    <div class="row">
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <input
-                            type="text"
-                            id="form3Example1"
-                            class="form-control"
-                            required
-                            autofocus
-                          />
-                          <label class="form-label" for="form3Example1"
-                            >Nombre(s)</label
-                          >
-                        </div>
-                      </div>
-                      <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                          <input
-                            type="text"
-                            id="form3Example2"
-                            class="form-control"
-                            required
-                            autofocus
-                          />
-                          <label class="form-label" for="form3Example2"
-                            >Apellidos</label
-                          >
-                        </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="form3Example1"
+                          class="form-control"
+                          required
+                          autofocus
+                        />
+                        <label class="form-label" for="form3Example1"
+                          >Nombre(s)</label
+                        >
                       </div>
                     </div>
->>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
-
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                      <input
-                        type="email"
-
-                        class="form-control"
-                        placeholder="usuario@correo.com"
-                        required
-                        autofocus
-                      />
-                      <label class="form-label" for="form3Example3"
-                        >Correo Electrónico</label
-                      >
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input
+                          type="text"
+                          id="form3Example2"
+                          class="form-control"
+                          required
+                          autofocus
+                        />
+                        <label class="form-label" for="form3Example2"
+                          >Apellidos</label
+                        >
+                      </div>
                     </div>
+                  </div>
 
-<<<<<<< HEAD
-                  <button type="button" class="btn  btn-dark btn-floating my-1">
-                    <i class="fab fa-github"></i>
-                  </button>
-                </div>-->
-              </form>
-=======
-                    <!-- Password input -->
-                    <div class="form-outline mb-4">
-                      <input
-                        type="password"
-                        class="form-control"
-                        placeholder="************"
-                        required
-                        autofocus
-                      />
-                      <label class="form-label" for="form3Example4"
-                        >Contraseña</label
-                      >
-                    </div>
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
 
-                    <!-- Checkbox -->
-                    <div class="form-check d-flex justify-content-center mb-4">
-                      <input
-                        class="form-check-input me-2 bg-dark"
-                        type="checkbox"
-                        value=""
-                        id="form2Example33"
-                        checked
-                      />
-                      <label class="form-check-label" for="form2Example33">
-                        Acepto términos y condiciones
-                      </label>
-                    </div>
+                      class="form-control"
+                      placeholder="usuario@correo.com"
+                      required
+                      autofocus
+                    />
+                    <label class="form-label" for="form3Example3"
+                      >Correo Electrónico</label
+                    >
+                  </div>
 
-                    <!-- Submit button -->
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-dark btn-block mb-4">
-                        Registrarme
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="************"
+                      required
+                      autofocus
+                    />
+                    <label class="form-label" for="form3Example4"
+                      >Contraseña</label
+                    >
+                  </div>
+
+                  <!-- Checkbox -->
+                  <div class="form-check d-flex justify-content-center mb-4">
+                    <input
+                      class="form-check-input me-2 bg-dark"
+                      type="checkbox"
+                      value=""
+                      id="form2Example33"
+                      checked
+                    />
+                    <label class="form-check-label" for="form2Example33">
+                      Acepto términos y condiciones
+                    </label>
+                  </div>
+
+                  <!-- Submit button -->
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-dark btn-block mb-4">
+                      Registrarme
+                    </button>
+                  </div>
+                </form>
               </div>
->>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
             </div>
           </div>
         </div>
       </div>
-<<<<<<< HEAD
     </div>
-  </div>
-</section>
+  </section>
+  <div class="flex-item d-flex flex-sm-row flex-column justify-content-center" id="elementos-lista">
+    <a href="#">Contacto</a>
+    <a href="#">Acerca</a>
+    <a href="#">Paquetes</a>
 
-<footer id="footer">
-  <div class="flex-container">
-    <!-- Logo -->
-    <!-- el navbarbrand es para quitarle la linea de hipervinculo -->
-      <a href="#" class="flex-item navbar-brand" id="Dr">Dr. Banner Photography</a>
+  </div> 
+  
+   <div class=" p-2" id="sig">  
+    ¡Síguenos!
+  </div> 
 
-    <!-- ligas 2 -->
-    <!-- cuando pase el valor de sm que es 576 se volvera una fila -->
-    <!-- <div class="flex-item d-flex flex-sm-row flex-column justify-content-center" id="elementos-lista">
-      <a href="#">Contacto</a>
-      <a href="#">Acerca</a>
-      <a href="#">Paquetes</a>
-
-    </div> -->
+   
+  <div class="flex-item d-flex flex-row justify-content-center" id="redes-sociales">
+    <a href="https://instagram.com/reylesbanner?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i>
+    <a href="https://www.facebook.com/reylesbanner.perezvazquez"><i class="bi bi-facebook"></i></a>
+    <a href="https://wa.me/529613156245?text=%C2%A1Hola!%20Estuve%20explorando%20tu%20p%C3%A1gina%20y%20requiero%20mas%20informaci%C3%B3n%20%C2%BFMe%20puedes%20ayudar?%20"><i class="bi bi-whatsapp"></i></a>
     
-    <!-- <div class=" p-2" id="sig">  
-      ¡Síguenos!
-    </div> -->
-
-    <!-- redes 2 -->
-    <div class="flex-item d-flex flex-row justify-content-center" id="redes-sociales">
-      <a href="https://instagram.com/reylesbanner?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i>
-      <a href="https://www.facebook.com/reylesbanner.perezvazquez"><i class="bi bi-facebook"></i></a>
-      <a href="https://wa.me/529613156245?text=%C2%A1Hola!%20Estuve%20explorando%20tu%20p%C3%A1gina%20y%20requiero%20mas%20informaci%C3%B3n%20%C2%BFMe%20puedes%20ayudar?%20"><i class="bi bi-whatsapp"></i></a>
-
-    </div>
-
-    <small class="pt-4" id="derechos">  
-      <!-- ©Dr Banner Photography Aviso legal · Privacidad · Cookies -->
-      ©2022 Todos los derechos reservados. Dr Banner Photography.
-    </small>
   </div>
-</footer>        
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-=======
-    </section>
-  </body>
->>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
-</html>
 
+  <small class="pt-4" id="derechos">  
+    <!-- ©Dr Banner Photography Aviso legal · Privacidad · Cookies -->
+    ©2022 Todos los derechos reservados. Dr Banner Photography.
+  </small>
+</div>
+
+</footer>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
