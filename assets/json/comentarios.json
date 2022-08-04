@@ -2,8 +2,8 @@
 "data":[ 
 {
     "id":1,
-    "nombre": "Cristofer",
-    "apellido": "Pineda",
+    "nombre": "Azucena",
+    "apellido": "Ceniceros",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": "Las mejores fotografias están aqui",
     "stars": "5"
