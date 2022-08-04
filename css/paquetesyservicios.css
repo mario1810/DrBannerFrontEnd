@@ -2,91 +2,26 @@
 /*clase principal del carrusel*/
 
 body {
-    background-color:#F2F2F2;
+    background: #F2F2F2;
+    font-family: 'Montserrat', sans-serif;
+}
+.new {
+    margin-top: 16px;
 }
 
-#carousel {
-    padding-left: 30px;
-    padding-right: 30px;
-
+.container {
+    padding: 10px;
 }
 
-.card {
-    background-color: unset;
-}
-.card-text {
-    border: 1px;
-    display: inline-block;
-    width: auto;
-    margin: 0 20px;
-    text-align: justify;
-
-}
-
-
-.carousel-inner {
-    border: 10px solid #f7f9f9;
-    margin-top: 60px;
-    padding-bottom: 10px;
-    background-color: rgba(254,255, 255, 0.5);
-    border-radius: 12px;
-    box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-    -webkit-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-    -moz-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-
-}
-.list-group {
-    background-color: rgba(254,255, 255, 0.5);
-    border-radius: 12px;
-    box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-    -webkit-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-    -moz-box-shadow: 2px 0px 18px -3px rgba(219,219,219,0.49);
-}
-/*titulo de los paquetes-forman parte del carrusel*/
 .carousel-caption {
     position: absolute;
     right: 15%;
     top: -75px;
     left: 15%;
-    z-index: 10;
     padding-top: 20px;
     color: #fff;
     text-align: center;
     color: black;
-}
-
-
-
-.carousel-control-prev-icon {
-    background-image: url("https://img.icons8.com/sf-black-filled/64/000000/double-left.png");
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    margin-top: -9px;
-}
-
-.carousel-control-next-icon {
-    background-image: url("https://img.icons8.com/sf-black-filled/64/000000/double-right.png");
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    margin-top: -9px;
-}
-
-
-/*cambio de botones*/
-
-
-
-
-/*FINAL DEL CARRUSEL*/
-
-
-/*2. SEGUNDA SECCION*/
-
-ul.list {
-
-    list-style-position: inside;
 }
 
 boton-pr {
@@ -94,16 +29,108 @@ boton-pr {
     padding-top: 18px;
 }
 
-.ps3 {
+/*monitor*/
+.container-design {
+    border: 1.125em solid rgb(28, 135, 177);
+    border-top-left-radius: 1.25em;
+    border-top-right-radius: 1.25em;
 
-    padding-top: 20px;
+
 }
 
-.list-group-item {
-    padding: .1rem 1rem;
+.camera {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    border: 0.1875em solid #c9c2c2;
+    background-color: #777777c2;
+    top: 0.2em;
+    right: 48%;
+    position: absolute;
 }
-footer .list-group-flush .list-group-item {
-    background-color:#F2F2F2;
+
+li{
+
+    list-style-type: circle;
+
+}
+
+/*Accordion*/
+
+.camera-light {
+
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    top: 7px;
+    left: 54%;
+    background-color: #cdcbb0;
+    position: absolute;
+
+}
+
+.low-casing {
+
+    width: 44em;
+    height: 2em;
+    position: absolute;
+    background-color: rgb(99, 147, 187);
+    border-bottom-left-radius: 1.25em;
+    border-bottom-right-radius: 1.25em;
+    -webkit-box-shadow: 0em 0.625em 0.8125em -0.4375em #737373, 0em -0.375em 0.25em 0em rgb(0 0 0 / 0%);
+    box-shadow: 0em 0.625em 0.8125em -0.4375em #737373, 0em -0.375em 0.25em 0em rgb(0 0 0 / 0%);
+    top: 400px;
+
+}
+
+.screen {
+    z-index: 1;
+    position: relative;
+    background-color: #fdfdfd;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+    -moz-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+}
+
+.base {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.base .monitor-stand-1 {
+    width: 8rem;
+    height: 0px;
+    border-right: 1rem solid transparent;
+    border-left: 1rem solid transparent;
+    border-bottom: 3rem solid #fdfdfd;
+    
+}
+.base .monitor-stand-3 {
+    height: 0.2rem;
+    background:  #fdfdfd;;
+    width: 8rem;
+    /*box-shadow: 0px -31px 39px 1px rgba(108, 108, 108, 0.47);*/
+       box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+-webkit-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+-moz-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+}
+.base .monitor-stand-2 {
+    width: 9.4rem;
+    height: 1.6em;
+    background-color: #fdfdfd;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+    -moz-box-shadow: 2px 8px 22px -6px rgba(0,0,0,0.7);
+
 }
 @media (min-width: 1400px) {
 
