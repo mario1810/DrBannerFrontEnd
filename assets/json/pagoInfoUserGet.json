@@ -3,7 +3,7 @@
         "id": 1,
         "nombre": "Mario Ivan",
         "apellido": "Alvarez Bautista",
-        "tarjeta":{
+        "tarjeta":{ 
                 "numeroTarjeta":"1234567890123456",
                 "mes" :9,
                 "anio": 23,

@@ -208,7 +208,9 @@ async function EnvioInfoAPI(showMensaje, compra){
     }
     if(flag){ // Envio a ala API exitoso
         localStorage.clear();
-        window.location.assign("/html/pago.html");
+        if(compra){
+            window.location.assign("/html/pago.html");
+        }
     }else{
         //Ocurrio un error
         if(showMensaje){
