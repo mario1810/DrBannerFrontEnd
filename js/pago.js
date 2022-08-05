@@ -625,7 +625,8 @@ function corroborarCampos(){
             tipo:String(tT),
             meses:Number(tMeses)
         },
-        total: Number(totPagar.value)
+        total: Number(totPagar.value),
+        pagar:"true"
     };
     let flag=PAGO_EXITOSO;
     if(SIMULAR_POST){
