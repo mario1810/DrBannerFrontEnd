@@ -9,42 +9,54 @@
                 "paquete": "XV años",
                 "tipo": "Básico",
                 "costo": "500",
-                "fecha": "01/02/23"
+                "fecha": "01/02/23",
+                "hora": "12:20:00",
+                "direccion":"Colonia Luz"
             },
             {
                 "id": 2,
                 "paquete": "XV años",
                 "tipo": "Premium",
                 "costo": "800",
-                "fecha": "01/04/23"
+                "fecha": "01/04/23",
+                "hora": "23:20:00",
+                "direccion":"Colonia Luz, Chiapas"
             },
             {
                 "id": 3,
                 "paquete": "Familiar",
-                "tipo": "Premium",
+                "tipo": "completo",
                 "costo": "900",
-                "fecha": "12/03/23"
+                "fecha": "12/03/23",
+                "hora": "05:20:00",
+                "direccion":"Colonia Luz, Chiapas"
             },
             {
                 "id": 4,
                 "paquete": "XV años",
                 "tipo": "Básico",
                 "costo": "500",
-                "fecha": "30/05/23"
+                "fecha": "30/05/23",
+                "hora": "03:20:00",
+                "direccion":"Colonia Luz, Chiapas"
             },
             {
                 "id": 5,
                 "paquete": "Familiar",
                 "tipo": "Normal",
                 "costo": "900",
-                "fecha": "01/12/22"
+                "fecha": "01/12/22",
+                "hora": "18:20:00",
+                "direccion":"Colonia Luz, Chiapas"
             },
             {
                 "id": 6,
                 "paquete": "Familiar",
                 "tipo": "Chido",
                 "costo": "300",
-                "fecha": "21/11/23"
+                "fecha": "21/11/23",
+                "hora": "13:25:00",
+                "direccion":"Colonia Luz, Chiapas"
             }
         ],
         "support": {
