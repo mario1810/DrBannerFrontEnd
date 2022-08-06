@@ -6,6 +6,32 @@ const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global xD
 
+//Obtención de elementos
+const inputNombre=document.getElementById("fullName");
+const inputTarjeta=document.getElementById("cardNumber");
+const inputMes=document.getElementById("cardMonth");
+const inputYear=document.getElementById("cardYear");
+const inputCVV=document.getElementById("cvvNumber");
+const buttonCancelar=document.getElementById("bCancelar");
+const buttonComprar=document.getElementById("bComprar");
+const formPago=document.getElementById("formPago");
+const inputGroupMeses=document.getElementById("inputGroupMeses");
+const rbTC=document.getElementById("TC");
+const rbTD=document.getElementById("TD");
+const totPagar=document.getElementById("totalPagar");
+//Elemento modal
+myModal = new bootstrap.Modal(document.getElementById('myModal')); // Para poder llamar el metodo show del modal
+myModal2 = document.getElementById('myModal'); // Para poder acceder a los eventos del modal
+myModal2.addEventListener("shown.bs.modal",()=>{pagoEnvioPost();});
+//Elementos dentro del modal
+const btnFinCompra=document.getElementById("botonFinCompra");
+const spinner=document.getElementById("checkProceso");
+const checkC= document.getElementById("checkCompra");
+const messageC=document.getElementById("mensajeCompra");
+//Envento de boton de compra finalizada
+//btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
+
+
 /**
  * 
  *                                                                      SOLICITUD FETCH GET
@@ -13,7 +39,7 @@ let idUser=0; //temporalmente global xD
  */
 
 // GET request for remote image in node.js
-async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
+async function requestGet(proveedor = "Fetch", direccionhttp) {
     if (proveedor == "Fetch") {
         return new Promise((resolve, reject) => {
         fetch(direccionhttp)
@@ -45,7 +71,7 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
   }
   
  async function solicitudDatosForm() {
-    let usuario = await adquirirDatos(SERVICE_TYPE,USER_INFO_GET_URL);
+    let usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
     
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
         //Relleno los campos de mi formulario.
@@ -65,7 +91,7 @@ async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
             rbTC.checked=true;
         } 
         totPagar.value=Number.parseFloat(usuario.total).toFixed(2);
-        corroborarCampos();
+        corroborarCamposForm();
     }
   }
 
@@ -547,7 +573,7 @@ function corroborarYear(){
 }
 
 //Corrobora campos antes de proseguir con la compra(fecha de caducidad de la tarjeta)
-function corroborarCampos(){
+function corroborarCamposForm(){
     if(buttonComprar.classList.contains("data-bs-toggle")){
         buttonComprar.classList.remove("data-bs-toggle");    
     }
@@ -577,27 +603,29 @@ function corroborarCampos(){
  /**
   *     FUnción que realiza un post a la api
   * @param {*} direccionhttp  // dirección de la API
-  * @param {*} json  // JSON que se adjunta en el post
+  * @param {*} data  // JSON que se adjunta en el post
   */
-  async function enviarDatos(direccionhttp, data){
-        return new Promise((resolve, reject) => {
-          fetch(direccionhttp,{
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers:{
-              'Content-Type': 'application/json'
-            }
-
-          }).then((responseJSON) =>{responseJSON.json()})
-            .catch((error) => {
-              console.log(error);
-              reject(false);
-            })
-            .then((response) => {
-                console.log('Success:', response);
-                resolve(true);
-              })
-        });
+ //Si el servidor, responde sólo con el código de estado
+async function requestPost(direccionhttp, data){
+    return new Promise((resolve, reject) => {
+      fetch(direccionhttp, {
+        method: "POST",
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify(data)
+      })
+      .then(response =>{ //Opcional
+          if(response.ok){
+            //console.log("HTTP request successful");
+            return resolve(true);
+          }else{
+            //console.log("HTTP request unsuccessful");
+            return resolve(false);
+          }
+      }) 
+      .catch(err =>{
+        //console.log(err);
+        reject(false);});
+  });
   }
 
 /**
@@ -632,12 +660,12 @@ function corroborarCampos(){
     if(SIMULAR_POST){
         console.log(JSON.stringify(user));
     }else{
-        let flag = await enviarDatos(USER_INFO_POST_URL,user);
+        let flag = await requestPost(USER_INFO_POST_URL,user);
     }
     //Retraso para ver la aimación
     syncDelay(5000);
     //Actualizamos el modal despues de hacer el pago
-    postPago(flag);
+    resultadoPago(flag);
 }
 
 
@@ -652,7 +680,7 @@ function syncDelay(milliseconds){
 /**
  * Función que actualiza el modal, para indicar que la compra se realizó con exito o no
  */
-function postPago(flag){
+function resultadoPago(flag){
     if(flag){
         spinner.style.display="none";
         messageC.innerHTML="El pago se ha realizado con éxito. Gracias por tu compra.";
@@ -674,8 +702,8 @@ function postPago(flag){
 }
 
 
-//función que despliega el modal, su evento de despliegue, encadea el envio del post
-function procesoPago(){
+//función que despliega el modal, el evento de despliegue del modal, encadena la llamada pagoEnvioPost
+function iniciaPago(){
     //Antes de hacer el pago, abrimos el modal
     myModal.show();
 }
@@ -688,41 +716,18 @@ function procesoPago(){
  * 
  */
 
- function procesoCompra(){
-    let flag=corroborarCampos();
+ function btnPagoPresionado(){
+    let flag=corroborarCamposForm();
     if(flag){
         //Realizamos el Post
-        procesoPago();
+        iniciaPago();
     }
     // No se puede realizar el proceso, porque hay un campo mal
  }
 
  
 
-//Obtención de elementos
-const inputNombre=document.getElementById("fullName");
-const inputTarjeta=document.getElementById("cardNumber");
-const inputMes=document.getElementById("cardMonth");
-const inputYear=document.getElementById("cardYear");
-const inputCVV=document.getElementById("cvvNumber");
-const buttonCancelar=document.getElementById("bCancelar");
-const buttonComprar=document.getElementById("bComprar");
-const formPago=document.getElementById("formPago");
-const inputGroupMeses=document.getElementById("inputGroupMeses");
-const rbTC=document.getElementById("TC");
-const rbTD=document.getElementById("TD");
-const totPagar=document.getElementById("totalPagar");
-//Elemento modal
-myModal = new bootstrap.Modal(document.getElementById('myModal')); // Para poder llamar el metodo show del modal
-myModal2 = document.getElementById('myModal'); // Para poder acceder a los eventos del modal
-myModal2.addEventListener("shown.bs.modal",()=>{pagoEnvioPost();});
-//Elementos dentro del modal
-const btnFinCompra=document.getElementById("botonFinCompra");
-const spinner=document.getElementById("checkProceso");
-const checkC= document.getElementById("checkCompra");
-const messageC=document.getElementById("mensajeCompra");
-//Envento de boton de compra finalizada
-//btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
+
 
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
 inputNombre.addEventListener("keyup",(event)=>{corroborarNombreRT()});
@@ -750,7 +755,7 @@ inputYear.addEventListener("focusout",()=>{addCeroYear()});
 //inputNombre.addEventListener("focusout",()=>{focusNombre()});
 
 //Eventos de botones
-buttonComprar.addEventListener("click",()=>{procesoCompra()});
+buttonComprar.addEventListener("click",()=>{btnPagoPresionado()});
 buttonCancelar.addEventListener("click",()=>{window.location.assign("/html/carrito.html"); });
 
 

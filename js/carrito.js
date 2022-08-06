@@ -1,5 +1,6 @@
 const USER_INFO_GET_URL = "/assets/json/carritoPaquetesGet.json";
-const USER_INFO_POST_URL = "https://a75973a6-cd56-4429-816a-7f6527bc347e.mock.pstmn.io";
+const USER_INFO_PUT_URL = "";
+const USER_INFO_DELETE_URL = "";
 const SERVICE_TYPE = "Json"; //Fetch
 const SIMULAR_ENVIO=true;
 let arrayCarrito;
@@ -14,7 +15,7 @@ const btnPagar=document.getElementById("btnPagar");
 /**
  * Se lamma la función tan pronto se cargue el documento HTML
  */
- window.addEventListener('load', ()=> {solicitudPaquetesCarrito()});
+ window.addEventListener('load', ()=> {obtenerPaquetes()});
  /**
   * Función que se llama cuando se abanadona la página
   */
@@ -37,7 +38,7 @@ const btnPagar=document.getElementById("btnPagar");
  * Función que realiza el fetch para obtener los paquetes que el usuario agrego al carrito
  * 
  */
-async function adquirirDatos(proveedor = "Fetch", direccionhttp) {
+async function requestGet(proveedor = "Fetch", direccionhttp) {
     if (proveedor == "Fetch") {
         return new Promise((resolve, reject) => {
         fetch(direccionhttp)
@@ -105,10 +106,10 @@ function muestraPaquetesTabla(arrayPaquetes){
 /**
  * Función que obtiene los paquetes que se han añadido en el carrito
  */
- async function solicitudPaquetesCarrito() {
+ async function obtenerPaquetes() {
     
     //Realizamos un fetch
-    let usuario = await adquirirDatos(SERVICE_TYPE,USER_INFO_GET_URL);
+    let usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
     // El fetch se realizó de manera correcta?
     if(usuario!=null){ 
         //Guardamos al información del carrito localmente
@@ -122,7 +123,10 @@ function muestraPaquetesTabla(arrayPaquetes){
     }
 }
 
-
+/**
+ * 
+ *                                           DELETE
+ */
 
 /**
  * Función que crea evento  listener para cada bote de basura
@@ -130,12 +134,11 @@ function muestraPaquetesTabla(arrayPaquetes){
 function borrarRow(id, paqueteId){
     if(arrayCarrito.length>0){
         if(!SIMULAR_ENVIO){
-          let user = {
+          let data = {
             idusuario: Number(idUser),
             idproducto: Number(paqueteId),
-            borrar:"true"
           };
-          enviarDatos(USER_INFO_POST_URL,user);
+          requestDelete(USER_INFO_DELETE_URL,data);
         } 
         arrayCarrito.splice(id,1);
         muestraPaquetesTabla(arrayCarrito);
@@ -145,10 +148,34 @@ function borrarRow(id, paqueteId){
     }
 }
 
+/**
+ * Función que envia un delete request para borrar el paquete 
+ * @param {URL} direccionhttp 
+ * @param {idUser&idpaquete} data  Define que paquete se borrará
+ * @returns 
+ */
+ async function requestDelete(direccionhttp,data) {
+  return new Promise((resolve, reject) => {
+    fetch(direccionhttp+"/"+data, {  method: "DELETE", headers: { 'Content-type': 'application/json'}})
+    .then(response =>{ //Opcional
+      if(response.ok){
+        //console.log("HTTP request successful");
+        return resolve(true);
+      }else{
+        //console.log("HTTP request unsuccessful");
+        return resolve(false);
+      }
+  }) 
+  .catch(err =>{
+    //console.log(err);
+    reject(false);});
+});
+}
+
 
 /**
  * 
- *                                           POST    
+ *                                           PUT 
  */
 
 
@@ -157,27 +184,27 @@ function borrarRow(id, paqueteId){
   * @param {*} direccionhttp  // dirección de la API
   * @param {*} json  // JSON que se adjunta en el post
   */
-  async function enviarDatos(direccionhttp, data){
+  async function requestPut(direccionhttp, data){
     return new Promise((resolve, reject) => {
-      fetch(direccionhttp,{
-        method: 'POST', // or 'PUT'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers:{
-          'Content-Type': 'application/json'
-        }
-
-      }).then((responseJSON) =>{responseJSON.json()})
-        .catch((error) => {
-          console.log(error);
-          reject(false);
-        })
-        .then((response) => {
-            console.log('Success:', response);
-            resolve(true);
-          })
-    });
-}
-
+      fetch(direccionhttp, {
+        method: "PUT",
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify(data)
+      })
+      .then(response =>{ //Opcional
+          if(response.ok){
+            //console.log("HTTP request successful");
+            return resolve(true);
+          }else{
+            //console.log("HTTP request unsuccessful");
+            return resolve(false);
+          }
+      }) 
+      .catch(err =>{
+        //console.log(err);
+        reject(false);});
+  });
+  }
 
 
 /**
@@ -195,7 +222,7 @@ async function EnvioInfoAPI(){
      };
 
     if(!SIMULAR_ENVIO){
-        flag = await enviarDatos(USER_INFO_POST_URL,user);
+        flag = await requestPut(USER_INFO_PUT_URL,user);
     }
     if(flag){ // Envio a ala API exitoso
         window.location.assign("/html/pago.html");
@@ -203,7 +230,6 @@ async function EnvioInfoAPI(){
         alert("Ocurrio un error, recargar la página");        
     }
 }
-
 
 
 
