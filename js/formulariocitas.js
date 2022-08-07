@@ -12,13 +12,26 @@ const textaraDireccion=document.getElementById("direccion");
 
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
 inputNombre.addEventListener("keyup",(event)=>{corroborarNombre()});
-inputTarjeta.addEventListener("keyup",(event)=>{corroborarApellido()});
-inputMes.addEventListener("keyup",(event)=>{corroborarCorreo()});
-inputYear.addEventListener("keyup",(event)=>{corroborarTelefono(event)});
-inputCVV.addEventListener("keyup",(event)=>{corroborarFecha()});
-inputCVV.addEventListener("keyup",(event)=>{corroborarPaquete()});
-inputCVV.addEventListener("keyup",(event)=>{corroborartipoPaquete()});
-inputCVV.addEventListener("keyup",(event)=>{corroborarDireccion()});
+inputApellido.addEventListener("keyup",(event)=>{corroborarApellido()});
+inputCorreo.addEventListener("keyup",(event)=>{corroborarCorreo()});
+inputTelefono.addEventListener("keyup",(event)=>{corroborarTelefono(event)});
+inputFecha.addEventListener("keyup",(event)=>{corroborarFecha()});
+selectPaquete.addEventListener("keyup",(event)=>{corroborarPaquete()});
+selectTipoPaquete.addEventListener("keyup",(event)=>{corroborartipoPaquete()});
+textaraDireccion.addEventListener("keyup",(event)=>{corroborarDireccion()});
+
+
+//eventos de ingreso de texto (antes de que el valor llegue al input)
+inputNombre.addEventListener("Keydown",(event)=>{corroborarNombre()});
+inputApellido.addEventListener("Keydown",(event)=>{corroborarApellido()});
+inputCorreo.addEventListener("Keydown",(event)=>{corroborarCorreo()});
+inputTelefono.addEventListener("Keydown",(event)=>{corroborarTelefono(event)});
+inputFecha.addEventListener("Keydown",(event)=>{corroborarFecha()});
+selectPaquete.addEventListener("Keydown",(event)=>{corroborarPaquete()});
+selectTipoPaquete.addEventListener("Keydown",(event)=>{corroborartipoPaquete()});
+textaraDireccion.addEventListener("Keydown",(event)=>{corroborarDireccion()});
+
+
 
 
 
