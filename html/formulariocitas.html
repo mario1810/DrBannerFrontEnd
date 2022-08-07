@@ -121,52 +121,63 @@
                     <form action="">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Escribe aqui tu nombre" required>
-                                <label>Nombres: </label>
+                              <label>Nombres: </label>
+                                <input type="text" class="form-control" placeholder="Escribe aqui tu nombre" required id="nombre">
+                               
                             </div>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Escribe aqui tus Apellidos" required>
-                                <label>Apellidos: </label>
+                              <label>Apellidos: </label>
+                                <input type="text" class="form-control" placeholder="Escribe aqui tus Apellidos" required  id="apellido">
+                               
                             </div>
                             <div class="col-md-6">
-                                <input type="tel" class="form-control" placeholder="Escribe aqui el número" required>
-                                <label>Telefono de contacto: </label>
+                              <label>Telefono de contacto: </label>
+                                <input type="tel" class="form-control" placeholder="Escribe aqui el número" required  id="telefono">
+                              
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Escribe aqui tu correo" required>
-                                <label>Correo: </label>
+                              <label>Correo: </label>
+                                <input type="email" class="form-control" placeholder="Escribe aqui tu correo" required id="correo">
+                               
                             </div>
                             <div class="col-md-6">
-                                <input type="date" class="form-control" placeholder="Introduce fecha" required>
-                                <label>Fecha del evento: </label>
+                              <label>Fecha del evento: </label>
+                                <input type="date" class="form-control" placeholder="Introduce fecha" required id="fecha">
+                               
                             </div>
                             <div class="col-md-6">
-                                <input type="time" class="form-control" placeholder="Una hora antes" required>
-                                <label>Horario del evento: </label>
+                              <label>Horario del evento: </label>
+                                <input type="time" class="form-control" placeholder="Una hora antes" required id="fecha">
+                              
                             </div>
                             <div class="col-12">
-                                <select class="form-select">
+                              <label>Paquetes: </label>
+                                <select class="form-select" id="paquete">
                                     <option selected>Tipos de paquete</option>
                                     <option value="1">XV años</option>
                                     <option value="2">Bodas</option>
                                     <option value="3">Familiar</option>
                                     <option value="3">otro</option>
                                 </select>
-                                <label>Paquetes: </label>
+                               
                             </div>
                             <br>
                             <div class="col-12">
-                                <select class="form-select">
+                              <label>Tipo de paquetes </label>
+
+                    
+                                <select class="form-select" id="tipoPaquete">
                                     <option selected>Tipos de sub paquetes</option>
                                     <option value="1">Premium</option>
                                     <option value="2">Full</option>
                                     <option value="3">basico</option>
                                     <option value="3">otro</option>
                                 </select>
-                                <label>Sub paquetes: </label>
+                                
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" placeholder="Dejanos una pequeña descripción"></textarea>
+                              <label>Dirección del evento</label>
+                                <textarea class="form-control" placeholder="Escribe a qui la direción del evento"></textarea>
                             </div>
                             <div class="col-12 mt-5">                        
                                 <button type="button" class="btn btn-outline-secondary float-end me-2">Añadir otra paquete</button>

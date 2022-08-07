@@ -1,0 +1,12 @@
+const inputNombre=document.getElementById("fullName");
+const inputTarjeta=document.getElementById("cardNumber");
+const inputMes=document.getElementById("cardMonth");
+const inputYear=document.getElementById("cardYear");
+const inputCVV=document.getElementById("cvvNumber");
+const buttonCancelar=document.getElementById("bCancelar");
+const buttonComprar=document.getElementById("bComprar");
+const formPago=document.getElementById("formPago");
+const inputGroupMeses=document.getElementById("inputGroupMeses");
+const rbTC=document.getElementById("TC");
+const rbTD=document.getElementById("TD");
+const totPagar=document.getElementById("totalPagar");
