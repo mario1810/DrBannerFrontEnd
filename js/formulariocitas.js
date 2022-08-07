@@ -37,6 +37,117 @@ textaraDireccion.addEventListener("Keydown",(event)=>{filtroDireccion()});
 //Eventos de botones
 buttunPagar.addEventListener("click",()=>{window.location.assign("/html/carrito.html"); });
 
+function filtroNombre() {
+    
+    
+        
+}
+
+// ------------------
+
+
+function filtroApellido() {
+    
+}
+
+//---------------
+
+function filtroCorreo(){
+
+}
+
+// ------------------
+function filtroTelefono() {
+
+}
+
+// ------------------
+
+function filtroFecha (){
+
+}
+
+// ------------------
+
+function filtroPaquete(){
+
+}
+
+// ------------------
+
+function filtrotipoPaquete() {
+
+}
+
+// ------------------
+
+function filtroDireccion() {
+
+}
+
+
+
+
+// funciones corroborar datos 
+
+function corroborar
+Nombre() {
+    
+    
+        
+}
+
+// ------------------
+
+
+function corroborar
+Apellido() {
+    
+}
+
+//---------------
+
+function corroborar
+Correo(){
+
+}
+
+// ------------------
+function corroborar
+Telefono() {
+
+}
+
+// ------------------
+
+function corroborar
+Fecha (){
+
+}
+
+// ------------------
+
+function corroborar
+Paquete(){
+
+}
+
+// ------------------
+
+function corroborar
+tipoPaquete() {
+
+}
+
+// ------------------
+
+function corroborar
+Direccion() {
+
+}
+
+
+
 
 
 
