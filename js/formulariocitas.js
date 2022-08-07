@@ -8,6 +8,9 @@ const inputFecha=document.getElementById("fecha");
 const selectPaquete=document.getElementById("paquete");
 const selectTipoPaquete=document.getElementById("tipoPaquete");
 const textaraDireccion=document.getElementById("direccion");
+const buttunPagar=document.getElementById("pago");
+
+
 
 
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
@@ -22,14 +25,22 @@ textaraDireccion.addEventListener("keyup",(event)=>{corroborarDireccion()});
 
 
 //eventos de ingreso de texto (antes de que el valor llegue al input)
-inputNombre.addEventListener("Keydown",(event)=>{corroborarNombre()});
-inputApellido.addEventListener("Keydown",(event)=>{corroborarApellido()});
-inputCorreo.addEventListener("Keydown",(event)=>{corroborarCorreo()});
-inputTelefono.addEventListener("Keydown",(event)=>{corroborarTelefono(event)});
-inputFecha.addEventListener("Keydown",(event)=>{corroborarFecha()});
-selectPaquete.addEventListener("Keydown",(event)=>{corroborarPaquete()});
-selectTipoPaquete.addEventListener("Keydown",(event)=>{corroborartipoPaquete()});
-textaraDireccion.addEventListener("Keydown",(event)=>{corroborarDireccion()});
+inputNombre.addEventListener("Keydown",(event)=>{filtroNombre()});
+inputApellido.addEventListener("Keydown",(event)=>{filtroApellido()});
+inputCorreo.addEventListener("Keydown",(event)=>{filtroCorreo()});
+inputTelefono.addEventListener("Keydown",(event)=>{filtroTelefono(event)});
+inputFecha.addEventListener("Keydown",(event)=>{filtroFecha()});
+selectPaquete.addEventListener("Keydown",(event)=>{filtroPaquete()});
+selectTipoPaquete.addEventListener("Keydown",(event)=>{filtrotipoPaquete()});
+textaraDireccion.addEventListener("Keydown",(event)=>{filtroDireccion()});
+
+//Eventos de botones
+buttunPagar.addEventListener("click",()=>{window.location.assign("/html/carrito.html"); });
+
+
+
+
+
 
 
 
