@@ -134,10 +134,7 @@ function muestraPaquetesTabla(arrayPaquetes){
 function borrarRow(id, paqueteId){
     if(arrayCarrito.length>0){
         if(!SIMULAR_ENVIO){
-          let data = {
-            idusuario: Number(idUser),
-            idproducto: Number(paqueteId),
-          };
+          let data =String(idUser+"&"+paqueteId);
           requestDelete(USER_INFO_DELETE_URL,data);
         } 
         arrayCarrito.splice(id,1);
