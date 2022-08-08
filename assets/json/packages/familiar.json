@@ -1,0 +1,67 @@
+{
+    "id":3,
+    "title":"Paquete familiar",
+    "name":"familiar",
+    "images":[
+        {
+            "title":"imagen 1-1 familiar",
+            "src":"https://i.ibb.co/6Z4pxgP/IMG-8348.jpg"
+        },
+        {
+            "title":"imagen 1-2 familiar",
+            "src":"https://i.ibb.co/XjZb7Jj/IMG-8332.jpg"
+        },
+        {
+            "title":"imagen 1-3 familiar",
+            "src":"https://i.ibb.co/SQpshkM/IMG-8336.jpg"
+        },
+        {
+            "title":"imagen 2-1 familiar",
+            "src":"https://i.ibb.co/FskdxZ4/MG-2-1.jpg"
+        },
+        {
+            "title":"imagen 2-2 familiar",
+            "src":"https://i.ibb.co/3CWSkhJ/MG-2-2.jpg"
+        },
+        {
+            "title":"imagen 2-3 familiar",
+            "src":"https://i.ibb.co/rZKCk7F/MG-2-3.jpg"
+        },
+        {
+            "title":"imagen 3-1 familiar",
+            "src":"https://i.ibb.co/Nn3gMmZ/MG-3-1.jpg"
+        },
+        {
+            "title":"imagen 3-2 familiar",
+            "src":"https://i.ibb.co/TwpmD24/MG-3-2.jpg"
+        },
+        {
+            "title":"imagen 3-3 familiar",
+            "src":"https://i.ibb.co/Pz6hGpk/MG-3-3.jpg"
+        }  
+    ],
+    "services": [
+        {
+            "name": "Paquete familiar 1",
+            "items": [
+                "2 horas y media de sesión",
+                "1 cambio de ropa.",
+                "30 fotos.",
+                "15 fotos impresas tamaño 6*8 pulgadas.",
+                "Todas las fotos se envían mediante enlace drive."
+            ]
+        },
+        {
+            "name": "Paquete familiar 2",
+            "items": [
+                "3 horas y media de sesión.",
+                "2 cambios de ropa.",
+                "50 fotos.",
+                "30 fotos impresas 6*8 pulgadas.",
+                "1 marco de 6*8 pulgadas.",
+                "Caballete para la exposición de las fotos.",
+                "1 memoria usb con todas las fotos."
+            ]
+        }
+    ]
+}
