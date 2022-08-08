@@ -1,7 +1,4 @@
 
-<<<<<<< HEAD
-
-=======
 //Buscar servicio por el nombre
 const fetchServiceByName = name => fetch(`/assets/json/packages/${name}.json`).then(response => response.json());;
 
@@ -100,4 +97,4 @@ addEventListener('DOMContentLoaded', () => {
     const serviceName= service || 'xv';
     setPage(serviceName);
 });
->>>>>>> c47e2229ed5046c6ee75fd6499c9dc6742123719
+
