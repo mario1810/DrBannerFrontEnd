@@ -137,6 +137,13 @@ function corroborarDireccion() {
 
 }
 
+window.addEventListener('DOMContentLoaded', () => { 
+    if(isUserLogged() === true) { 
+        document.getElementById('formulario-citas').classList.remove('d-none') 
+        return; 
+    } 
+    window.location.href = window.location.origin + '/html/login.html' 
+});
 
 
 
