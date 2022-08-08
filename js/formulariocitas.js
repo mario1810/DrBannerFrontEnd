@@ -1,4 +1,4 @@
-// Declaracion decontantes 
+// Declaracion constantes 
 
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
@@ -14,10 +14,10 @@ const buttunPagar = document.getElementById("pago");
 
 
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
-inputNombre.addEventListener("keyup", (event) => { corroborarNombre(event       ) });
+inputNombre.addEventListener("keyup", (event) => { corroborarNombre() });
 inputApellido.addEventListener("keyup", (event) => { corroborarApellido() });
 inputCorreo.addEventListener("keyup", (event) => { corroborarCorreo() });
-inputTelefono.addEventListener("keyup", (event) => { corroborarTelefono(event) });
+inputTelefono.addEventListener("keyup", (event) => { corroborarTelefono() });
 inputFecha.addEventListener("keyup", (event) => { corroborarFecha() });
 selectPaquete.addEventListener("keyup", (event) => { corroborarPaquete() });
 selectTipoPaquete.addEventListener("keyup", (event) => { corroborartipoPaquete() });
@@ -26,62 +26,87 @@ textaraDireccion.addEventListener("keyup", (event) => { corroborarDireccion() })
 
 //eventos de ingreso de texto (antes de que el valor llegue al input)
 inputNombre.addEventListener("Keydown", (event) => { filtroNombre(event) });
-inputApellido.addEventListener("Keydown", (event) => { filtroApellido() });
-inputCorreo.addEventListener("Keydown", (event) => { filtroCorreo() });
+inputApellido.addEventListener("Keydown", (event) => { filtroApellido(event) });
+inputCorreo.addEventListener("Keydown", (event) => { filtroCorreo(event) });
 inputTelefono.addEventListener("Keydown", (event) => { filtroTelefono(event) });
-inputFecha.addEventListener("Keydown", (event) => { filtroFecha() });
-selectPaquete.addEventListener("Keydown", (event) => { filtroPaquete() });
-selectTipoPaquete.addEventListener("Keydown", (event) => { filtrotipoPaquete() });
-textaraDireccion.addEventListener("Keydown", (event) => { filtroDireccion() });
+inputFecha.addEventListener("Keydown", (event) => { filtroFecha(event) });
+selectPaquete.addEventListener("Keydown", (event) => { filtroPaquete(event) });
+selectTipoPaquete.addEventListener("Keydown", (event) => { filtrotipoPaquete(event) });
+textaraDireccion.addEventListener("Keydown", (event) => { filtroDireccion(event) });
 
 //Eventos de botones
 buttunPagar.addEventListener("click", () => { window.location.assign("/html/carrito.html"); });
 
-function filtroNombre(e) {
+function clear(elemento) {
+    if (elemento.classList.contains("is-valid")) {
+      elemento.classList.remove("is-valid");
+    }
+    if (elemento.classList.contains("is-invalid")) {
+      elemento.classList.remove("is-invalid");
+    }
+  }
+  
+
+//---------------------------
+
+
+
+
+
+    function filtroNombre(event) {
+     let regex = /^[a-zA-ZÀ-ÿ ]+$/;  
+      
+        if (regex.test(event.key)) {
+          return;
+        } else {
+          event.preventDefault();
+        }
+      }
+      
    
 
 
-}
-
-// ------------------
 
 
-function filtroApellido() {
+// -------------------
+
+
+function filtroApellido(e) {
 
 }
 
 //---------------
 
-function filtroCorreo() {
+function filtroCorreo(e) {
 
 }
 
 // ------------------
-function filtroTelefono() {
-
-}
-
-// ------------------
-
-function filtroFecha() {
+function filtroTelefono(e) {
 
 }
 
 // ------------------
 
-function filtroPaquete() {
+function filtroFecha(e) {
 
 }
 
 // ------------------
 
-function filtrotipoPaquete() {
+function filtroPaquete(e) {
 
 }
 
 // ------------------
 
-function filtroDireccion() {
+function filtrotipoPaquete(e) {
+
+}
+
+// ------------------
+
+function filtroDireccion(e) {
 
 }
 
@@ -91,6 +116,13 @@ function filtroDireccion() {
 // funciones corroborar datos 
 
 function corroborarNombre() {
+    
+        clear(inputNombre);
+        inputNombre.value.length <= 3 
+          ? inputNombre.classList.add("is-invalid")
+          : inputNombre.classList.add("is-valid");
+      
+      
 
     
 }
@@ -99,7 +131,7 @@ function corroborarNombre() {
 
 
 function corroborarApellido() {
-
+    clear(inputApellido);
 }
 
 //---------------
