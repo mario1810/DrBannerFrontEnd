@@ -1,0 +1,100 @@
+{
+    "usuario": {
+        "idusuario": 1,
+        "nombre": "Mario Ivan",
+        "apellido": "Alvarez Bautista",
+        "carrito": [
+            {
+                "id": 1,
+                "paquete": "XV años",
+                "tipo": "Básico",
+                "costo": "500",
+                "fecha": "01/02/23",
+                "hora": "12:20:00",
+                "direccion":"Colonia Luz"
+            },
+            {
+                "id": 2,
+                "paquete": "XV años",
+                "tipo": "Premium",
+                "costo": "800",
+                "fecha": "01/04/23",
+                "hora": "23:20:00",
+                "direccion":"Colonia Luz, Chiapas"
+            },
+            {
+                "id": 3,
+                "paquete": "Familiar",
+                "tipo": "completo",
+                "costo": "900",
+                "fecha": "12/03/23",
+                "hora": "05:20:00",
+                "direccion":"Colonia Luz, Chiapas"
+            },
+            {
+                "id": 4,
+                "paquete": "XV años",
+                "tipo": "Básico",
+                "costo": "500",
+                "fecha": "30/05/23",
+                "hora": "03:20:00",
+                "direccion":"Colonia Luz, Chiapas"
+            },
+            {
+                "id": 5,
+                "paquete": "Familiar",
+                "tipo": "Normal",
+                "costo": "900",
+                "fecha": "01/12/22",
+                "hora": "18:20:00",
+                "direccion":"Colonia Luz, Chiapas"
+            },
+            {
+                "id": 6,
+                "paquete": "Familiar",
+                "tipo": "Chido",
+                "costo": "300",
+                "fecha": "21/11/23",
+                "hora": "13:25:00",
+                "direccion":"Colonia Luz, Chiapas"
+            }
+        ],
+        "support": {
+            "url": "https://reqres.in/#support-heading",
+            "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+        }
+    },
+    "status": 200,
+    "statusText": "",
+    "headers": {
+        "content-type": "application/json; charset=utf-8"
+    },
+    "config": {
+        "transitional": {
+            "silentJSONParsing": true,
+            "forcedJSONParsing": true,
+            "clarifyTimeoutError": false
+        },
+        "transformRequest": [
+            null
+        ],
+        "transformResponse": [
+            null
+        ],
+        "timeout": 0,
+        "xsrfCookieName": "XSRF-TOKEN",
+        "xsrfHeaderName": "X-XSRF-TOKEN",
+        "maxContentLength": -1,
+        "maxBodyLength": -1,
+        "env": {
+            "FormData": null
+        },
+        "headers": {
+            "Accept": "application/json, text/plain, */*"
+        },
+        "method": "get",
+        "url": "https://reqres.in/api/users?delay=3",
+        "responseType": "stream"
+    },
+    "request": {}
+}

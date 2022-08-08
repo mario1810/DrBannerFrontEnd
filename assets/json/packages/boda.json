@@ -1,0 +1,67 @@
+{
+    "id":2,
+    "name":"boda",
+    "title": "Paquete de bodas",
+    "images":[
+        {
+            "title":"imagen 1-1 de boda",
+            "src":"https://i.ibb.co/1sW4Bmb/269704074-209487838045674-9209495460227678371-n.jpg"
+        },
+        {
+            "title":"imagen 1-2 de boda",
+            "src":"https://i.ibb.co/sm3yhr6/269894626-209487678045690-1840351644850199577-n.jpg"
+        },
+        {
+            "title":"imagen 1-3 de boda",
+            "src":"https://i.ibb.co/DDh0fjK/269761297-209487568045701-88917452-n.jpg"
+        },
+        {
+            "title":"imagen 2-1 de boda",
+            "src":"https://i.ibb.co/N77RXTH/MG-2-1.jpg"
+        },
+        {
+            "title":"imagen 2-2 de boda",
+            "src":"https://i.ibb.co/MCC79HX/MG-2-2.jpg"
+        },
+        {
+            "title":"imagen 2-3 de boda",
+            "src":"https://i.ibb.co/QpM5WTY/MG-2-3.jpg"
+        },
+        {
+            "title":"imagen 3-1 de boda",
+            "src":"https://i.ibb.co/F4tJx7Z/MG-3-1.jpg"
+        },
+        {
+            "title":"imagen 3-2 de boda",
+            "src":"https://i.ibb.co/2vwSf93/MG-3-2.jpg"
+        },
+        {
+            "title":"imagen 3-3 de boda",
+            "src":"https://i.ibb.co/dpdwbN3/MG-3-3.jpg"
+        }
+    ],
+    "services": [
+        {
+            "name": "Sesion de fotos antes de la boda",
+            "items": [
+                "20 fotos editadas y retocadas.",
+                "1 cambio de ropa.",
+                "1 cuadro para adorno en la boda de tamano 40*50 cm texturizado.",
+                "15 fotos impresas tamaño 6*8 pulgadas.",
+                "Enlace para descargar las fotos."
+            ]
+        },
+        {
+            "name": "Fotos el dia de boda",
+            "items": [
+                "Se cubre todo el evento.",
+                "200 fotos aproximadamente editadas y retocadas.",
+                "40 fotos impresas de tamaño 6*8.",
+                "Cajita donde van impresas todas las fotos.",
+                "Memoria usb donde van integradas todas las fotografías.",
+                "Caballete para la exposición de las fotos.",
+                "Video tipo documental."
+            ]
+        }
+    ]
+}
