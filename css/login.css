@@ -1,37 +1,13 @@
-<<<<<<< HEAD
-.Mbody {
-  height: 100%;
-  background-color: #f2f2f2;
-=======
-.container-fluid {
-  height: 100vh;
-  width: 100%;
-  padding: 0px 0px 00px 0px;
->>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
-}
-
 #fotos {
   color: rgb(170, 11, 170);
 }
-<<<<<<< HEAD
-.Mbody {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-=======
-body {
-  padding-top: 100px;
 
->>>>>>> 78514d3da743d4208ea4cf7154c509b04af18e6d
+.Mbody {
+  padding-top: 100px;
   background-color: #f2f2f2;
+  height: 100vh;
+  width: 100%;
+  padding: 0px 0px 00px 0px;
 }
 
 .form-signin {
@@ -40,9 +16,11 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+
 .form-signin .checkbox {
   font-weight: 400;
 }
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -50,19 +28,23 @@ body {
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 a:focus,
 a:hover,
 a:link,
@@ -72,7 +54,8 @@ a:active {
   text-decoration-color: black;
   color: black;
 }
-a{
+
+a {
   text-decoration: underline;
   text-decoration-color: black;
   color: black;
