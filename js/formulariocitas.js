@@ -85,6 +85,13 @@ function filtroApellido(e) {
 //---------------
 
 function filtroCorreo(e) {
+    clear(inputCorreo);
+    let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (regex.test(inputCorreo.value)) {
+      inputCorreo.classList.add("is-valid");
+    } else {
+      inputCorreo.classList.add("is-invalid");
+    }
 
 }
 
@@ -139,14 +146,27 @@ function corroborarNombre() {
 
 function corroborarApellido() {
     clear(inputApellido);
+<<<<<<< HEAD
         inputApellido.value.length <= 3 
           ? inputApellido.classList.add("is-invalid")
           : inputApellido.classList.add("is-valid");
+=======
+    inputApellido.value.length <= 3 
+      ? inputApellido.classList.add("is-invalid")
+      : inputApellido.classList.add("is-valid");
+  
+>>>>>>> subirjs
 }
 
 //---------------
 
 function corroborarCorreo() {
+    
+    clear(inputCorreo);
+    inputCorreo.value.length <= 3 
+      ? inputCorreo.classList.add("is-invalid")
+      : inputCorreo.classList.add("is-valid");
+  
 
 }
 
@@ -180,7 +200,11 @@ function corroborarDireccion() {
 }
 
 window.addEventListener('DOMContentLoaded', () => { 
+<<<<<<< HEAD
     if(isUserLogged() === false) { 
+=======
+    if(isUserLogged() ===false) { 
+>>>>>>> subirjs
         document.getElementById('formulario-citas').classList.remove('d-none') 
         return; 
     } 
