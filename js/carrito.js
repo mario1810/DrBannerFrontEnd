@@ -151,6 +151,8 @@ function borrarRow(id, paqueteId) {
       requestDelete(USER_INFO_DELETE_URL, data);
     }
     arrayCarrito.splice(id, 1);
+    //Actualizamos localmente, el icono de carrito, cuantos elementos tiene el carrito
+    iconoCarrito.innerHTML=arrayCarrito.length;
     muestraPaquetesTabla(arrayCarrito);
   } else {
     //Condición de protección
