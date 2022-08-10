@@ -4,23 +4,36 @@ const SERVICE_TYPE_NAV = "Json"; //Fetch
 
 //id  del elemento para mostrar 
 const iconoCarrito=document.getElementById("numItemscarNavBar");
-window.addEventListener('DOMContentLoaded', ()=> {actualizarCarrito()});
+const iconoUsuario=document.getElementById("iconUser");
+window.addEventListener('DOMContentLoaded', ()=> {actualizarIconos()});
 
-
+style="color:greenyellow"
 /**
  * Funciión que muestra el número de paquetes en el carrito en el icono de la barra de navegación
  */
-async function actualizarCarrito(){
+async function actualizarIconos(){
     let userID=getUserId();
-    if(userID!=null &&  isUserLogged() === true){
+    let logged=isUserLogged();
+
+    if(logged){
+      iconoUsuario.style.color="greenyellow"; // Si se dio de alta, el icono cmbia a verde
+    }else{
+      iconoUsuario.style.color="#F2F2F2"; // Si no se dio de alta, el icono cmbia a blanco
+    }
+
+
+    if(userID!=null && logged === true){
         let response = await requestGet(SERVICE_TYPE_NAV,CAR_NAV_GET_URL);
         if(response!=null){
             iconoCarrito.innerHTML=response.carritoitems;
-        return;
+            return;
         }
-        // no mostramos nada porque hubo un error con conexión en la API
+        //else{
+          // no mostramos nada porque hubo un error con conexión en la API
+          //iconoCarrito.innerHTML="";
+        //}
     }
-    
+    iconoCarrito.innerHTML="";
     // No actualizamos el número el carrito porque nadie se ha loggeado
 }
 
