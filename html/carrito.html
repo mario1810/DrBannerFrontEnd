@@ -37,16 +37,15 @@
         <div class="row align-items-center justify-content-end">
           <!--Carrito-->
           <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
-            <!--<a href="/html/carrito.html" class="nav-item"
+            <a href="/html/carrito.html" class="nav-item"
               ><i class="bi bi-cart-check colorTextNavBar"></i
-              ><span class="badge color4 rounded-pill">0</span></a
-            >-->
+              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
           </div>
           <!--User-->
           <div class="col-4 col-lg-1 text-lg-end  text-center">
-            <a href="/html/login.html" class="nav-item"
+            <div data-loggedhref="/html/perfil.html" class="nav-item"
               ><i class="bi bi-person-circle colorTextNavBar"></i
-            ></a>
+            ></div>
           </div>
           <!--Menu-->
           <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
@@ -115,7 +114,8 @@
     <main class="container-max-width text-center color3">
         <div class="row">
             <section class="col-12 col-ls-12">
-                <h2 class="encabezado">Tu carrito de compras</h2>
+                <h2 class="encabezado">Carrito de compras</h2>
+                <h2 class="subencabezado">Tienes <span id="numPaquetesTitulo">1 paquete</span> en tu carrito</h2>
             </section>
             <section class="col-12 col-lg-7 color3 contenedorDos ">
                 <div class="table-responsive-lg secctionTabla contenedorTabla">
@@ -145,13 +145,13 @@
                     <p id="carritoVacio" class="textoCarrito"></p>
                 </div>
             </section>
-            <section class="col-12 col-lg-4 color2 contenedorPago ">
+            <section class="col-12 col-lg-4 color2 contenedorPago">
               <h3>Total de compra</h3>
               <br>
               <p class="costoTotal" id="totalPagar"></p>
               <br>
-              <button type="button" class="btn btn-dark" id="btnPagar">Continuar con la compra</button>
-              <br>
+              <button type="button" class="btn btn-dark botonesStyle" id="btnPagar">Ir a pagar</button>        
+              <button data-loggedhref="/html/formulariocitas.html" type="button" class="btn btn-dark botonesStyle" id="btnSeguir">Seguir comprando</button>
               <div>
                 <br>
                 <br>
@@ -199,6 +199,9 @@
       
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/navbar.js"></script>
     <script src="/js/carrito.js"></script>
+    
 </body>
 </html>
