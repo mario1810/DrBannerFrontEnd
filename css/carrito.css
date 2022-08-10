@@ -65,8 +65,16 @@
 }
 
 .encabezado{
+    font-size: 60px;
     padding: 20px;
     font-weight: 700;
+}
+.subencabezado{
+    font-size: 30px;
+    padding: 20px;
+    padding-bottom:80px;
+    font-weight: 700;
+    color: #404040;
 }
 
 @media(max-width:992px){
@@ -114,9 +122,19 @@ h2{
 }
 
 .textoCarrito{
+    font-family:cursive;
     margin: auto;
     width: 80%;
     text-align: center;
-    font-size: 70px;
-    font-weight: 700;    
+    font-size: 40px;
+    font-weight: 500;    
+}
+
+
+.botonesStyle{
+    width: 240px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
 }
