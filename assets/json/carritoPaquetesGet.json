@@ -63,38 +63,5 @@
             "url": "https://reqres.in/#support-heading",
             "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
         }
-    },
-    "status": 200,
-    "statusText": "",
-    "headers": {
-        "content-type": "application/json; charset=utf-8"
-    },
-    "config": {
-        "transitional": {
-            "silentJSONParsing": true,
-            "forcedJSONParsing": true,
-            "clarifyTimeoutError": false
-        },
-        "transformRequest": [
-            null
-        ],
-        "transformResponse": [
-            null
-        ],
-        "timeout": 0,
-        "xsrfCookieName": "XSRF-TOKEN",
-        "xsrfHeaderName": "X-XSRF-TOKEN",
-        "maxContentLength": -1,
-        "maxBodyLength": -1,
-        "env": {
-            "FormData": null
-        },
-        "headers": {
-            "Accept": "application/json, text/plain, */*"
-        },
-        "method": "get",
-        "url": "https://reqres.in/api/users?delay=3",
-        "responseType": "stream"
-    },
-    "request": {}
+    }
 }
