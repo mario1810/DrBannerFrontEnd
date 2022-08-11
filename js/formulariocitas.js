@@ -25,14 +25,14 @@ textaraDireccion.addEventListener("keyup", (event) => { corroborarDireccion() })
 
 
 //eventos de ingreso de texto (antes de que el valor llegue al input)
-inputNombre.addEventListener("Keydown", (event) => { filtroNombre(event) });
-inputApellido.addEventListener("Keydown", (event) => { filtroApellido(event) });
-inputCorreo.addEventListener("Keydown", (event) => { filtroCorreo(event) });
-inputTelefono.addEventListener("Keydown", (event) => { filtroTelefono(event) });
-inputFecha.addEventListener("Keydown", (event) => { filtroFecha(event) });
-selectPaquete.addEventListener("Keydown", (event) => { filtroPaquete(event) });
-selectTipoPaquete.addEventListener("Keydown", (event) => { filtrotipoPaquete(event) });
-textaraDireccion.addEventListener("Keydown", (event) => { filtroDireccion(event) });
+inputNombre.addEventListener("keydown", (event) => { filtroNombre(event) });
+inputApellido.addEventListener("keydown", (event) => { filtroApellido(event) });
+inputCorreo.addEventListener("keydown", (event) => { filtroCorreo(event) });
+inputTelefono.addEventListener("keydown", (event) => { filtroTelefono(event) });
+inputFecha.addEventListener("keydown", (event) => { filtroFecha(event) });
+selectPaquete.addEventListener("keydown", (event) => { filtroPaquete(event) });
+selectTipoPaquete.addEventListener("keydown", (event) => { filtrotipoPaquete(event) });
+textaraDireccion.addEventListener("keydown", (event) => { filtroDireccion(event) });
 
 //Eventos de botones
 buttunPagar.addEventListener("click", () => { window.location.assign("/html/carrito.html"); });
@@ -72,12 +72,26 @@ function clear(elemento) {
 
 
 function filtroApellido(e) {
+    let regex = /^[a-zA-ZÀ-ÿ ]+$/;  
+      
+        if (regex.test(event.key)) {
+          return;
+        } else {
+          event.preventDefault();
+        }
 
 }
 
 //---------------
 
 function filtroCorreo(e) {
+    clear(inputCorreo);
+    let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (regex.test(inputCorreo.value)) {
+      inputCorreo.classList.add("is-valid");
+    } else {
+      inputCorreo.classList.add("is-invalid");
+    }
 
 }
 
@@ -132,11 +146,22 @@ function corroborarNombre() {
 
 function corroborarApellido() {
     clear(inputApellido);
+        inputApellido.value.length <= 3 
+          ? inputApellido.classList.add("is-invalid")
+          : inputApellido.classList.add("is-valid");
+
+
 }
 
 //---------------
 
 function corroborarCorreo() {
+    
+    clear(inputCorreo);
+    inputCorreo.value.length <= 3 
+      ? inputCorreo.classList.add("is-invalid")
+      : inputCorreo.classList.add("is-valid");
+  
 
 }
 
@@ -170,13 +195,13 @@ function corroborarDireccion() {
 }
 
 window.addEventListener('DOMContentLoaded', () => { 
-    if(isUserLogged() === true) { 
+
+    if(isUserLogged() ===false) { 
         document.getElementById('formulario-citas').classList.remove('d-none') 
         return; 
     } 
     window.location.href = window.location.origin + '/html/login.html' 
 });
-
 
 
 

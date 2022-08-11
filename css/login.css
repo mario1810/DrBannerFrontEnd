@@ -1,7 +1,6 @@
 #fotos {
   color: rgb(170, 11, 170);
 }
-
 .Mbody {
   padding-top: 100px;
   background-color: #f2f2f2;
@@ -16,11 +15,9 @@
   padding: 15px;
   margin: 0 auto;
 }
-
 .form-signin .checkbox {
   font-weight: 400;
 }
-
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -28,23 +25,19 @@
   padding: 10px;
   font-size: 16px;
 }
-
 .form-signin .form-control:focus {
   z-index: 2;
 }
-
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 a:focus,
 a:hover,
 a:link,
@@ -54,15 +47,50 @@ a:active {
   text-decoration-color: black;
   color: black;
 }
-
 a {
   text-decoration: underline;
   text-decoration-color: black;
   color: black;
 }
 
-
 #paquetes {
   color: hsl(217, 10%, 50.8%);
   font-size: large;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f2f2f2;
+  color: #000;
+  position: relative;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding:5px 35px;
+  font-size: 13px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
 }

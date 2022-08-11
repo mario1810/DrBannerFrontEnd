@@ -37,14 +37,13 @@
             <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
               <a href="/html/carrito.html" class="nav-item"
                 ><i class="bi bi-cart-check colorTextNavBar"></i
-                ><span class="badge color4 rounded-pill" id="cantidadCarrito">0</span></a
-              >
+                ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
             </div>
             <!--User-->
             <div class="col-4 col-lg-1 text-lg-end  text-center">
-              <a href="/html/login.html" class="nav-item"
-                ><i class="bi bi-person-circle colorTextNavBar"></i
-              ></a>
+              <div data-loggedhref="/html/perfil.html" class="nav-item"
+                ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
+              ></div>
             </div>
             <!--Menu-->
             <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
@@ -90,7 +89,7 @@
                           </a>
                           <ul class="dropdown-menu dropdown-menu-dark">
                             <li>
-                              <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=xv">XV años</a>
+                              <a class="dropdown-item" href="/html/paquetesxv.html">XV años</a>
                             </li>
                             <li>
                               <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
@@ -164,18 +163,17 @@
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <!-- <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading">Nos ubicamos</h2>
-        <p class="lead"> Trabajos en Fontera Camalapa Chiapas y sus alrrederes 
-           </p>
+      <div class="col-md-7">
+        <h2>Nos ubicamos</h2>
+        <p class="lead">Trabajos en Fontera Camalapa Chiapas y sus alrrederes. </p>
       </div>
-      <div class="col-md-5 order-md-1">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122917.5821308861!2d-92.16160892792958!3d15.688890158139879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858da20bdea89859%3A0x8fd68753e62cafb7!2sFrontera%20Comalapa%2C%20Chis.!5e0!3m2!1ses-419!2smx!4v1659911490200!5m2!1ses-419!2smx" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="col-md-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122917.5821308861!2d-92.16160892792958!3d15.688890158139879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x858da20bdea89859%3A0x8fd68753e62cafb7!2sFrontera%20Comalapa%2C%20Chis.!5e0!3m2!1ses-419!2smx!4v1659911490200!5m2!1ses-419!2smx" width="500" height="500"></iframe>
       </div>
-    </div>
+    </div> -->
  
 <br>
 </div>
@@ -214,7 +212,8 @@
   
 </footer>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="/js/main.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
 
 </html>
