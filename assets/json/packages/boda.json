@@ -1,7 +1,7 @@
 {
     "id":2,
     "name":"boda",
-    "title": "Paquete de bodas",
+    "title": "Paquetes de bodas",
     "images":[
         {
             "title":"imagen 1-1 de boda",
@@ -42,7 +42,7 @@
     ],
     "services": [
         {
-            "name": "Sesion de fotos antes de la boda",
+            "name": "Sesión de fotos antes de la boda",
             "items": [
                 "20 fotos editadas y retocadas.",
                 "1 cambio de ropa.",
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "name": "Fotos el dia de boda",
+            "name": "Fotos el día de boda",
             "items": [
                 "Se cubre todo el evento.",
                 "200 fotos aproximadamente editadas y retocadas.",
