@@ -129,7 +129,22 @@
     background-color: #404040;
     color: #f2f2f2;
 }
+/*Ocultar las tablas */
+#divDatosPesonales{
+    display: none;
+}
+#divFormasPago{
+    display: none;
+}
+#divComprasAnteriores{
+    display: none;
+}
 
+
+
+.table{
+    width: 100%;
+}
 
 @media (max-width: 780px) {
     .perfil-usuario .contenedor-perfil {

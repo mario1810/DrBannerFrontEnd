@@ -1,0 +1,17 @@
+{
+    "data":[ 
+   
+    {
+        "id":1,
+        "nombre": "Mario Ivan",
+        "apellido": "Alvarez Bautista",
+        "correo": "Mario.AlvBau@generation.com",
+        "contra": "123mario",
+        "telefono":"5555124587"
+
+        
+    }
+    
+    
+]
+}
