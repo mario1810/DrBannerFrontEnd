@@ -7,7 +7,6 @@ const iconoCarrito=document.getElementById("numItemscarNavBar");
 const iconoUsuario=document.getElementById("iconUser");
 window.addEventListener('DOMContentLoaded', ()=> {actualizarIconos()});
 
-style="color:greenyellow"
 /**
  * Funciión que muestra el número de paquetes en el carrito en el icono de la barra de navegación
  */
@@ -17,8 +16,10 @@ async function actualizarIconos(){
 
     if(logged){
       iconoUsuario.style.color="greenyellow"; // Si se dio de alta, el icono cmbia a verde
+      //iconoUsuario.style.cursor="pointer";
     }else{
       iconoUsuario.style.color="#F2F2F2"; // Si no se dio de alta, el icono cmbia a blanco
+      //iconoUsuario.style.cursor="pointer";
     }
 
 
@@ -33,7 +34,7 @@ async function actualizarIconos(){
           //iconoCarrito.innerHTML="";
         //}
     }
-    iconoCarrito.innerHTML="";
+    iconoCarrito.innerHTML="0";
     // No actualizamos el número el carrito porque nadie se ha loggeado
 }
 

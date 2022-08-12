@@ -1,12 +1,10 @@
 {
     "usuario": {
         "id": 1,
-        "nombre": "Mario Ivan",
-        "apellido": "Alvarez Bautista",
+        "nombre": "Mario",
+        "apellido": "Alvarez",
         "tarjeta":{
                 "numeroTarjeta":"1234567890123456",
-                "mes" :9,
-                "anio": 23,
                 "tipo":"credito"            
             },
         "total": 1200,
