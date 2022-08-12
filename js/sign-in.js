@@ -44,7 +44,7 @@ function btnRegistro(){
    inputEmail.classList.contains("is-valid")
   ) {
     //Post
-    
+    localStorage.setItem('userId', '22');
   } else {
     if (!inputNombre.classList.contains("is-valid")) {
       clear(inputNombre);
