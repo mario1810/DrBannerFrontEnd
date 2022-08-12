@@ -21,95 +21,95 @@
     <!--========================================================== -->
 
     <header class="container-max-width text-center color5 colorTextNavBar">
-        <!--Renglón que contiene todos los elementos de la navBar-->
-        <div class="row align-items-center">
-          <!--Columna del nombre de la empresa-->
-          <div class="col-12 col-lg-5">
-            <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+    <!--Renglón que contiene todos los elementos de la navBar-->
+    <div class="row align-items-center">
+      <!--Columna del nombre de la empresa-->
+      <div class="col-12 col-lg-5">
+        <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+      </div>
+      <!--Columna que contiene el resto de elementos del navbar
+              carrito, user, menu-->
+      <div class="col-12 col-lg-7">
+        <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
+        <div class="row align-items-center justify-content-end">
+          <!--Carrito-->
+          <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
+            <a href="/html/carrito.html" class="nav-item"
+              ><i class="bi bi-cart-check colorTextNavBar"></i
+              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
           </div>
-          <!--Columna que contiene el resto de elementos del navbar
-                  carrito, user, menu-->
-          <div class="col-12 col-lg-7">
-            <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
-            <div class="row align-items-center justify-content-end">
-              <!--Carrito-->
-              <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
-                <a href="/html/carrito.html" class="nav-item"
-                  ><i class="bi bi-cart-check colorTextNavBar"></i
-                  ><span class="badge color4 rounded-pill">0</span></a
+          <!--User-->
+          <div class="col-4 col-lg-1 text-lg-end  text-center">
+            <div data-loggedhref="/html/perfil.html" class="nav-item"
+              ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
+            ></div>
+          </div>
+          <!--Menu-->
+          <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
+            <nav class="navbar navbar-expand-lg color5">
+              <div class="container-fluid justify-content-end">
+                <button
+                  class="navbar-toggler color3"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasDarkNavbar"
+                  aria-controls="offcanvasDarkNavbar"
                 >
-              </div>
-              <!--User-->
-              <div class="col-4 col-lg-1 text-lg-end  text-center">
-                <a href="/html/login.html" class="nav-item"
-                  ><i class="bi bi-person-circle colorTextNavBar"></i
-                ></a>
-              </div>
-              <!--Menu-->
-              <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
-                <nav class="navbar navbar-expand-lg color5">
-                  <div class="container-fluid justify-content-end">
-                    <button
-                      class="navbar-toggler color3"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasDarkNavbar"
-                      aria-controls="offcanvasDarkNavbar"
+                <div class="color3">
+                  <span class="navbar-toggler-icon"></span>
+                </div>
+                  
+                </button>
+                <div
+                  class="offcanvas offcanvas-end colortextNavBar"
+                  tabindex="-1"
+                  id="offcanvasDarkNavbar"
+                  aria-labelledby="offcanvasDarkNavbarLabel"
+                >
+                  <div class="offcanvas-body color5">
+                    <ul
+                      class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
                     >
-                    <div class="color3">
-                      <span class="navbar-toggler-icon"></span>
-                    </div>
-                      
-                    </button>
-                    <div
-                      class="offcanvas offcanvas-end colortextNavBar"
-                      tabindex="-1"
-                      id="offcanvasDarkNavbar"
-                      aria-labelledby="offcanvasDarkNavbarLabel"
-                    >
-                      <div class="offcanvas-body color5">
-                        <ul
-                          class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
+                      <li class="nav-item">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/contactanos.html">Contacto</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/acercadenosotros.html">Acerca</a>
+                      </li>
+                      <li class="nav-item dropdown ">
+                        <a
+                          class="nav-link dropdown-toggle colorTextNavBar colorNavH colorNavF"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
                         >
-                          <li class="nav-item">
-                            <a class="nav-link colorTextNavBar colorNavH" href="/html/contactanos.html">Contacto</a>
+                          Paquetes
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesxv.html">XV años</a>
                           </li>
-                          <li class="nav-item ">
-                            <a class="nav-link colorTextNavBar colorNavH" href="/html/acercadenosotros.html">Acerca</a>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
                           </li>
-                          <li class="nav-item dropdown ">
-                            <a
-                              class="nav-link dropdown-toggle colorTextNavBar colorNavH colorNavF"
-                              href="#"
-                              role="button"
-                              data-bs-toggle="dropdown"
-                              aria-expanded="false"
-                            >
-                              Paquetes
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=xv">XV años</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=familiar">Familiar</a>
-                              </li>
-                            </ul>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=familiar">Familiar</a>
                           </li>
                         </ul>
-                      </div>
-                    </div>
+                      </li>
+                    </ul>
                   </div>
-                </nav>
+                </div>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
-      </header>
-    <section class="perfil-usuario">
+      </div>
+    </div>
+  </header>
+    <section>
+      <div class="perfil-usuario">
         <div class="contenedor-perfil">
             <div class="portada-perfil" style="background-image: url('https://i.ibb.co/4WFwfh1/lluvia-fondo.jpg');">
                 <div class="sombra"></div>
@@ -122,24 +122,107 @@
                 </div>
                 <div class="datos-perfil">
                     <h4 class="titulo-usuario">Nombre de usuario</h4>
-                    <p class="bio-usuario">Bienvenido , amet consectetur adipisicing.</p>
+                    <p class="bio-usuario">Bienvenido , es un gusto tenerte de vuelta.</p>
                 </div>
                 <!--<div class="opcciones-perfil">
                     <button type="">Cambiar portada</button>
                 </div>-->
             </div>
             <div class="menu-perfil">
-                <ul>
-                    <li><a href="#" title=""><i></i> Datos personales</a></li>
-                    <li><a href="#" title=""><i></i> </i> Forma de pago</a></li>
-                    <li><a href="#" title=""><i></i> Compras anteriores</a></li>
-                </ul>
-            </div>
+              <ul>
+                  <li><a href="#" onclick="mostrarDatosPersonales()" title="" ><i></i> Datos personales</a></li>
+                  <li><a href="#" onclick="mostrarFormaPago()" title=""><i></i> </i> Forma de pago</a></li>
+                  <li><a href="#" onclick="mostrarComprasAnteriores()" title="" ><i></i> Compras anteriores</a></li>
+              </ul>
+          </div>
         </div>
-    </section>
+      </div>
+          <br>
+          <div>
+          <div class="container my-3" >
+              <div class="row-cols-auto" >
+                  <div class="col-sm-12 col-md-12 col-lg-12" id="divDatosPesonales">
+                      <h2>Datos personales</h2>
+                      <div class="">
+                          <table class="table table-hover text-center" id="tablaDatosPersonales">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Apellidos</th>
+                                      <th scope="col">Correo</th>
+                                      <th scope="col">Contraseña</th>
+                                      <th scope="col">Telefono</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="datosPersonales">
+                                      
+                              </tbody>
+
+                          </table>
+                          <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarDatosPersonales()">Ocultar</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <br>
+          <div class="container my-3" >
+              <div class="row-cols-auto">
+                  <div class="col-sm-12 col-md-12 col-lg-12" id="divFormasPago">
+                      <h2>Fromas de pago</h2>
+                      <div class="my-3">
+                          <table class="table table-hover text-center" id="tablaFormaPago">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">Nombre</th>
+                                      <th scope="col">Apellidos</th>
+                                      <th scope="col">Tarjeta/th>
+                                      <th scope="col">Numero</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="datosFormaPago">
+                                      
+                              </tbody>
+
+                          </table>
+                          <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <br>
+          <div class="container-fluid my-3" >
+              <div class="row-cols-auto">
+                  <div class="col-sm-12 col-md-12 col-lg-12" id="divComprasAnteriores">
+                      <h2>Compras anteriores</h2>
+                      <div class="my-3">
+                          <table class="table table-hover text-center" id="tablaCompras" >
+                              <thead>
+                                  <tr>
+                                      <th scope="col">ID</th>
+                                      <th scope="col">Paquete</th>
+                                      <th scope="col">Tipo</th>
+                                      <th scope="col">Costo</th>
+                                      <th scope="col">Fecha</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="datosHistorialCompras">
+                                      
+                              </tbody>
+
+                          </table>
+                          <button type="button" class="btn btn-dark" id="btnHistorialCompra" onclick="ocultarComprasAnteriores()">Ocultar</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+    
+      
+  </section>
     <div>
       <!--Div donde se desplegará la info-->
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta nihil asperiores cumque inventore molestiae rem officiis quam ratione exercitationem ab, harum est repellat! Perspiciatis eveniet facilis expedita. Fugiat, ipsum nisi.</p>
+      
       <br>
       <br>
       <br>
@@ -191,5 +274,8 @@
       
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/perfil.js"></script>
 </body>
 </html>

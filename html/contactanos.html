@@ -37,14 +37,13 @@
             <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
               <a href="/html/carrito.html" class="nav-item"
                 ><i class="bi bi-cart-check colorTextNavBar"></i
-                ><span class="badge color4 rounded-pill">0</span></a
-              >
+                ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
             </div>
             <!--User-->
             <div class="col-4 col-lg-1 text-lg-end  text-center">
-              <a href="/html/login.html" class="nav-item"
-                ><i class="bi bi-person-circle colorTextNavBar"></i
-              ></a>
+              <div data-loggedhref="/html/perfil.html" class="nav-item"
+                ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
+              ></div>
             </div>
             <!--Menu-->
             <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
@@ -90,7 +89,7 @@
                           </a>
                           <ul class="dropdown-menu dropdown-menu-dark">
                             <li>
-                              <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=xv">XV años</a>
+                              <a class="dropdown-item" href="/html/paquetesxv.html">XV años</a>
                             </li>
                             <li>
                               <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
@@ -116,23 +115,23 @@
 
        </div>
         <div class="form" id="form">
-            <form class="row">
+            <form class="row" action="https://formsubmit.co/cristofer.pineda.jauregui@gmail.com" method="POST">
                 <div class=" form_container ">
                     <h2 class="form_container">¡CONTÁCTANOS!</h2>
                     <label for="nombreInput" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="nombreInput" >
+                    <input type="text" class="form-control" id="nombreInput" name="name">
                     <label for="emaiInput" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="emailInput" >
+                    <input type="email" class="form-control" id="emailInput" name="email" >
                     <label for="telefonoInput" class="form-label">Telefono</label>
-                    <input type="text" class="form-control" id="telefonoInput">
+                    <input type="text" class="form-control" id="telefonoInput" name="telefono">
                     <label for="textArea" class="form-label" id="textArea">Mensaje</label>
-                    <textarea class="form_input form_input--menssage"  ></textarea>
+                    <textarea class="form_input form_input--menssage" name="textArea"  ></textarea>
                     <div class="input-group mb-3">
-                        <input type="file" class="form-control btn btn-dark" id="cargaArchivos">
+                        <input type="file" class="form-control btn btn-dark" id="cargaArchivos" name="archivos">
                       </div>
-                    <button type="submit" class="btn btn-dark" value="=enviar">Enviar</a></button>
+                    <button type="submit" class="btn btn-dark" value="enviar" name="submit">Enviar</a></button>
                 </div>
-                <a href="cristofer.pineda.jauregui@gmail.com" id="trucazo"></a>
+                <!--<a href="cristofer.pineda.jauregui@gmail.com" id="trucazo"></a>-->
               
             </form>
         </div>
@@ -173,7 +172,12 @@
       
     </footer>
     <!--<footer></footer>-->
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/navbar.js"></script> 
+    <script src="/js/contactanos.js"></script>   
+    
+        
         
 
 </body>
