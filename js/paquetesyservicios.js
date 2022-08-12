@@ -12,7 +12,7 @@ const setTitle = (title) => {
 const createImageColTemplate = (image, isActive) => {
     //image: {"title", "src"}, isActive: Boolean
     return `
-        <div class="col-sm-4 ${ isActive ?  '' : 'd-none d-sm-block'}">
+        <div class="col-sm-4 ${ isActive ?  '' : 'd-none d-sm-block'}"> 
             <img title="${ image.title }" src="${ image.src }" class="img-fluid rounded-2" alt="...">
         </div>
     `;

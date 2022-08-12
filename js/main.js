@@ -4,19 +4,19 @@ Primero, creamos una function llamada setCookie que almacena el nombre del visit
 cookie
 https://www.w3schools.com/js/js_cookies.asp*/
 
+/*1. Los parámetros de la función setCookie son:
+    (cname),nombre de la cookie 
+    (cvalue)valor de la cookie .
+    (exdays)número de días hasta que caduque la cookie.*/
+
 const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    /*2. La función establece una cookie sumando el el valor de los parametros.*/
 };
 
-/*
-1. Los parámetros de la función setCookie son el nombre de la cookie (cname), el valor de la cookie 
-(cvalue) y el número de días hasta que caduque la cookie (exdays).
-
-2. La función establece una cookie sumando el nombre de la cookie, el valor de la cookie y la cadena
-de expiración.*/
 
 
 //GETCOOKIE
