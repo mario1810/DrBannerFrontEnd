@@ -22,7 +22,6 @@ async function actualizarIconos(){
       //iconoUsuario.style.cursor="pointer";
     }
 
-
     if(userID!=null && logged === true){
         let response = await requestGet(SERVICE_TYPE_NAV,CAR_NAV_GET_URL);
         if(response!=null){
@@ -65,7 +64,7 @@ async function actualizarIconos(){
         fetch(direccionhttp)
           .then((response) => { return response.json()})
           .then((json) => {
-                resolve(json)}
+                resolve(json.usuario)}
             )
           .catch((error) => {
             reject(null);
