@@ -21,96 +21,100 @@
     
 </head>
 <body>
-    
-    <header class="container-max-width text-center color5 colorTextNavBar">
-        <!--Renglón que contiene todos los elementos de la navBar-->
-        <div class="row align-items-center">
-          <!--Columna del nombre de la empresa-->
-          <div class="col-12 col-lg-5">
-            <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+
+   <!--========================================================== -->
+                              <!-- NAVBAR -->
+    <!--========================================================== -->
+  <header class="container-max-width text-center color5 colorTextNavBar">
+    <!--Renglón que contiene todos los elementos de la navBar-->
+    <div class="row align-items-center">
+      <!--Columna del nombre de la empresa-->
+      <div class="col-12 col-lg-5">
+        <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+      </div>
+      <!--Columna que contiene el resto de elementos del navbar
+              carrito, user, menu-->
+      <div class="col-12 col-lg-7">
+        <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
+        <div class="row align-items-center justify-content-end">
+          <!--Carrito-->
+          <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
+            <a href="/html/carrito.html" class="nav-item"
+              ><i class="bi bi-cart-check colorTextNavBar"></i
+              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
           </div>
-          <!--Columna que contiene el resto de elementos del navbar
-                  carrito, user, menu-->
-          <div class="col-12 col-lg-7">
-            <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
-            <div class="row align-items-center justify-content-end">
-              <!--Carrito-->
-              <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
-                <a href="/html/carrito.html" class="nav-item"
-                  ><i class="bi bi-cart-check colorTextNavBar"></i
-                  ><span class="badge color4 rounded-pill">0</span></a
+          <!--User-->
+          <div class="col-4 col-lg-1 text-lg-end  text-center">
+            <div data-loggedhref="/html/perfil.html" class="nav-item"
+              ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
+            ></div>
+          </div>
+          <!--Menu-->
+          <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
+            <nav class="navbar navbar-expand-lg color5">
+              <div class="container-fluid justify-content-end">
+                <button
+                  class="navbar-toggler color3"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasDarkNavbar"
+                  aria-controls="offcanvasDarkNavbar"
                 >
-              </div>
-              <!--User-->
-              <div class="col-4 col-lg-1 text-lg-end  text-center">
-                <a href="/html/login.html" class="nav-item"
-                  ><i class="bi bi-person-circle colorTextNavBar"></i
-                ></a>
-              </div>
-              <!--Menu-->
-              <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
-                <nav class="navbar navbar-expand-lg color5">
-                  <div class="container-fluid justify-content-end">
-                    <button
-                      class="navbar-toggler color3"
-                      type="button"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#offcanvasDarkNavbar"
-                      aria-controls="offcanvasDarkNavbar"
+                <div class="color3">
+                  <span class="navbar-toggler-icon"></span>
+                </div>
+                  
+                </button>
+                <div
+                  class="offcanvas offcanvas-end colortextNavBar"
+                  tabindex="-1"
+                  id="offcanvasDarkNavbar"
+                  aria-labelledby="offcanvasDarkNavbarLabel"
+                >
+                  <div class="offcanvas-body color5">
+                    <ul
+                      class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
                     >
-                    <div class="color3">
-                      <span class="navbar-toggler-icon"></span>
-                    </div>
-                      
-                    </button>
-                    <div
-                      class="offcanvas offcanvas-end colortextNavBar"
-                      tabindex="-1"
-                      id="offcanvasDarkNavbar"
-                      aria-labelledby="offcanvasDarkNavbarLabel"
-                    >
-                      <div class="offcanvas-body color5">
-                        <ul
-                          class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
+                      <li class="nav-item">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/contactanos.html">Contacto</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link colorTextNavBar colorNavH" href="/html/acercadenosotros.html">Acerca</a>
+                      </li>
+                      <li class="nav-item dropdown ">
+                        <a
+                          class="nav-link dropdown-toggle colorTextNavBar colorNavH colorNavF"
+                          href="#"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
                         >
-                          <li class="nav-item">
-                            <a class="nav-link colorTextNavBar colorNavH" href="/html/contactanos.html">Contacto</a>
+                          Paquetes
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=xv">XV años</a>
                           </li>
-                          <li class="nav-item ">
-                            <a class="nav-link colorTextNavBar colorNavH" href="/html/acercadenosotros.html">Acerca</a>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
                           </li>
-                          <li class="nav-item dropdown ">
-                            <a
-                              class="nav-link dropdown-toggle colorTextNavBar colorNavH colorNavF"
-                              href="#"
-                              role="button"
-                              data-bs-toggle="dropdown"
-                              aria-expanded="false"
-                            >
-                              Paquetes
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=xv">XV años</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=boda">Bodas</a>
-                              </li>
-                              <li>
-                                <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=familiar">Familiar</a>
-                              </li>
-                            </ul>
+                          <li>
+                            <a class="dropdown-item" href="/html/paquetesyservicio.html?servicio=familiar">Familiar</a>
                           </li>
                         </ul>
-                      </div>
-                    </div>
+                      </li>
+                    </ul>
                   </div>
-                </nav>
+                </div>
               </div>
-            </div>
+            </nav>
           </div>
         </div>
-      </header>
+      </div>
+    </div>
+  </header> 
+  <!--========================================================== -->
+
         <br>
         <br>
         <br>
@@ -235,6 +239,8 @@
         </footer>
         <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="/js/main.js"></script>
+        <script src="/js/navbar.js"></script>
+        
         <script src="/js/formulariocitas.js"></script>
         
 

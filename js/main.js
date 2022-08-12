@@ -1,10 +1,28 @@
+/*
+SETCOOKIE
+Primero, creamos una function llamada setCookie que almacena el nombre del visitante en una 
+cookie
+https://www.w3schools.com/js/js_cookies.asp*/
+
+/*1. Los parámetros de la función setCookie son:
+    (cname),nombre de la cookie 
+    (cvalue)valor de la cookie .
+    (exdays)número de días hasta que caduque la cookie.*/
+
 const setCookie = (cname, cvalue, exdays) => {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    /*2. La función establece una cookie sumando el el valor de los parametros.*/
 };
 
+
+
+//GETCOOKIE
+/*Luego, creamos una function que devuelve el valor de una cookie específica:*/
+
+//declaramos una function y le colocamos nombre del parámetro como (cname).
 const getCookie = (cname) => {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -21,7 +39,10 @@ const getCookie = (cname) => {
     return "";
 };
 
+//function para eliminar la cookie
 const deleteCookie = (cname) => {
+    //Para eliminar una cookie establecemos el parámetro de expiración en 
+    //una fecha pasada.
     document.cookie = cname +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
@@ -31,7 +52,7 @@ const isUserLogged = () => {
 
 const bindGotoLoggedListener = () => {
     const buttons = document.querySelectorAll('[data-loggedhref]');// buscar todos los botones con el data atributo loggedhref 
-    for (button of buttons) {
+    for (let button of buttons) {
         //Por cada boton encontrado agrega un listener al evento click
         button.addEventListener('click', () => {
             //Cuando el boton es clicked
@@ -47,7 +68,6 @@ const bindGotoLoggedListener = () => {
         });
     }
 };
-
 window.addEventListener('DOMContentLoaded', () => {
     bindGotoLoggedListener();
 });

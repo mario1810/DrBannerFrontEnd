@@ -1,7 +1,7 @@
 {
     "id": 1,
     "name": "xv",
-    "title": "Paquete de XV años",
+    "title": "Paquetes de XV años",
     "images":[
         {
             "title": "imagen 1-1 de xv",
@@ -119,7 +119,7 @@
     ],
     "services": [
         {
-            "name": "Sesion de fotos antes de los xv años",
+            "name": "Sesión de fotos antes de los xv años",
             "items": [
                 "20 fotos editadas y retocadas",
                 "1 cambio de ropa.",
