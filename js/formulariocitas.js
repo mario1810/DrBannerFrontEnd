@@ -146,16 +146,11 @@ function corroborarNombre() {
 
 function corroborarApellido() {
     clear(inputApellido);
-<<<<<<< HEAD
         inputApellido.value.length <= 3 
           ? inputApellido.classList.add("is-invalid")
           : inputApellido.classList.add("is-valid");
-=======
-    inputApellido.value.length <= 3 
-      ? inputApellido.classList.add("is-invalid")
-      : inputApellido.classList.add("is-valid");
-  
->>>>>>> subirjs
+
+
 }
 
 //---------------
@@ -200,17 +195,13 @@ function corroborarDireccion() {
 }
 
 window.addEventListener('DOMContentLoaded', () => { 
-<<<<<<< HEAD
-    if(isUserLogged() === false) { 
-=======
+
     if(isUserLogged() ===false) { 
->>>>>>> subirjs
         document.getElementById('formulario-citas').classList.remove('d-none') 
         return; 
     } 
     window.location.href = window.location.origin + '/html/login.html' 
 });
-
 
 
 
