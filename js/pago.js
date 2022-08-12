@@ -8,7 +8,7 @@ let idUser=0; //temporalmente global
 
 //Obtención de elementos
 const inputNombre=document.getElementById("Name");
-const inputApellido=document.getElementById("lastName");
+//const inputApellido=document.getElementById("lastName");
 const inputTarjeta=document.getElementById("cardNumber");
 const inputMes=document.getElementById("cardMonth");
 const inputYear=document.getElementById("cardYear");
@@ -81,8 +81,8 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
         //Relleno los campos de mi formulario.
         //idUser=usuario.id;
-        inputNombre.value=usuario.nombre;
-        inputApellido.value=usuario.apellido;
+        inputNombre.value=usuario.nombre+" "+usuario.apellido;
+        //inputApellido.value=usuario.apellido;
         inputTarjeta.value=addSpacesNumeroTarjeta(usuario.tarjeta.numeroTarjeta);
         //Tipo de tarjeta
         if(usuario.tarjeta.tipo=="debito"){
@@ -450,8 +450,9 @@ function clear(elemento){
  * Función que compruba que los input, que se autorrellenaron con  fetch, tienen información válida
  */
 function corroborarAutorrelleno(){
-    corroborarTexto(true,inputNombre);
-    corroborarTexto(true,inputApellido);
+    //corroborarTexto(true,inputNombre);
+    //corroborarTexto(true,inputApellido);
+    corroborarNombre(true);
     corroborarNumTarjeta(true);
 }
 
@@ -475,7 +476,24 @@ function corroborarAutorrelleno(){
     return false;
 }
 
-
+/**
+ * Función que corroborá que el texto ingresado tenga  minimo dos caracteres+espacio´dos caracteres
+ * @param {*} flag "Bandera para acarrear e resultado de una validación anterior cuando se realizan en serie"
+ * @param {*} elemento  "Input sobre el cual realiza la corroboración"
+ * @returns  flag, si longitud de texto es mayor o igual 2, false caso contrario
+ */
+function corroborarNombre(flag){
+    clear(inputNombre);
+    const nombres=inputNombre.value.split(" ");
+    if(nombres.length>=2){
+        if(nombres[0].length>1 && nombres[1].length>1){
+            inputNombre.classList.add("is-valid");
+            return flag;
+        }
+    }
+    inputNombre.classList.add("is-invalid");  
+    return false;
+}
 
 
 /*
@@ -661,9 +679,11 @@ function corroborarCamposFormPago(){
     }
     let flag=true; // Bandera para saber si todo esta bien
         //Comprobacion de campo nombre (Que haya al menos dos letras)
-        flag=corroborarTexto(flag,inputNombre);
+        //flag=corroborarTexto(flag,inputNombre);
         //Comprobacion de campo apellido (Que haya al menos dos letras)
-        flag=corroborarTexto(flag,inputApellido);
+        //flag=corroborarTexto(flag,inputApellido);
+        //Corroborar el nombre completo
+        flag=corroborarNombre(flag);
         //Comporbación de  numero de tarjeta (que sean 16 digitos)
         flag=corroborarNumTarjeta(flag);
         //Comprobación de CVV (Que sean tres digitos)
@@ -811,8 +831,8 @@ function resultadoPago(flag){
 
 
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
-inputNombre.addEventListener("keyup",(event)=>{corroborarTexto(true,inputNombre)});
-inputApellido.addEventListener("keyup",(event)=>{corroborarTexto(true,inputApellido)});
+inputNombre.addEventListener("keyup",(event)=>{corroborarNombre(true)});
+//inputApellido.addEventListener("keyup",(event)=>{corroborarTexto(true,inputApellido)});
 inputTarjeta.addEventListener("keyup",(event)=>{corroborarNumTarjeta(true)});
 inputMes.addEventListener("keyup",(event)=>{corroborarMes(true)});
 inputYear.addEventListener("keyup",(event)=>{corroborarYear(true)});
@@ -823,7 +843,7 @@ inputCVV.addEventListener("keyup",(event)=>{corroborarCVV(true)});
 
 //eventos de ingreso de texto (antes de que el valor llegue al input)
 inputNombre.addEventListener("keydown",(event)=>{filtroTexto(event)});
-inputApellido.addEventListener("keydown",(event)=>{filtroTexto(event)});
+//inputApellido.addEventListener("keydown",(event)=>{filtroTexto(event)});
 inputTarjeta.addEventListener("keydown",(event)=>{filtroNumeroTarjeta(event)});
 inputMes.addEventListener("keydown",(event)=>{filtroNumeroMes(event)});
 inputYear.addEventListener("keydown",(event)=>{filtroNumeroYear(event)});
