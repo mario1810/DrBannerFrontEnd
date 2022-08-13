@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `Githubitos`.`usuarios` (
   `password` VARCHAR(150) NULL,
   `telefono` VARCHAR(105) NULL,
   `avatar` VARCHAR(1000) NULL,
-  `numero_tarjeta` VARCHAR(16) NULL,
+  `numero_tarjeta` VARCHAR(20) NULL,
   `tipo_tarjeta` VARCHAR(20) NULL,
   `rol_id_rol` INT NOT NULL,
   PRIMARY KEY (`id_usuario`),
@@ -101,7 +101,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Githubitos`.`caracteristicasPaquete` (
   `paquetes_id_paquetes` INT NOT NULL AUTO_INCREMENT,
-  `cambios_ropa` VARCHAR(45) NULL,
+  `cambios_ropa` INT NULL,
   `fotos_digital` INT NULL,
   `fotos_impresas` INT NULL,
   `caballete` TINYINT NULL,
@@ -160,11 +160,11 @@ ENGINE = InnoDB;
 -- Table `Githubitos`.`pedido`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Githubitos`.`pedido` (
+  `id_pedido` INT NOT NULL AUTO_INCREMENT,
   `fecha` DATE NOT NULL,
   `direccion` VARCHAR(1000) NOT NULL,
   `compra_id_compra` INT UNSIGNED NOT NULL,
   `paquetes_id_paquetes` INT NOT NULL,
-  `id_pedido` INT NOT NULL AUTO_INCREMENT,
   INDEX `fk_Pedido_Compra1_idx` (`compra_id_compra` ASC) VISIBLE,
   INDEX `fk_Pedido_Paquetes1_idx` (`paquetes_id_paquetes` ASC) VISIBLE,
   PRIMARY KEY (`id_pedido`),
