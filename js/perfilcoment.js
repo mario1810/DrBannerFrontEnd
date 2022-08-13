@@ -136,6 +136,8 @@ function ocultarComprasAnteriores(){
 
     // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
+    btnComent.addEventListener('click',()=>{leeEstrella();});
+
     function leeEstrella() {
         let five= document.getElementById("five").checked;
         let four= document.getElementById("four").checked;
