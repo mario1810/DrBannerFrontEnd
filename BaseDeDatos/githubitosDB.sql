@@ -100,7 +100,7 @@ ENGINE = InnoDB;
 -- Table `Githubitos`.`caracteristicasPaquete`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Githubitos`.`caracteristicasPaquete` (
-  `paquetes_id_paquetes` INT NOT NULL,
+  `paquetes_id_paquetes` INT NOT NULL AUTO_INCREMENT,
   `cambios_ropa` VARCHAR(45) NULL,
   `fotos_digital` INT NULL,
   `fotos_impresas` INT NULL,
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `Githubitos`.`pedido` (
   `direccion` VARCHAR(1000) NOT NULL,
   `compra_id_compra` INT UNSIGNED NOT NULL,
   `paquetes_id_paquetes` INT NOT NULL,
-  `id_pedido` INT NOT NULL,
+  `id_pedido` INT NOT NULL AUTO_INCREMENT,
   INDEX `fk_Pedido_Compra1_idx` (`compra_id_compra` ASC) VISIBLE,
   INDEX `fk_Pedido_Paquetes1_idx` (`paquetes_id_paquetes` ASC) VISIBLE,
   PRIMARY KEY (`id_pedido`),
