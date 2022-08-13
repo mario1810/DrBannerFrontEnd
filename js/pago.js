@@ -10,6 +10,7 @@ let idUser=0; //temporalmente global
 const inputNombre=document.getElementById("Name");
 //const inputApellido=document.getElementById("lastName");
 const inputTarjeta=document.getElementById("cardNumber");
+const inputMesMsj=document.getElementById("messageMonth");
 const inputMes=document.getElementById("cardMonth");
 const inputYear=document.getElementById("cardYear");
 const inputCVV=document.getElementById("cvvNumber");
@@ -611,6 +612,7 @@ function corroborarMes(flag){
     clear(inputMes);
     if(inputMes.value.length!=2){
         inputMes.classList.add("is-invalid");
+        inputMesMsj.innerHTML="Mes debe ser de dos digitos";
         return false; 
     }
     else{
@@ -623,8 +625,8 @@ function corroborarMes(flag){
         let mes=parseInt(fecha.getMonth())+1;
         let anio=parseInt(fecha.getFullYear())-2000;
         if(parseInt(inputMes.value)<mes && parseInt(inputYear.value)==anio){
-           //alert("Fecha de tarjeta invalida");
            inputMes.classList.add("is-invalid");
+           inputMesMsj.innerHTML="Mes no válido. Tarjeta ha expirado.";
            return false;
         }else{
            inputMes.classList.add("is-valid");
