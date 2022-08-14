@@ -108,6 +108,10 @@ function mostrarFormaPago(){
 function mostrarComprasAnteriores(){
     document.getElementById('divComprasAnteriores').style.display = 'block';
 }
+//Compras anteriores
+function mostrarComentarios(){
+    document.getElementById('divComentarios').style.display = 'block';
+}
 
 
 /* Funciones ocultar tablas de datos ***************************8***********/
@@ -119,6 +123,12 @@ function ocultarDatosPersonales(){
 //Forma de pago
 function ocultarFormaPago(){
     document.getElementById('divFormasPago').style.display = 'none';
+  //  document.getElementById('btnformaPago').style.display = 'none';
+}
+
+//Ocultar comentarios
+function ocultarComent(){
+    document.getElementById('divComentarios').style.display = 'none';
   //  document.getElementById('btnformaPago').style.display = 'none';
 }
 //Compras anteriores 
@@ -136,24 +146,25 @@ function ocultarComprasAnteriores(){
 
     // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
-    btnComent.addEventListener('click',()=>{leeEstrella();});
+    btnComent.addEventListener('click',()=>{leeEstrella();enviaComentario()});
 
     function leeEstrella() {
+        //Lee si da un true o false porque las estrellas es como una lista
         let five= document.getElementById("five").checked;
+
         let four= document.getElementById("four").checked;
         let three= document.getElementById("three").checked;
         let two= document.getElementById("two").checked;
         let one= document.getElementById("one").checked;
         
-
+        //Envia el true/false y el valor numero correcpondiente a otra funcion
         enviarEstrella(five,5);
         enviarEstrella(four,4);
         enviarEstrella(three,3);
         enviarEstrella(two,2);
         enviarEstrella(one,1);
-
+       
         console.log("------------");
-
         
     }
 
@@ -170,6 +181,12 @@ function ocultarComprasAnteriores(){
         //     id: Number(userId),
         //     total: Number(totalC.substring(1, totalC.length)),
         // };
-      
+    }
+    
+
+    function enviaComentario() {
+        let comentario= document.getElementById("cajitaComent").value;
+        console.log(comentario);
+        //aqui debe ir el post que manda el valor de "numero"
     }
     
