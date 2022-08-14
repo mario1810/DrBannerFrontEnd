@@ -134,6 +134,7 @@
                   <li><a href="#" onclick="mostrarDatosPersonales()" title="" ><i></i> Datos personales</a></li>
                   <li><a href="#" onclick="mostrarFormaPago()" title=""><i></i> </i> Forma de pago</a></li>
                   <li><a href="#" onclick="mostrarComprasAnteriores()" title="" ><i></i> Compras anteriores</a></li>
+                  <li><a href="#" onclick="mostrarComentarios()" title="" ><i></i> Comentarios </a></li>
                 
               </ul>
           </div>
@@ -224,12 +225,22 @@
             <br>
             <div class="container my-3" >
                 <div class="row-cols-auto">
-                    <div class="col-sm-12 col-md-12 col-lg-12" id="divComentarios">
-                        <h2>Comentarios</h2>
-                        <div class="my-3">
-                      
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="container text-center">
+                        <div class="row">
+                          <div class="col">
+                            <h2 class="text-start">Comentarios</h2>
+                          </div>
+                          <div class="col">
+                            <button type="button" class="btn-close" aria-label="Close" onclick="ocultarComent()"></button>
+                          </div>
+                        </div>
+                      </div>
+                        
+                        
+                        <div id="divComentarios" class="my-3">
 
-                           
+                          <!-- Estrellas -->
                               <div class="center">
                                 <div class="stars">
                                   <input type="radio" id="five" name="rate" value="5">
@@ -244,11 +255,19 @@
                                   <label for="one"></label>
                                   <span class="result"></span>
                                 </div>
+                              </div>
+                          
+                            <!-- Cajita de comentarios -->
+                            <div class="form-floating">
+                              <textarea id="cajitaComent" class="form-control " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                              <label for="floatingTextarea2">¿Cómo describes nuestro servicio?</label>
                             </div>
-                          
-                          <button id="btnComent" type="button" class="btn btn-dark mybtn">ENVIAR</button>
-                          
-                          <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button>
+
+                            <!-- div de botoncito -->
+                            <div class="p-2">
+                              <button id="btnComent" type="button" class="btn btn-dark mybtn ">ENVIAR</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
