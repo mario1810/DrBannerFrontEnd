@@ -231,8 +231,10 @@
                           <div class="col">
                             <h2 class="text-start">Comentarios</h2>
                           </div>
-                          <div class="col">
-                            <button type="button" class="btn-close" aria-label="Close" onclick="ocultarComent()"></button>
+                          <div class="col" id="botonClose">
+                            <span id="botonActivo" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarComent()"></span>
+                            <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
+
                           </div>
                         </div>
                       </div>
@@ -260,7 +262,7 @@
                             <!-- Cajita de comentarios -->
                             <div class="form-floating">
                               <textarea id="cajitaComent" class="form-control " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
-                              <label for="floatingTextarea2">¿Cómo describes nuestro servicio?</label>
+                              <label for="floatingTextarea2">¿Cuál fue tu experiencia con nosotros?</label>
                             </div>
 
                             <!-- div de botoncito -->
@@ -296,9 +298,7 @@
       <br>
     </div>
 
-   
-    
-          
+
        
 
     <footer id="footer">

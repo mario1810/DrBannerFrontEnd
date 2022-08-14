@@ -128,9 +128,30 @@ function ocultarFormaPago(){
 
 //Ocultar comentarios
 function ocultarComent(){
+
+    if(document.getElementById('divComentarios').style.display=='none'){
+       document.getElementById('divComentarios').style.display = 'block';
+       document.getElementById('botonActivo').classList.replace("bi-plus-lg", "bi-x-lg");
+   }
+   else{
     document.getElementById('divComentarios').style.display = 'none';
-  //  document.getElementById('btnformaPago').style.display = 'none';
+    document.getElementById('botonActivo').classList.replace("bi-x-lg", "bi-plus-lg");
+   }
 }
+
+//cambiar el boton 
+// const botonActivo = document.getElementById("botonClose");
+
+// function cambiarBoton(elemento){
+
+//     if(elemento.classList.contains("is-valid")){
+//         elemento.classList.remove("is-valid");
+//     }
+//     if(elemento.classList.contains("is-invalid")){
+//         elemento.classList.remove("is-invalid");   
+//     }
+// }
+
 //Compras anteriores 
 function ocultarComprasAnteriores(){
     document.getElementById('divComprasAnteriores').style.display = 'none';
@@ -142,8 +163,8 @@ function ocultarComprasAnteriores(){
     cargarFormaDePago();
     cargarHistorialCompra();
 
-
-
+    
+    
     // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
     btnComent.addEventListener('click',()=>{leeEstrella();enviaComentario()});
@@ -183,6 +204,26 @@ function ocultarComprasAnteriores(){
         // };
     }
     
+    let comentario= document.getElementById("cajitaComent");
+
+    comentario.addEventListener("keydown",(event)=>{filtroTexto(event)});
+
+    function filtroTexto(e){
+        
+        //test es un método de la expresión regular (como length) para comprobar si tiene un caracter fuera de la expresión regulr o no
+       //console.log(e.key.charCodeAt(0));
+        if((comentario.value.length+1)<120||e.key.charCodeAt(0)==66||e.key.charCodeAt(0)==65){
+            //esta instruccion es para limitar los caracteres en el input de comentarios
+            //tambien se necesitan los ekey para que el caracter de las flechitas
+            //no se cuenten como caracteres
+        }else{
+            /**
+             Una llamada a preventDefault() del evento keydown impide la emisión del consiguiente evento keypress
+             //En otras palabras, el input no notará que se ha presionado una tecla, y por tanto no aparece
+             */
+            e.preventDefault();
+        }
+    }
 
     function enviaComentario() {
         let comentario= document.getElementById("cajitaComent").value;
@@ -190,3 +231,6 @@ function ocultarComprasAnteriores(){
         //aqui debe ir el post que manda el valor de "numero"
     }
     
+    //pa cambiar el iconito
+    //div.classList.replace("foo", "bar");
+    //document get element by id.classlist
