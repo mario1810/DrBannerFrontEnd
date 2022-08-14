@@ -13,6 +13,15 @@ const mensajeCarritoVacio=document.getElementById("carritoVacio");
 const totalPagar=document.getElementById("totalPagar");
 const btnPagar=document.getElementById("btnPagar");
 const mensajeSub= document.getElementById("numPaquetesTitulo");
+const divTabla=document.getElementById("divTabla");
+const divPago=document.getElementById("divPago");
+
+//Cmabio de etamaño de la pabtalla-> se ajusta el div de la tabla
+window.onresize=start;
+function start(){
+  let tamano=divPago.offsetHeight;
+  divTabla.style.height=tamano+"px";
+}
 
 /**
  * Se lamma la función tan pronto se cargue el documento HTML
@@ -81,6 +90,11 @@ function muestraPaquetesTabla(arrayPaquetes){
     mensajeCarritoVacio.innerHTML="";
     tablaBody.innerHTML="";
     totalPagar.innerHTML="$"+Number.parseFloat(0).toFixed(2);
+    
+    //Ajustar el tamaño del elemento hermano
+    let tamano=divPago.offsetHeight;
+    divTabla.style.height=tamano+"px";
+
     if(arrayPaquetes.length>0){
         let id=0;
         btnPagar.disabled=false;
