@@ -1,4 +1,7 @@
 /*Para el grid del navbar*/
+/*
+que sea sticky la navbar
+*/
 .row{
     padding-right: 0px;
     margin-right: 0px;
@@ -25,10 +28,10 @@
 }
 
 .colorNavH:hover{
-    color:aqua;
+    color:#D9D0BF;
 }
 .colorNavF:focus{
-    color:aqua;
+    color:#D9D0BF;
 }
 
 
@@ -50,8 +53,15 @@
 body{
     background: #F2F2F2    ;
     font-family: 'Montserrat', sans-serif;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 #iconUser{
     cursor:pointer;
+}
+
+footer{
+    margin-top: auto;
 }
