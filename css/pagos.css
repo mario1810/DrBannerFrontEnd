@@ -51,23 +51,29 @@
 }
 
 /*Div  que contiene la foto o el texto promocional*/
+
 .ocultarImagen{
     display:block;
 }
 
-@media(max-width:1200px){
+@media(max-width:1225px){
     .ocultarImagen{
         display:none;
     }
 }
 
 
-@media(max-width:1200px){
+.ocultarTextoProm{
+    display:block;
+}
+
+@media(max-width:768px){
     .ocultarTextoProm{
-        display:block;
+        display:none;
     }
 }
-@media(min-width:1200px){
+
+@media(min-width:1226px){
     .ocultarTextoProm{
         display:none;
     }
@@ -81,7 +87,7 @@ h2{
     margin: auto;
     margin-top: 0;
     margin-bottom: 0;
-    max-width:500px;    
+    max-width:490px;    
 }
 
 @media(max-width:576px){

@@ -77,6 +77,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
 
   //Función que llama requetGet para obtener los datos del usuario y los despliega en el formulario
  async function solicitudDatosForm() {
+    console.log();
     let usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
     
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
