@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/general.css"/>
     <link rel="stylesheet" href="/css/perfil.css">
+    <link rel="stylesheet" href="/css/perfilcoment.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
@@ -120,150 +121,163 @@
                         <span>Cambiar foto</span>
                     </a>
                 </div>
-                <!--
                 <div class="datos-perfil">
                     <h4 class="titulo-usuario">Nombre de usuario</h4>
                     <p class="bio-usuario">Bienvenido , es un gusto tenerte de vuelta.</p>
                 </div>
-                <div class="opcciones-perfil">
+                <!--<div class="opcciones-perfil">
                     <button type="">Cambiar portada</button>
-                </div>
+                </div>-->
             </div>
             <div class="menu-perfil">
               <ul>
                   <li><a href="#" onclick="mostrarDatosPersonales()" title="" ><i></i> Datos personales</a></li>
                   <li><a href="#" onclick="mostrarFormaPago()" title=""><i></i> </i> Forma de pago</a></li>
                   <li><a href="#" onclick="mostrarComprasAnteriores()" title="" ><i></i> Compras anteriores</a></li>
+                  <li><a href="#" onclick="mostrarComentarios()" title="" ><i></i> Comentarios </a></li>
+                
               </ul>
           </div>
-               -->
         </div>
       </div>
-    </section>
           <br>
-          <br>
-          <div class="container my-3" >
-            <div class="row-cols-auto">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                  <div class="container text-center">
-                    <div class="row">
-                      <div class="col">
-                        <h2 class="text-start">Datos personales</h2>
-                      </div>
-                      <div class="col" id="botonClose">
-                        <span id="botonActivoDatosPersonales" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarDatosPersonales()"></span>
-                        <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
-                      
-                      </div>
+          <div>
+            <div class="container my-3" >
+                <div class="row-cols-auto" >
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="divDatosPesonales">
+                        <h2>Datos personales</h2>
+                        <div class="">
+                            <table class="table table-hover text-center" id="tablaDatosPersonales">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Correo</th>
+                                        <th scope="col">Contraseña</th>
+                                        <th scope="col">Telefono</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datosPersonales">
+                                        
+                                </tbody>
+
+                            </table>
+                            <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarDatosPersonales()">Ocultar</button>
+                        </div>
                     </div>
-                  </div>
-      
-              <div class="col-sm-12 col-md-12 col-lg-12" id="divDatosPesonales">
-                <div class="my-3">
-                          <table class="table  table-hover text-break" id="tablaDatosPersonales">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">Nombre</th>
-                                      <th scope="col">Apellidos</th>
-                                      <th scope="col">Correo</th>
-                                      <th scope="col">Contraseña</th>
-                                      <th scope="col">Telefono</th>
-                                  </tr>
-                              </thead>
-                              <tbody id="datosPersonales">
-                                
-                              </tbody>
-
-                          </table>
-                          <!--<button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarDatosPersonales()">Ocultar</button>-->
-                      </div>
-                  </div>
-              </div>
+                </div>
             </div>
-            </div>
-            <br>
-          <div class="container my-3" >
-            <div class="row-cols-auto">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                  <div class="container text-center">
-                    <div class="row">
-                      <div class="col">
-                        <h2 class="text-start">Formas de pago</h2>
-                      </div>
-                      <div class="col" id="botonClose">
-                        <span id="botonActivoFormasPago" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarFormaPago()"></span>
-                        <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
+              <br>
+            <div class="container my-3" >
+                <div class="row-cols-auto">
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="divFormasPago">
+                        <h2>Fromas de pago</h2>
+                        <div class="my-3">
+                            <table class="table table-hover text-center" id="tablaFormaPago">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Tarjeta/th>
+                                        <th scope="col">Numero</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datosFormaPago">
+                                        
+                                </tbody>
 
-                      </div>
+                            </table>
+                            <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button>
+                        </div>
                     </div>
-                  </div>
-            
-              <div class="col-sm-12 col-md-12 col-lg-12" id="divFormasPago">
-                <div class="my-3">              
-                          <table class="table table-hover text-break" id="tablaFormaPago">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">Nombre</th>
-                                      <th scope="col">Apellidos</th>
-                                      <th scope="col">Tarjeta</th>
-                                      <th scope="col">Numero</th>
-                                  </tr>
-                              </thead>
-                              <tbody id="datosFormaPago">
-                                
-                              </tbody>
+                </div>
+            </div>
+              <br>
+            <div class="container-fluid my-3" >
+                <div class="row-cols-auto">
+                    <div class="col-sm-12 col-md-12 col-lg-12" id="divComprasAnteriores">
+                        <h2>Compras anteriores</h2>
+                        <div class="my-3">
+                            <table class="table table-hover text-center" id="tablaCompras" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Paquete</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Costo</th>
+                                        <th scope="col">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datosHistorialCompras">
+                                        
+                                </tbody>
 
-                          </table>
-                          <!-- <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button> -->
-                      </div>
-                  </div>
-              </div>
+                            </table>
+                            <button type="button" class="btn btn-dark" id="btnHistorialCompra" onclick="ocultarComprasAnteriores()">Ocultar</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            </div>
+              <!--========================================================== -->
+                              <!-- COMENTARIOS -->
+              <!--========================================================== -->
             <br>
             <div class="container my-3" >
-              <div class="row-cols-auto">
-                  <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="container text-center">
-                      <div class="row">
-                        <div class="col">
-                          <h2 class="text-start">Compras anteriores</h2>
-                        </div>
-                        <div class="col" id="botonClose">
-                          <span id="botonActivoComprasAnteriores" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarComprasAnteriores()"></span>
-                          <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
-  
-                        </div>
-                      </div>
-                    </div>
-        
-                  <div class="col-sm-12 col-md-12 col-lg-12" id="divComprasAnteriores">
-                      <div class="my-3">
-                          <table class="table table-hover text-center " id="tablaCompras" >
-                              <thead>
-                                  <tr>
-                                      <th scope="col">ID</th>
-                                      <th scope="col">Paquete</th>
-                                      <th scope="col">Tipo</th>
-                                      <th scope="col">Costo</th>
-                                      <th scope="col">Fecha</th>
-                                  </tr>
-                              </thead>
-                              <tbody id="datosHistorialCompras">
-                                      
-                              </tbody>
+                <div class="row-cols-auto">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                      <div class="container text-center">
+                        <div class="row">
+                          <div class="col">
+                            <h2 class="text-start">Comentarios</h2>
+                          </div>
+                          <div class="col" id="botonClose">
+                            <span id="botonActivo" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarComent()"></span>
+                            <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
 
-                          </table>
-                          <!--<button type="button" class="btn btn-dark" id="btnHistorialCompra" onclick="ocultarComprasAnteriores()">Ocultar</button>-->
+                          </div>
+                        </div>
                       </div>
-                  </div>
-              </div>
+                        
+                        
+                        <div id="divComentarios" class="my-3">
+
+                          <!-- Estrellas -->
+                              <div class="center">
+                                <div class="stars">
+                                  <input type="radio" id="five" name="rate" value="5">
+                                  <label for="five"></label>
+                                  <input type="radio" id="four" name="rate" value="4">
+                                  <label for="four"></label>
+                                  <input type="radio" id="three" name="rate" value="3">
+                                  <label for="three"></label>
+                                  <input type="radio" id="two" name="rate" value="2">
+                                  <label for="two"></label>
+                                  <input type="radio" id="one" name="rate" value="1">
+                                  <label for="one"></label>
+                                  <span class="result"></span>
+                                </div>
+                              </div>
+                          
+                            <!-- Cajita de comentarios -->
+                            <div class="form-floating">
+                              <textarea id="cajitaComent" class="form-control " placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                              <label for="floatingTextarea2">¿Cuál fue tu experiencia con nosotros?</label>
+                            </div>
+
+                            <!-- div de botoncito -->
+                            <div class="p-2">
+                              <button id="btnComent" type="button" class="btn btn-dark mybtn ">ENVIAR</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-          </div>
-      
     
       
-  
+  </section>
     <div>
       <!--Div donde se desplegará la info-->
       
@@ -283,6 +297,10 @@
       <br>
       <br>
     </div>
+
+
+       
+
     <footer id="footer">
       <div class="flex-container">
         <!-- Logo -->
@@ -320,6 +338,6 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/navbar.js"></script>
-    <script src="/js/perfil.js"></script>
+    <script src="/js/perfilcoment.js"></script>
 </body>
 </html>

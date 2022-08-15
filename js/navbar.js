@@ -15,7 +15,7 @@ async function actualizarIconos(){
     let logged=isUserLogged();
 
     if(logged){
-      iconoUsuario.style.color="greenyellow"; // Si se dio de alta, el icono cmbia a verde
+      iconoUsuario.style.color="#D9D0BF"; // Si se dio de alta, el icono cmbia a verde
       //iconoUsuario.style.cursor="pointer";
     }else{
       iconoUsuario.style.color="#F2F2F2"; // Si no se dio de alta, el icono cmbia a blanco

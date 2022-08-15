@@ -25,17 +25,7 @@ background-repeat: no-repeat;
 height: 100vh;
 }
 
-#testimonials{
-background-color: #D9D0BF;
-/* border: solid 1px black; */
 
-
-}
-
-#derecha-comment{
-
-
-}
 
 .avatar{
  width: 80px;
@@ -86,7 +76,7 @@ padding: 2rem;
 }
 
 
-#Dr, #derechos, #sig{
+#Dr, #derechos{
 color: #F2F2F2;
 text-align: center;
 }
@@ -95,6 +85,39 @@ p{
 text-align: justify;
 }
 
+/* Caja de comentarios */
+#carouselExampleControls{
+  /* border: solid 1px black; */
+  height: 400px;
+  background-color: #D9D0BF;
+  width: 80%;
+  margin: auto;
+}
 
 
 
+/* Estilo del cintillo */
+
+#cintillo{
+  background-color: #D9D0BF;
+  width: 100%;
+  margin: auto;
+}
+
+/* tabla dentro de cintillo */
+/* #tablita{
+background-color: aquamarine;
+border: solid 1px black;
+} */
+
+.celda{
+  border: solid 1px black;
+}
+
+/* .textoCintilloIz{
+text-align: center;
+} */
+
+/* .textoComent{
+  color: aqua;
+} */

@@ -5,8 +5,8 @@
     "nombre": "Azucena",
     "apellido": "Ceniceros",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "Las mejores fotografias están aqui",
-    "stars": "5"
+    "comentario": "My studio primarily focuses on international and destination luxury weddings. But no love celebration is too  large or too small. I have worked with couples from intimate elopment  to large scale  luxury celebrations.  In addition, my  amazing clients have taken me to some of the most amazing locations in the  world, such as  Italy,  Mexico, Taiwan, Tailand,  Shanghai and all over United States.",
+    "stars": "1"
 },
 
 {
@@ -15,7 +15,7 @@
     "apellido": "Ruiz",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "5"
+    "stars": "4"
 },
 
 {
@@ -24,7 +24,7 @@
     "apellido": "Fdz",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": "icing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "5"
+    "stars": "2"
 },
 
 {
@@ -41,7 +41,7 @@
     "apellido": "Alvarez",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": " quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "5"
+    "stars": "4"
 },
 {
     "id":6,
@@ -49,16 +49,17 @@
     "apellido": "Flores",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": "quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magniquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni loremquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "5"
+    "stars": "3"
 },
 {
-    "id":6,
+    "id":7,
     "nombre": "Tania",
     "apellido": "Gayoso",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
     "comentario": "quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magniquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni loremquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "5"
+    "stars": "2"
 }
 ]
 }
+
 
