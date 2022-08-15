@@ -129,7 +129,7 @@
     background-color: #404040;
     color: #f2f2f2;
 }
-/*Ocultar las tablas */
+/*Ocultar las tablas 
 #divDatosPesonales{
     display: none;
 }
@@ -140,7 +140,7 @@
     display: none;
 }
 
-
+*/
 
 .table{
     width: 100%;
@@ -193,4 +193,56 @@
         box-shadow: 0 0 12px 2px rgba(0, 0, 0, .1);
     }
     
+}
+
+@media only screen and (max-width:1000px){
+    #tablaDatosPersonales tbody ,
+    #tablaDatosPersonales tr,
+    #tablaDatosPersonales td{
+        display: block;
+    }
+    #tablaDatosPersonales thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    #tablaDatosPersonales  td{
+        position: relative;
+        padding-left: 50%;
+    }
+    #datosPersonales td:before{
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+    #datosPersonales tr{
+        border-bottom: 1px solid;
+    }
+    #tablaFormaPago tbody ,
+    #tablaFormaPago tr,
+    #tablaFormaPago td{
+        display: block;
+    }
+    #tablaFormaPago thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    #tablaFormaPago  td{
+        position: relative;
+        padding-left: 50%;
+    }
+    #datosFormaPago td:before{
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+    #datosFormaPago tr{
+        border-bottom: 1px solid;
+    }
+}
+#botonClose span{
+    font-size: 20pt;
 }
