@@ -67,3 +67,7 @@ footer{
     width: 100%;
     /* overflow-y: hidden; */
 }
+
+.navbarbrand{
+    text-decoration: none; 
+}
