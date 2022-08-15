@@ -32,7 +32,7 @@ const checkC= document.getElementById("checkCompra");
 const messageC=document.getElementById("mensajeCompra");
 //Envento de boton de compra finalizada
 //btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
-
+const guardarTarjeta=document.getElementById("Check3");
 
 /**
  * 
@@ -77,7 +77,6 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
 
   //Función que llama requetGet para obtener los datos del usuario y los despliega en el formulario
  async function solicitudDatosForm() {
-    console.log();
     let usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
     
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
@@ -750,7 +749,7 @@ function getUserId(){
  * @returns Valor booleano indicando si la información se envio a la API o no (Si la compra se realizó o no)
  */
  async function pagoEnvioPost(){
-    let tT="";
+    let tT=null;
     //let tMeses=inputGroupMeses.value;
     if(rbTC.checked){
         tT=rbTC.value;
@@ -768,6 +767,7 @@ function getUserId(){
             anio:Number(inputYear.value),
             cvv:Number(inputCVV),
             tipo:String(tT),
+            guardar:guardarTarjeta.checked
         },
         //Ya está el costo total en la base de datos
         //total: Number(totPagar.value),
