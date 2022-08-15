@@ -104,3 +104,16 @@ text-align: justify;
   margin: auto;
 }
 
+/* tabla dentro de cintillo */
+/* #tablita{
+background-color: aquamarine;
+border: solid 1px black;
+} */
+
+.celda{
+  border: solid 1px black;
+}
+
+/* .textoCintilloIz{
+text-align: center;
+} */
