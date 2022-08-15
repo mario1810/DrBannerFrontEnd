@@ -612,7 +612,7 @@ function corroborarMes(flag){
     clear(inputMes);
     if(inputMes.value.length!=2){
         inputMes.classList.add("is-invalid");
-        inputMesMsj.innerHTML="Mes debe ser de dos digitos";
+        inputMesMsj.innerHTML="Deben ser dos digitos";
         return false; 
     }
     else{
@@ -626,7 +626,7 @@ function corroborarMes(flag){
         let anio=parseInt(fecha.getFullYear())-2000;
         if(parseInt(inputMes.value)<mes && parseInt(inputYear.value)==anio){
            inputMes.classList.add("is-invalid");
-           inputMesMsj.innerHTML="Mes no válido. Tarjeta ha expirado.";
+           inputMesMsj.innerHTML="Tarjeta ha expirado.";
            return false;
         }else{
            inputMes.classList.add("is-valid");
