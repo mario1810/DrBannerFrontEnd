@@ -32,7 +32,7 @@ const checkC= document.getElementById("checkCompra");
 const messageC=document.getElementById("mensajeCompra");
 //Envento de boton de compra finalizada
 //btnFinCompra.addEventListener("click",()=>{window.location.assign("/index.html"); });
-
+const guardarTarjeta=document.getElementById("Check3");
 
 /**
  * 
@@ -612,7 +612,7 @@ function corroborarMes(flag){
     clear(inputMes);
     if(inputMes.value.length!=2){
         inputMes.classList.add("is-invalid");
-        inputMesMsj.innerHTML="Mes debe ser de dos digitos";
+        inputMesMsj.innerHTML="Deben ser dos digitos";
         return false; 
     }
     else{
@@ -626,7 +626,7 @@ function corroborarMes(flag){
         let anio=parseInt(fecha.getFullYear())-2000;
         if(parseInt(inputMes.value)<mes && parseInt(inputYear.value)==anio){
            inputMes.classList.add("is-invalid");
-           inputMesMsj.innerHTML="Mes no válido. Tarjeta ha expirado.";
+           inputMesMsj.innerHTML="Tarjeta ha expirado.";
            return false;
         }else{
            inputMes.classList.add("is-valid");
@@ -749,7 +749,7 @@ function getUserId(){
  * @returns Valor booleano indicando si la información se envio a la API o no (Si la compra se realizó o no)
  */
  async function pagoEnvioPost(){
-    let tT="";
+    let tT=null;
     //let tMeses=inputGroupMeses.value;
     if(rbTC.checked){
         tT=rbTC.value;
@@ -767,6 +767,7 @@ function getUserId(){
             anio:Number(inputYear.value),
             cvv:Number(inputCVV),
             tipo:String(tT),
+            guardar:guardarTarjeta.checked
         },
         //Ya está el costo total en la base de datos
         //total: Number(totPagar.value),

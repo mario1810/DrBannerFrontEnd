@@ -1,3 +1,7 @@
+.perfil-usuario {
+    background: linear-gradient(#0D0D0D, transparent);
+    color:  #404040;
+}
 .row{
     padding-right: 0px;
     margin-right: 0px;
@@ -37,7 +41,7 @@
     margin-bottom: 20px;
 }
 .imagen{
-    width:80%; 
+    width:60%; 
     margin:auto;
 }
 .textoDescripcion{
@@ -53,28 +57,31 @@
 }
 .costoTotal{
     text-align: center;
-    font-size: 40px;
+    
     font-weight: 700;
 
 }
-
-.secctionTabla{
+@media(max-width:330px){
+    .costoTotal{
+        width: auto;
+    }
+}
+.sectionTabla{
     padding-right:0;
     padding-left:0;
-    background-color: white;
 }
 
 .encabezado{
-    font-size: 60px;
     padding: 20px;
     font-weight: 700;
+    color:#F2F2F2
 }
 .subencabezado{
-    font-size: 30px;
+    
     padding: 20px;
     padding-bottom:80px;
     font-weight: 700;
-    color: #404040;
+    color: #D9D0BF;
 }
 
 @media(max-width:992px){
@@ -83,13 +90,15 @@
         margin:auto;
     }
     .contenedorPago{
+        box-sizing: border-box;
         margin:auto;
         width: 90%;
         padding: 10px;
         padding-top:15px;
-    }   
-    
+        margin-bottom: 20px;
+    }    
 }
+
 h2{
     font-family: 'Montserrat', sans-serif;
 }
@@ -97,32 +106,27 @@ h2{
     text-align: center;
 }
 
+
 .contenedorDos{
-    padding: 0;
-    margin-right: 20px;
+    
+    box-sizing: border-box;
     margin-left: 20px;
-    margin-bottom: 20px;
+    padding:0px;
+    overflow-y: scroll;
 }
-.contenedorTabla{
-    background-color: white;
-    min-height: 100%;
-    overflow-y: scroll;    
-}
+
 @media(max-width:992px){
     .contenedorDos{
-        padding: 0;
-        margin-right: 48px;
-        margin-left: 48px;
+        box-sizing: border-box;
+        margin:auto;
         margin-bottom: 20px;
-    }
-    .contenedorTabla{
-        max-width: 90%;
-        overflow-y: scroll;    
+        width: 90%;
+        padding:0px;
     }
 }
 
 .textoCarrito{
-    font-family:cursive;
+    font-family:'Montserrat';
     margin: auto;
     width: 80%;
     text-align: center;
@@ -138,3 +142,32 @@ h2{
     margin-bottom: 10px;
     display: block;
 }
+
+@media(max-width:330px){
+    .botonesStyle{
+        width: auto;     
+    }
+}
+
+h3{
+ font-weight: 600;
+}
+
+.bordeoutset{
+    border: 10px outset #D9D0BF;
+    background-color: #D9D0BF;
+
+ }
+
+
+ .table .headingTable{
+     /* Stick to the top */
+     background-color: #404040;
+     position: sticky;
+     top: 0px;
+ }
+
+
+
+
+ 

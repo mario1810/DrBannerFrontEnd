@@ -120,13 +120,14 @@
                         <span>Cambiar foto</span>
                     </a>
                 </div>
+                <!--
                 <div class="datos-perfil">
                     <h4 class="titulo-usuario">Nombre de usuario</h4>
                     <p class="bio-usuario">Bienvenido , es un gusto tenerte de vuelta.</p>
                 </div>
-                <!--<div class="opcciones-perfil">
+                <div class="opcciones-perfil">
                     <button type="">Cambiar portada</button>
-                </div>-->
+                </div>
             </div>
             <div class="menu-perfil">
               <ul>
@@ -135,16 +136,31 @@
                   <li><a href="#" onclick="mostrarComprasAnteriores()" title="" ><i></i> Compras anteriores</a></li>
               </ul>
           </div>
+               -->
         </div>
       </div>
+    </section>
           <br>
-          <div>
+          <br>
           <div class="container my-3" >
-              <div class="row-cols-auto" >
-                  <div class="col-sm-12 col-md-12 col-lg-12" id="divDatosPesonales">
-                      <h2>Datos personales</h2>
-                      <div class="">
-                          <table class="table table-hover text-center" id="tablaDatosPersonales">
+            <div class="row-cols-auto">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <h2 class="text-start">Datos personales</h2>
+                      </div>
+                      <div class="col" id="botonClose">
+                        <span id="botonActivoDatosPersonales" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarDatosPersonales()"></span>
+                        <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
+                      
+                      </div>
+                    </div>
+                  </div>
+      
+              <div class="col-sm-12 col-md-12 col-lg-12" id="divDatosPesonales">
+                <div class="my-3">
+                          <table class="table  table-hover text-break" id="tablaDatosPersonales">
                               <thead>
                                   <tr>
                                       <th scope="col">Nombre</th>
@@ -155,47 +171,75 @@
                                   </tr>
                               </thead>
                               <tbody id="datosPersonales">
-                                      
+                                
                               </tbody>
 
                           </table>
-                          <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarDatosPersonales()">Ocultar</button>
+                          <!--<button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarDatosPersonales()">Ocultar</button>-->
                       </div>
                   </div>
               </div>
             </div>
+            </div>
             <br>
           <div class="container my-3" >
-              <div class="row-cols-auto">
-                  <div class="col-sm-12 col-md-12 col-lg-12" id="divFormasPago">
-                      <h2>Fromas de pago</h2>
-                      <div class="my-3">
-                          <table class="table table-hover text-center" id="tablaFormaPago">
+            <div class="row-cols-auto">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="container text-center">
+                    <div class="row">
+                      <div class="col">
+                        <h2 class="text-start">Formas de pago</h2>
+                      </div>
+                      <div class="col" id="botonClose">
+                        <span id="botonActivoFormasPago" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarFormaPago()"></span>
+                        <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
+
+                      </div>
+                    </div>
+                  </div>
+            
+              <div class="col-sm-12 col-md-12 col-lg-12" id="divFormasPago">
+                <div class="my-3">              
+                          <table class="table table-hover text-break" id="tablaFormaPago">
                               <thead>
                                   <tr>
                                       <th scope="col">Nombre</th>
                                       <th scope="col">Apellidos</th>
-                                      <th scope="col">Tarjeta/th>
+                                      <th scope="col">Tarjeta</th>
                                       <th scope="col">Numero</th>
                                   </tr>
                               </thead>
                               <tbody id="datosFormaPago">
-                                      
+                                
                               </tbody>
 
                           </table>
-                          <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button>
+                          <!-- <button type="button" class="btn btn-dark" id="btnDatosPersonales" onclick="ocultarFormaPago()">Ocultar</button> -->
                       </div>
                   </div>
               </div>
             </div>
+            </div>
             <br>
-          <div class="container-fluid my-3" >
+            <div class="container my-3" >
               <div class="row-cols-auto">
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col">
+                          <h2 class="text-start">Compras anteriores</h2>
+                        </div>
+                        <div class="col" id="botonClose">
+                          <span id="botonActivoComprasAnteriores" type="button" class="bi-x-lg" aria-label="Close" onclick="ocultarComprasAnteriores()"></span>
+                          <!-- <button onclick="ocultarComent()"><i class="bi bi-instagram"></i></button> -->
+  
+                        </div>
+                      </div>
+                    </div>
+        
                   <div class="col-sm-12 col-md-12 col-lg-12" id="divComprasAnteriores">
-                      <h2>Compras anteriores</h2>
                       <div class="my-3">
-                          <table class="table table-hover text-center" id="tablaCompras" >
+                          <table class="table table-hover text-center " id="tablaCompras" >
                               <thead>
                                   <tr>
                                       <th scope="col">ID</th>
@@ -210,16 +254,16 @@
                               </tbody>
 
                           </table>
-                          <button type="button" class="btn btn-dark" id="btnHistorialCompra" onclick="ocultarComprasAnteriores()">Ocultar</button>
+                          <!--<button type="button" class="btn btn-dark" id="btnHistorialCompra" onclick="ocultarComprasAnteriores()">Ocultar</button>-->
                       </div>
                   </div>
               </div>
-
           </div>
-      </div>
+          </div>
+      
     
       
-  </section>
+  
     <div>
       <!--Div donde se desplegará la info-->
       

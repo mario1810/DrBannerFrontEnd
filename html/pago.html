@@ -37,48 +37,48 @@
           </div>
         </div>
       </header>
-    <main class="container-max-width text-center mainBackground">
+    <main class="container-max-width text-center color2">
         <div class="row">
-            <section class="container col-12 col-lg-6 justify-content-center align-items-center color2 tamContainerForm">
-                <h2 class="encabezado">Proceso de compra</h2>
+            <section class="container col-12 col-md-6 col-lx-5 justify-content-center align-items-center color2 tamContainer">
                 <form class="row" id="formPago">
-                  <div class="col-12 col-sm-12">
+                  <h2 class="fs-2 fw-semibold mt-3">Proceso de compra</h2>
+                  <div class="col-12  mb-2">
                     <label for="Name" class="form-label">Nombre Completo</label>
                     <input type="text" class="form-control textInputPos" id="Name" >                    
-                    <div class="invalid-feedback">Ingresa al menos un nombre y apellido.</div>
+                    <div class="invalid-feedback">Ingresa un nombre y apellido</div>
                   </div>
                   <!--<div class="col-12 col-sm-6">
                     <label for="lastName" class="form-label">Apellido(s)</label>
                     <input type="text" class="form-control textInputPos" id="lastName" >                    
                   </div>-->
-                  <label class="subEncabezado">Datos de la tarjeta</label>
-                  <div class="col-12">
+              
+                  <div class="col-12 mb-2 ">
                     <label for="cardNumber" class="form-label">Número de tarjeta</label>
                     <input type="text" class="form-control textInputPos" id="cardNumber">
-                    <div class="invalid-feedback">El número de la tarjeta debe ser de 16 dígitos.</div>
-                  </div>
-                  <div class="col-12  col-sm-4">
-                      <label for="cardMonth" class="form-label labelData">Mes</label>
+                    <div class="invalid-feedback ">Deben ser de 16 dígitos</div>
+                    </div>
+                  <div class="col-12  col-sm-4 mb-2">
+                      <label for="cardMonth" class="form-label">Mes</label>
                       <input type="text" class="form-control tamInput textInputPos" id="cardMonth"  placeholder="mm">
-                      <div class="invalid-feedback" id="messageMonth"></div>
+                      <div class="invalid-feedback " id="messageMonth">Deben ser dos dígitos</div>
                   </div>
-                  <div class="col-12  col-sm-4">
-                      <label for="cardYear" class="form-label labelData">Año</label>
+                  <div class="col-12  col-sm-4 mb-2 ">
+                      <label for="cardYear" class="form-label">Año</label>
                       <input type="text" class="form-control tamInput textInputPos" id="cardYear" placeholder="yy">
-                      <div class="invalid-feedback">Año debe ser de dos digitos.</div>
+                      <div class="invalid-feedback ">Deben ser dos digitos</div>
                   </div>
                   
-                  <div class="col-12 col-sm-4">
-                      <label for="cvvNumber" class="form-label labelData">CVV</label>
+                  <div class="col-12 col-sm-4 mb-2 ">
+                      <label for="cvvNumber" class="form-label">CVV</label>
                       <input type="text" class="form-control tamInput textInputPos" id="cvvNumber" placeholder="cvv">
-                      <div class="invalid-feedback">CVV no válido, deben ser 3 dígitos.</div>
-                  </div>
-                  <div class="col-12 col-sm-12">
-                      <label class="form-label subEncabezado2">Tipo de tarjeta</label>
+                      <div class="invalid-feedback ">Deben ser 3 dígitos</div>
+                  </div>        
+                  <div class="col-12 col-sm-12 text-start mb-4 mt-1 ">        
+                      <input class="form-check-input" type="radio" name="tarjeta" value="Credito" id="TC" checked="checked"> <label class="form-label" for="TC">Crédito</label>
                       <br>
-                      <input class="form-check-input" type="radio" name="tarjeta" value="Credito" id="TC" checked="checked"> Crédito
+                      <input  class="form-check-input" type="radio" name="tarjeta" value="Debito" id="TD"> <label class="form-label" for="TD">Dédito</label>
                       <br>
-                      <input  class="form-check-input" type="radio" name="tarjeta" value="Debito" id="TD"> Débito
+                      <label class="form-label" for="Check3"><input class="form-check-input" type="checkbox" value="" id="Check3"> Recordar tipo y número de tarjeta</label> 
                   </div>
                   <!--
                   <div class="col-12 col-sm-6 align-items-center">
@@ -91,22 +91,29 @@
                         <option value="3">12</option>
                       </select>
                     </div>
-                  </div>-->
-                  <div class="col-12 ">
+                  </div>-->  
+                  <hr>
+                  <div class="col-12 mb-4">
                     <div class="input-group mb-3 totalP">
-                      <span class="input-group-text text-bg-light">Total $</span>
+                      <span class="input-group-text text-bg-light">Cargo $</span>
                       <input type="text" class="form-control" id="totalPagar" disabled style="background-color: white;">
                     </div>
                   </div>                  
                   <div class="col-12">
-                    <button class="btn btn-dark marginBotones" type="button" id="bComprar"> Pagar</button>
-                    <button class="btn btn-dark marginBotones" type="button" id="bCancelar">Cancelar</button>
+                    <button class="btn btn-dark botonesEstilo" type="button" id="bComprar"> <i class="bi bi-check-circle"></i> Pagar</button>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <button class="btn btn-dark botonesEstilo" type="button" id="bCancelar"><i class="bi bi-x-circle"></i> Cancelar </button>
                   </div>
                 </form>              
               </section>
-            <section class="col-12 col-lg-6 paddingContenedorImagen ocultar">
+            <section class="col-12 col-md-6 col-xl-7 color3 paddingContenedor">
               <!--https://i.ibb.co/bJDffXZ/XV.jpg-->
-                <div class="marginControl"><img src="https://i.ibb.co/MNVNSyD/XV52.jpg" class="imagen"></div>
+                <div class="marginControl ocultarImagen"><img src="https://i.ibb.co/MNVNSyD/XV52.jpg" class="imagen"></div>
+                <h1 class="my-5 display-4 display-lg-3 fw-bold  ocultarTextoProm">
+                  Las mejores fotos están <br>en <br>
+                  <span class="fw-bold" id="fotos">Dr. Banner Photography</span>
+                </h1>
             </section>
         </div>
     </main>
