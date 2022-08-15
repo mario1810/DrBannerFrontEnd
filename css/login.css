@@ -94,3 +94,9 @@ a {
   left: -35px;
   content: "✖";
 }
+
+footer{
+  font-family: 'Montserrat', sans-serif;
+  color: #f2f2f2;
+  background-color: #404040;
+}
