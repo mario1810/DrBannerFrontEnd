@@ -27,16 +27,6 @@ height: 100vh;
 
 
 
-/* Caja de comentarios */
-#carouselExampleControls{
-  /* border: solid 1px black; */
-  height: 400px;
-  background-color: #D9D0BF;
-  width: 80%;
-  margin: auto;
-}
-
-
 .avatar{
  width: 80px;
  height: 80px;
@@ -95,6 +85,16 @@ p{
 text-align: justify;
 }
 
+/* Caja de comentarios */
+#carouselExampleControls{
+  /* border: solid 1px black; */
+  height: 400px;
+  background-color: #D9D0BF;
+  width: 80%;
+  margin: auto;
+}
+
+
 
 /* Estilo del cintillo */
 
@@ -116,4 +116,8 @@ border: solid 1px black;
 
 /* .textoCintilloIz{
 text-align: center;
+} */
+
+/* .textoComent{
+  color: aqua;
 } */
