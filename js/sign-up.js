@@ -45,6 +45,8 @@ function btnRegistro(){
   ) {
     //Post
     localStorage.setItem('userId', '22');
+    window.location.assign("/html/perfil.html");
+
   } else {
     if (!inputNombre.classList.contains("is-valid")) {
       clear(inputNombre);
