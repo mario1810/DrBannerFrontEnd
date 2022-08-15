@@ -22,11 +22,11 @@ function cargarDatosPersonales(){
         let datos = "";
         for (let usuario of arreglo) {
             datos = datos + `<tr>
-            <td>${usuario.nombre}</td>  
-            <td>${usuario.apellido}</td>
-            <td>${usuario.correo}</td>   
-            <td>${usuario.contra}</td>
-            <td>${usuario.telefono}</td>
+            <td data-title="Nombre">${usuario.nombre}</td>  
+            <td data-title="Apellidos">${usuario.apellido}</td>
+            <td data-title="Correo">${usuario.correo}</td>   
+            <td data-title="Contraseña">${usuario.contra}</td>
+            <td data-title="Telefono"> ${usuario.telefono}</td>
             </tr>`;
         }
         document.getElementById("datosPersonales").innerHTML = datos;
@@ -48,10 +48,10 @@ function cargarFormaDePago(){
         let datosPago = "";
         for (let pago of arregloPago) {
             datosPago = datosPago + `<tr>
-            <td>${pago.nombre}</td>
-            <td>${pago.apellido}</td>
-            <td>${pago.tarjeta.tipo}</td>                   
-            <td>${pago.tarjeta.numeroTarjeta}</td>
+            <td data-title="Nombre">${pago.nombre}</td>
+            <td data-title="Apellido">${pago.apellido}</td>
+            <td data-title="Tarjeta">${pago.tarjeta.tipo}</td>                   
+            <td data-title="Numero">${pago.tarjeta.numeroTarjeta}</td>
             </tr>`; //Linea 46 deberia ser tarjeta.pago , pero la wabada bota error(grita en silencio)
         }
         document.getElementById("datosFormaPago").innerHTML = datosPago;
@@ -125,7 +125,42 @@ function ocultarComprasAnteriores(){
   //  document.getElementById('btnHistorialCompra').style.display = 'none';
 }
 
+//Ocultar Datos Personales boton X=>+
+function ocultarDatosPersonales(){
 
+    if(document.getElementById('divDatosPesonales').style.display=='none'){
+       document.getElementById('divDatosPesonales').style.display = 'block';
+       document.getElementById('botonActivoDatosPersonales').classList.replace("bi-plus-lg", "bi-x-lg");
+   }
+   else{
+    document.getElementById('divDatosPesonales').style.display = 'none';
+    document.getElementById('botonActivoDatosPersonales').classList.replace("bi-x-lg", "bi-plus-lg");
+   }
+}
+//Ocultar forma de pago boton X=>+
+function ocultarFormaPago(){
+
+    if(document.getElementById('divFormasPago').style.display=='none'){
+       document.getElementById('divFormasPago').style.display = 'block';
+       document.getElementById('botonActivoFormasPago').classList.replace("bi-plus-lg", "bi-x-lg");
+   }
+   else{
+    document.getElementById('divFormasPago').style.display = 'none';
+    document.getElementById('botonActivoFormasPago').classList.replace("bi-x-lg", "bi-plus-lg");
+   }
+}
+//Ocultar compras anteriores boton X=>+
+function ocultarComprasAnteriores(){
+
+    if(document.getElementById('divComprasAnteriores').style.display=='none'){
+       document.getElementById('divComprasAnteriores').style.display = 'block';
+       document.getElementById('botonActivoComprasAnteriores').classList.replace("bi-plus-lg", "bi-x-lg");
+   }
+   else{
+    document.getElementById('divComprasAnteriores').style.display = 'none';
+    document.getElementById('botonActivoComprasAnteriores').classList.replace("bi-x-lg", "bi-plus-lg");
+   }
+}
     cargarDatosPersonales();
     cargarFormaDePago();
     cargarHistorialCompra();
