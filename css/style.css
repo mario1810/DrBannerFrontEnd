@@ -61,25 +61,27 @@ padding: 10px;
 color: #F2F2F2;
 padding: 1rem;
 font-size: 20pt;
-
+text-decoration: none;
 }
 
-.flex-container{
-display: flex;
+.footer-container{
+/* display: flex; */
 /* flex-direction: column;
 flex-wrap: wrap; */
 background-color: #404040;
-flex-flow: column wrap; 
+/* flex-flow: column wrap;  */
 /* border: solid 1px black; */
 padding: 2rem;
-
+text-align: center;
 }
 
 
 #Dr, #derechos{
 color: #F2F2F2;
-text-align: center;
+text-decoration: none;
 }
+
+
 
 p{
 text-align: justify;
@@ -121,3 +123,5 @@ text-align: center;
 /* .textoComent{
   color: aqua;
 } */
+
+
