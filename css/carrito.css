@@ -57,7 +57,7 @@
 }
 .costoTotal{
     text-align: center;
-    font-size: 40px;
+    
     font-weight: 700;
 
 }
@@ -72,13 +72,12 @@
 }
 
 .encabezado{
-    font-size: 60px;
     padding: 20px;
     font-weight: 700;
     color:#F2F2F2
 }
 .subencabezado{
-    font-size: 30px;
+    
     padding: 20px;
     padding-bottom:80px;
     font-weight: 700;
