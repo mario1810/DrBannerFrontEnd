@@ -58,8 +58,12 @@ body{
     min-height: 100vh;
 }
 
-#iconUser{
+#iconUser:hover{
     cursor:pointer;
+}
+
+#Dr:hover{
+    color:#D9D0BF;
 }
 
 footer{
@@ -70,4 +74,21 @@ footer{
 
 .navbarbrand{
     text-decoration: none; 
+}
+.iconoHover:hover{
+    color:#D9D0BF;
+}
+
+/*Hover de incono de usuario*/
+.iconoUserLog{
+    color:#fa62f2;
+}
+.iconoUserNoLog{
+    color:#F2F2F2;
+}
+.iconoUserLog:hover{
+    color:#e044d9;
+}
+.iconoUserNoLog:hover{
+    color:#D9D0BF;
 }
