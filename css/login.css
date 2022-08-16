@@ -43,7 +43,6 @@ a:hover,
 a:link,
 a:visited,
 a:active {
-  text-decoration: underline;
   text-decoration-color: black;
   color: black;
 }
