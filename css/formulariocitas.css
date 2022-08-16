@@ -163,6 +163,11 @@ main {
 	border: 3px solid #bb2929;
 }
 
+.botones {
+    display: flex;
+    nav-down: ;
+}
+
 
 /* ----- -----  Mediaqueries ----- ----- */
 @media screen and (max-width: 800px) {
