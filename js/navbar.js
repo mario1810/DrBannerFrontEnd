@@ -15,10 +15,12 @@ async function actualizarIconos(){
     let logged=isUserLogged();
 
     if(logged){
-      iconoUsuario.style.color="#D9D0BF"; // Si se dio de alta, el icono cmbia a verde
+      if(iconoUsuario.classList.contains("iconoUserNoLog"))
+        iconoUsuario.classList.replace("iconoUserNoLog","iconoUserLog");
       //iconoUsuario.style.cursor="pointer";
     }else{
-      iconoUsuario.style.color="#F2F2F2"; // Si no se dio de alta, el icono cmbia a blanco
+      if(iconoUsuario.classList.contains("iconoUserLog"))
+        iconoUsuario.classList.replace("iconoUserLog","iconoUserNoLog");
       //iconoUsuario.style.cursor="pointer";
     }
 

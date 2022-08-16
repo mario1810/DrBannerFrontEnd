@@ -72,7 +72,9 @@
 }
 
 .encabezado{
-    padding: 20px;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     font-weight: 700;
     color:#F2F2F2
 }

@@ -28,7 +28,7 @@
     <div class="row align-items-center">
       <!--Columna del nombre de la empresa-->
       <div class="col-12 col-lg-5">
-        <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+        <a href="/index.html" class="navbarbrand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
       </div>
       <!--Columna que contiene el resto de elementos del navbar
               carrito, user, menu-->
@@ -36,21 +36,21 @@
         <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
         <div class="row align-items-center justify-content-end">
           <!--Carrito-->
-          <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-sm-start text-center">
             <a href="/html/carrito.html" class="nav-item"
-              ><i class="bi bi-cart-check colorTextNavBar"></i
-              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
+              ><i class="bi bi-cart-check colorTextNavBar iconoHover"></i
+              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>          
           </div>
           <!--User-->
-          <div class="col-4 col-lg-1 text-lg-end  text-center">
-            <div data-loggedhref="/html/perfil.html" class="nav-item"
-              ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
-            ></div>
+          <div class="col-6 col-sm-4 col-lg-1 text-lg-end  text-center">
+            <div data-loggedhref="/html/perfil.html" class="nav-item">
+              <i id="iconUser" class="bi bi-person-circle iconoUserNoLog"></i>
+          </div>
           </div>
           <!--Menu-->
-          <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
+          <div class="col-12 col-sm-4 col-lg-8 col-xl-8 col-xxl-6 text-sm-end">
             <nav class="navbar navbar-expand-lg color5">
-              <div class="container-fluid justify-content-end">
+              <div class="container-fluid justify-content-sm-end justify-content-center">
                 <button
                   class="navbar-toggler color3"
                   type="button"
@@ -68,7 +68,10 @@
                   tabindex="-1"
                   id="offcanvasDarkNavbar"
                   aria-labelledby="offcanvasDarkNavbarLabel"
-                >
+                > 
+                <div class="offcanvas-header color5 justify-content-end">                  
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
                   <div class="offcanvas-body color5">
                     <ul
                       class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
@@ -164,40 +167,28 @@
         <section></section>
         <aside></aside>
     </main>
+  <!--========================================================== -->
+                              <!-- PIE DE PÁGINA--> 
+    <!--========================================================== -->
     <footer id="footer">
-      <div class="flex-container">
-        <!-- Logo -->
+      <div class="footer-container">
+     
         <!-- el navbarbrand es para quitarle la linea de hipervinculo -->
-          <a href="#" class="flex-item navbar-brand" id="Dr">Dr. Banner Photography</a>
-
-        <!-- ligas 2 -->
-        <!-- cuando pase el valor de sm que es 576 se volvera una fila -->
-        <!-- <div class="flex-item d-flex flex-sm-row flex-column justify-content-center" id="elementos-lista">
-          <a href="#">Contacto</a>
-          <a href="#">Acerca</a>
-          <a href="#">Paquetes</a>
-
-        </div> -->
-        
-        <!-- <div class=" p-2" id="sig">  
-          ¡Síguenos!
-        </div> -->
-
-        <!-- redes 2 -->
-        <div class="flex-item d-flex flex-row justify-content-center" id="redes-sociales">
+          <a href="#" id="Dr">Dr. Banner Photography</a>
+          
+        <div class="pb-5 pt-3" id="redes-sociales">
           <a href="https://instagram.com/reylesbanner?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i>
           <a href="https://www.facebook.com/reylesbanner.perezvazquez"><i class="bi bi-facebook"></i></a>
           <a href="https://wa.me/529613156245?text=%C2%A1Hola!%20Estuve%20explorando%20tu%20p%C3%A1gina%20y%20requiero%20mas%20informaci%C3%B3n%20%C2%BFMe%20puedes%20ayudar?%20"><i class="bi bi-whatsapp"></i></a>
 
         </div>
 
-        <small class="pt-4" id="derechos">  
-          <!-- ©Dr Banner Photography Aviso legal · Privacidad · Cookies -->
+        <small id="derechos">  
           ©2022 Todos los derechos reservados. Dr Banner Photography.
         </small>
       </div>
-      
     </footer>
+
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/navbar.js"></script>

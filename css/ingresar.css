@@ -16,7 +16,7 @@ footer{
 /* unvisited link */
 a:link {
     color: #404040;
-    text-decoration: underline;
+    
   }
   
   /* visited link */
@@ -28,10 +28,10 @@ a:link {
   /* mouse over link */
   a:hover {
     color: #404040;
-    text-decoration: underline;
+    
   }
   
   /* selected link */
-  a:active {
+ footer, a:active {
     color: #404040;
   }
