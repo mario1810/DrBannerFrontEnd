@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citas</title>
- <!-- CSS only -->
-<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">-->
+    <title>Carro de compras</title>
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
+    <!--Favicon-->
+    <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
+    <!--Bootstrap-->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">-->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!--CSS  general-->
     <link rel="stylesheet" href="/css/stylesFonts.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/general.css"/>
-    <link rel="stylesheet" href="/css/formulariocitas.css">
+    <link  rel="stylesheet" href="/css/carrito.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+	  <link rel="stylesheet" href="/css/formulariocitas.css">
 </head>
-<body>
-
-   <!--========================================================== -->
-                              <!-- NAVBAR -->
-    <!--========================================================== -->
+<body >
   <header class="container-max-width text-center color5 colorTextNavBar">
     <!--Renglón que contiene todos los elementos de la navBar-->
     <div class="row align-items-center">
       <!--Columna del nombre de la empresa-->
       <div class="col-12 col-lg-5">
-        <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+        <a href="/index.html" class="navbarbrand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
       </div>
       <!--Columna que contiene el resto de elementos del navbar
               carrito, user, menu-->
@@ -38,21 +38,21 @@
         <!--Dentro de esta columna creo un segundo renglon para organizar los elementos-->
         <div class="row align-items-center justify-content-end">
           <!--Carrito-->
-          <div class="col-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-start">
+          <div class="col-6 col-sm-4 col-lg-3 col-xl-3 col-xxl-4 text-lg-end text-sm-start text-center">
             <a href="/html/carrito.html" class="nav-item"
-              ><i class="bi bi-cart-check colorTextNavBar"></i
-              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>
+              ><i class="bi bi-cart-check colorTextNavBar iconoHover"></i
+              ><span class="badge color4 rounded-pill" id="numItemscarNavBar" ></span></a>          
           </div>
           <!--User-->
-          <div class="col-4 col-lg-1 text-lg-end  text-center">
-            <div data-loggedhref="/html/perfil.html" class="nav-item"
-              ><i id="iconUser" class="bi bi-person-circle colorTextNavBar"></i
-            ></div>
+          <div class="col-6 col-sm-4 col-lg-1 text-lg-end  text-center">
+            <div data-loggedhref="/html/perfil.html" class="nav-item">
+              <i id="iconUser" class="bi bi-person-circle iconoUserNoLog"></i>
+          </div>
           </div>
           <!--Menu-->
-          <div class="col-4 col-lg-8 col-xl-8 col-xxl-6 text-end">
+          <div class="col-12 col-sm-4 col-lg-8 col-xl-8 col-xxl-6 text-sm-end">
             <nav class="navbar navbar-expand-lg color5">
-              <div class="container-fluid justify-content-end">
+              <div class="container-fluid justify-content-sm-end justify-content-center">
                 <button
                   class="navbar-toggler color3"
                   type="button"
@@ -70,7 +70,10 @@
                   tabindex="-1"
                   id="offcanvasDarkNavbar"
                   aria-labelledby="offcanvasDarkNavbarLabel"
-                >
+                > 
+                <div class="offcanvas-header color5 justify-content-end">                  
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
                   <div class="offcanvas-body color5">
                     <ul
                       class="navbar-nav justify-content-evenly flex-grow-1 pe-3"
@@ -112,137 +115,231 @@
         </div>
       </div>
     </div>
-  </header> 
+  </header>
+
+
+   <!--========================================================== -->
+                              <!-- Formulario--> 
+    <!--========================================================== -->
+    <main>
+      <form action="" class="formulario" id="formulario">
+        <!-- Grupo: Nombre -->
+        <div class="formulario__grupo" id="grupo__nombre">
+          <label for="nombre" class="formulario__label">Nombre</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El usuario tiene que ser de letras.</p>
+        </div>
+        
+        <!-- Grupo: Apellido -->
+        <div class="formulario__grupo" id="grupo__apellido">
+          <label for="apellido" class="formulario__label">Apellido</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Gonzales Sanchez">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El apellido tiene que ser de letras.</p>
+        </div>
+  
+        
+  
+        <!-- Grupo: Contraseña 
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input type="password" class="formulario__input" name="password" id="password">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+        </div>
+  
+        <!-- Grupo: Contraseña 2 
+        <div class="formulario__grupo" id="grupo__password2">
+          <label for="password2" class="formulario__label">Repetir Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input type="password" class="formulario__input" name="password2" id="password2">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+        </div>-->
+  
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__correo">
+          <label for="correo" class="formulario__label">Correo Electrónico</label>
+          <div class="formulario__grupo-input">
+            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+        </div>
+  
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+          <label for="telefono" class="formulario__label">Teléfono</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+        </div>
+  
+        <!-- Grupo: Calle -->
+        <div class="formulario__grupo" id="grupo__calle">
+          <label for="calle" class="formulario__label">Calle</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="calle" id="calle" placeholder="Escribe aqui la calle del evento">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El calle tiene solo letras.</p>
+        </div>
+  
+        <!-- Grupo: Codigo Postal -->
+        <div class="formulario__grupo" id="grupo__codigoPostal">
+          <label for="codigoPostal" class="formulario__label">Codigo Postal</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="codigoPostal" id="codigoPostal" placeholder="Escribe el codigo postal C.P 00000 del evento">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El Codigo Postal debe de ser de Cinco a 8 números</p>
+        </div>
+  
+  
+        <!-- Grupo: colonia -->
+        <div class="formulario__grupo" id="grupo__municipio">
+          <label for="municipio" class="formulario__label">Municipio</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="municipio" id="municipio" placeholder="Colonia del evento">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El municipio tiene que ser solo letras</p>
+        </div>
+  
+  
+        <!-- Grupo: Estado -->
+        <div class="formulario__grupo" id="grupo__estado">
+          <label for="estado" class="formulario__label">Estado</label>
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="estado" id="estado" placeholder="El estado del evento">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El estado tiene que ser de letras</p>
+        </div>
+  
+  
+        <!-- Grupo: Fecha -->
+        <div class="formulario__grupo" id="grupo__fecha">
+          <label for="fecha" class="formulario__label">Fecha</label>
+          <div class="formulario__grupo-input">
+            <input type="date" class="formulario__input" name="fecha" id="fecha" placeholder="Gonzales Sanchez">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <!--<p class="formulario__input-error">El fecha tiene que ser de letras.</p>-->
+        </div>
+  
+  
+        <!-- Grupo: Hora -->
+        <div class="formulario__grupo" id="grupo__hora">
+          <label for="hora" class="formulario__label">Hora</label>
+          <div class="formulario__grupo-input">
+            <input type="time" class="formulario__input" name="hora" id="hora" placeholder="Gonzales Sanchez">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <!--<p class="formulario__input-error">El hora tiene que ser de letras.</p>-->
+        </div>
+  
+        <!-- Grupo: Paquete -->
+        <div class="formulario__grupo" id="grupo__paquete">
+          <label for="paquete" class="formulario__label">Paquete</label>
+          <div class="formulario__grupo-input">
+            <!--<input type="text" class="formulario__input" name="paquete" id="paquete" placeholder="4491234567">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>-->
+            <select class="formulario__input">
+              <option>Boda</option>
+              <option>XV años</option>
+              <option>Familiares</option>
+              <option>Bock</option>
+            </select>
+          </div>
+          <!--<p class="formulario__input-error">El paquete solo puede contener numeros y el maximo son 14 dígitos.</p>-->
+        </div>
+  
+        <!-- Grupo: Subpaquete -->
+        <div class="formulario__grupo" id="grupo__subpaquete">
+          <label for="subpaquete" class="formulario__label">Subpaquete</label>
+          <div class="formulario__grupo-input">
+            <!--<input type="text" class="formulario__input" name="subpaquete" id="subpaquete" placeholder="4491234567">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>-->
+            <select class="formulario__input">
+              <option>prime</option>
+              <option>full</option>
+              <option>basis</option>
+            
+            </select>
+          </div>
+          <!--<p class="formulario__input-error">El subpaquete solo puede contener numeros y el maximo son 14 dígitos.</p>-->
+        </div>
+  
+  
+        
+  
+        <!-- Grupo: Terminos y Condiciones -->
+        <div class="formulario__grupo" id="grupo__terminos">
+          <label class="formulario__label">
+            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+            <a href="/terminos.html">Acepto los Terminos y Condiciones</a> 
+          </label>
+        </div>
+  
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+        </div>
+  
+        <div class="formulario__grupo formulario__grupo-btn-enviar botones">
+          <button type="submit" class="formulario__btn">añadir paquete</buttobrn>
+          <button type="submit" class="formulario__btn">Ir a carrito</button>
+          
+          
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+      </form>
+    </main>
+
+
+
+
+
+
+
   <!--========================================================== -->
+                              <!-- PIE DE PÁGINA--> 
+    <!--========================================================== -->
+    <footer id="footer">
+      <div class="footer-container">
+     
+        <!-- el navbarbrand es para quitarle la linea de hipervinculo -->
+          <a href="#" id="Dr">Dr. Banner Photography</a>
+          
+        <div class="pb-5 pt-3" id="redes-sociales">
+          <a href="https://instagram.com/reylesbanner?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i>
+          <a href="https://www.facebook.com/reylesbanner.perezvazquez"><i class="bi bi-facebook"></i></a>
+          <a href="https://wa.me/529613156245?text=%C2%A1Hola!%20Estuve%20explorando%20tu%20p%C3%A1gina%20y%20requiero%20mas%20informaci%C3%B3n%20%C2%BFMe%20puedes%20ayudar?%20"><i class="bi bi-whatsapp"></i></a>
 
-        <br>
-        <br>
-        <br>
-        <div id="formulario-citas" class="container mt-6 d-none">
-            <div class="row">
-                <div class="col-md-10 offset-md-1 border p-4 shadow bg-light">
-                    <div class="col-12">
-                        <h3 class="fw-normal text-secondary fs-4 text-uppercase mb-4">Agenda tu cita</h3>
-                    </div>
-                    <form action="">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                              <label>Nombres: </label>
-                                <input type="text" class="form-control" placeholder="Escribe aqui tu nombre" required id="nombre">
-                               
-                            </div>
-                            <div class="col-md-6">
-                              <label>Apellidos: </label>
-                                <input type="text" class="form-control" placeholder="Escribe aqui tus Apellidos" required  id="apellido">
-                               
-                            </div>
-                            <div class="col-md-6">
-                              <label>Telefono de contacto: </label>
-                                <input type="tel" class="form-control" placeholder="Escribe aqui el número" required  id="telefono">
-                              
-                            </div>
-                            <div class="col-md-6">
-                              <label>Correo: </label>
-                                <input type="email" class="form-control" placeholder="Escribe aqui tu correo" required id="correo">
-                               
-                            </div>
-                            <div class="col-md-6">
-                              <label>Fecha del evento: </label>
-                                <input type="date" class="form-control" placeholder="Introduce fecha" required id="fecha">
-                               
-                            </div>
-                            <div class="col-md-6">
-                              <label>Horario del evento: </label>
-                                <input type="time" class="form-control" placeholder="Una hora antes" required id="hora">
-                              
-                            </div>
-                            <div class="col-12">
-                              <label>Paquetes: </label>
-                                <select class="form-select" id="paquete">
-                                    <option selected>Tipos de paquete</option>
-                                    <option value="1">XV años</option>
-                                    <option value="2">Bodas</option>
-                                    <option value="3">Familiar</option>
-                                    
-                                </select>
-                               
-                            </div>
-                            <br>
-                            <div class="col-12">
-                              <label>Tipo de paquetes </label>
-
-                    
-                                <select class="form-select" id="tipoPaquete">
-                                    <option selected>Tipos de sub paquetes</option>
-                                    <option value="1">Premium</option>
-                                    <option value="2">Full</option>
-                                    <option value="3">basico</option>
-                                    
-                                </select>
-                                
-                            </div>
-                            <div class="col-12">
-                              <label>Dirección del evento</label>
-                                <textarea class="form-control" placeholder="Escribe a qui la direción del evento" id="direccion"></textarea>
-                            </div>
-                            <div class="col-12 mt-5">                        
-                                <button type="button" class="btn btn-outline-secondary float-end me-2">Añadir otra paquete</button>
-                            </div>
-                        </div>
-                    </form>
-                    <div>
-                      <br>
-                      <a href="/html/carrito.html"><button type="submit" class="btn btn-dark float-end" id="pago">Pagar</button></a>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        
+        <small id="derechos">  
+          ©2022 Todos los derechos reservados. Dr Banner Photography.
+        </small>
+      </div>
+    </footer>
 
-
-        
-
-        <footer id="footer">
-          <div class="flex-container">
-            <!-- Logo -->
-            <!-- el navbarbrand es para quitarle la linea de hipervinculo -->
-              <a href="#" class="flex-item navbar-brand" id="Dr">Dr. Banner Photography</a>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/carrito.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="/js/formulariocitas.js"></script>
     
-            <!-- ligas 2 -->
-            <!-- cuando pase el valor de sm que es 576 se volvera una fila -->
-            <!-- <div class="flex-item d-flex flex-sm-row flex-column justify-content-center" id="elementos-lista">
-              <a href="#">Contacto</a>
-              <a href="#">Acerca</a>
-              <a href="#">Paquetes</a>
-    
-            </div> -->
-            
-            <!-- <div class=" p-2" id="sig">  
-              ¡Síguenos!
-            </div> -->
-    
-            <!-- redes 2 -->
-            <div class="flex-item d-flex flex-row justify-content-center" id="redes-sociales">
-              <a href="https://instagram.com/reylesbanner?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"></i>
-              <a href="https://www.facebook.com/reylesbanner.perezvazquez"><i class="bi bi-facebook"></i></a>
-              <a href="https://wa.me/529613156245?text=%C2%A1Hola!%20Estuve%20explorando%20tu%20p%C3%A1gina%20y%20requiero%20mas%20informaci%C3%B3n%20%C2%BFMe%20puedes%20ayudar?%20"><i class="bi bi-whatsapp"></i></a>
-    
-            </div>
-    
-            <small class="pt-4" id="derechos">  
-              <!-- ©Dr Banner Photography Aviso legal · Privacidad · Cookies -->
-              ©2022 Todos los derechos reservados. Dr Banner Photography.
-            </small>
-          </div>
-          
-        </footer>
-        <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/main.js"></script>
-        <script src="/js/navbar.js"></script>
-        
-        <script src="/js/formulariocitas.js"></script>
-        
-
-    </body>
-    </html>
+</body>
+</html>
