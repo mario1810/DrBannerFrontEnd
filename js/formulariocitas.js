@@ -11,7 +11,10 @@ const expresiones = {
 	calle:/^[a-zA-ZÀ-ÿ\s]{1,40}$/,
 	codigoPostal:/^[0-9]\d{4,7}$/,
 	municipio:/^[a-zA-ZÀ-ÿ\s]{4,40}$/,
-	estado:/^[a-zA-ZÀ-ÿ\s]{4,40}$/
+	estado:/^[a-zA-ZÀ-ÿ\s]{4,40}$/,
+    fecha:/^[0-9]\d{2}+[/]+[0-9]\d{2}[/]+[0-9]\d{4}$/
+    //paquete:true
+
 }
 
 const campos = {
@@ -24,7 +27,10 @@ const campos = {
 	calle:false,
 	codigoPostal:false,
 	municipio:false,
-	estado:false
+	estado:false,
+	fecha: false
+  
+  //paquete:true
 }
 
 const validarFormulario = (e) => {
@@ -63,9 +69,14 @@ const validarFormulario = (e) => {
 		case "estado":
 			validarCampo(expresiones.estado, e.target, 'estado');
 		break;
+    case "fecha":
+      validarCampo(expresiones.fecha, e.target, 'fecha');
+    break;
+    case "paquete":
+      validarCampo(expresiones.paquete, e.target, 'paquete');
+    break;
 	}
 }
-
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -114,7 +125,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(/*campos.usuario &&*/ campos.nombre && campos.apellido && /*campos.password && */campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && terminos.checked ){
+	if(/*campos.usuario &&*/ campos.nombre && campos.apellido && /*campos.password && */campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && campos.paquete && terminos.checked ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -129,3 +140,5 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
+
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carro de compras</title>
+    <title>Citas de Eventos</title>
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
     <!--Favicon-->
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
@@ -199,7 +199,7 @@
         <div class="formulario__grupo" id="grupo__codigoPostal">
           <label for="codigoPostal" class="formulario__label">Codigo Postal</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="codigoPostal" id="codigoPostal" placeholder="Escribe el codigo postal C.P 00000 del evento">
+            <input type="text" class="formulario__input" name="codigoPostal" id="codigoPostal" placeholder="Escribe el codigo postal C.P 00000 ">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
           <p class="formulario__input-error">El Codigo Postal debe de ser de Cinco a 8 números</p>
@@ -254,16 +254,22 @@
           <label for="paquete" class="formulario__label">Paquete</label>
           <div class="formulario__grupo-input">
             <!--<input type="text" class="formulario__input" name="paquete" id="paquete" placeholder="4491234567">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>-->
-            <select class="formulario__input">
-              <option>Boda</option>
-              <option>XV años</option>
-              <option>Familiares</option>
-              <option>Bock</option>
+            -->
+            <select class="formulario__input" id="paquete" name="paquete" required>
+              <option> Selecciona una opcion</option>
+              <option value="Boda">Boda</option>
+              <option value="XV años">XV años</option>
+              <option value="Familiares">Familiares</option>
+              <option value="Bock">Bock</option>
             </select>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
           <!--<p class="formulario__input-error">El paquete solo puede contener numeros y el maximo son 14 dígitos.</p>-->
         </div>
+
+
+
+        
   
         <!-- Grupo: Subpaquete -->
         <div class="formulario__grupo" id="grupo__subpaquete">
@@ -271,7 +277,7 @@
           <div class="formulario__grupo-input">
             <!--<input type="text" class="formulario__input" name="subpaquete" id="subpaquete" placeholder="4491234567">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>-->
-            <select class="formulario__input">
+            <select class="formulario__input" id="paquete">
               <option>prime</option>
               <option>full</option>
               <option>basis</option>
@@ -298,18 +304,23 @@
   
         <div class="formulario__grupo formulario__grupo-btn-enviar botones">
           <button type="submit" class="formulario__btn">añadir paquete</buttobrn>
-          <button type="submit" class="formulario__btn">Ir a carrito</button>
           
-          
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar botones">
+          <button type="button" class="formulario__btn">Ir a carrito</button>
           <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
       </form>
     </main>
 
+    
+    
 
 
 
-
+    
 
 
   <!--========================================================== -->
