@@ -1,0 +1,38 @@
+{
+    "title":"Imagenes desarrolladores",
+    "images":[
+        {
+            "title":"imagen.cristofer",
+            "src":"https://i.ibb.co/6Z4pxgP/IMG-8348.jpg"
+        },
+        {
+            "title":"imagen.azu",
+            "src":"https://i.ibb.co/XjZb7Jj/IMG-8332.jpg"
+        },
+        {
+            "title":"imagen.gerardo",
+            "src":"https://i.ibb.co/SQpshkM/IMG-8336.jpg"
+        },
+        {
+            "title":"imagen.mario",
+            "src":"https://i.ibb.co/FskdxZ4/MG-2-1.jpg"
+        },
+        {
+            "title":"imagen.cori",
+            "src":"https://i.ibb.co/3CWSkhJ/MG-2-2.jpg"
+        },
+        {
+            "title":"imagen.aron",
+            "src":"https://i.ibb.co/rZKCk7F/MG-2-3.jpg"
+        },
+        {
+            "title":"imagen.marco",
+            "src":"https://i.ibb.co/Nn3gMmZ/MG-3-1.jpg"
+        },
+        {
+            "title":"imagen.estrella",
+            "src":"https://i.ibb.co/TwpmD24/MG-3-2.jpg"
+        }
+        
+    ]
+}
