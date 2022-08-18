@@ -2,61 +2,53 @@
 "data":[ 
 {
     "id":1,
-    "nombre": "Azucena",
-    "apellido": "Ceniceros",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "My studio primarily focuses on international and destination luxury weddings. But no love celebration is too  large or too small. I have worked with couples from intimate elopment  to large scale  luxury celebrations.  In addition, my  amazing clients have taken me to some of the most amazing locations in the  world, such as  Italy,  Mexico, Taiwan, Tailand,  Shanghai and all over United States.",
-    "stars": "1"
-},
-
-{
-    "id":2,
-    "nombre": "Gerardo",
-    "apellido": "Ruiz",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
-    "stars": "4"
-},
-
-{
-    "id":3,
-    "nombre": "Aaron",
-    "apellido": "Fdz",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "icing elit. Nisi facilis, impedit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "nombre": "Coromoto",
+    "apellido": "Malave Rengel",
+    "foto": "https://reqres.in/img/faces/2-image.jpg",
+    "comentario": "Son todo lo que dicen, en verdad muy profesionales en cada momento, es justo lo que necesitábamos para nuestro evento, quedé muy satisfecha con el trabajo que realizaron, sobre todo el equipo de producción, muy amables siempre.  ",
     "stars": "2"
 },
 
 {
-    "id":4,
-    "nombre": "Cori",
-    "apellido": "Malave",
+    "id":2,
+    "nombre": "Mario Iván",
+    "apellido": "Álvarez Bautista",
     "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "icinit atque consequatur pariatur quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "comentario": "Desde que me contaron de Dr. Banner Photography supe que los quería para mi evento, son pequeños detalles que te dejan muy buen sabor de boca, desde puntualidad, fotografías de alta calidad y una atención de primer nivel, además los precios son muy accesibles.",
     "stars": "5"
 },
+
 {
-    "id":5,
-    "nombre": "Mario",
-    "apellido": "Alvarez",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": " quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "id":3,
+    "nombre": "Carlos Adrián",
+    "apellido": "Gonzalez Rios",
+    "foto": "https://reqres.in/img/faces/5-image.jpg",
+    "comentario": "Decidí contratar  los servicios para mi boda y quedé más que satisfecho y agradecido con el resultado, cuentan con un equipo de producción buenísimo, se ve que están realmente preparados, mil gracias por tan buen trabajo que hicieron, seguramente yo los recomiendo.",
     "stars": "4"
 },
+
 {
-    "id":6,
-    "nombre": "Marco",
-    "apellido": "Flores",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magniquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni loremquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "id":4,
+    "nombre": "Gerardo Ramiro",
+    "apellido": "Ruiz Andrade",
+    "foto": "https://reqres.in/img/faces/6-image.jpg",
+    "comentario": "Es increíble lo que pueden hacer con una cámara, estoy fascinado con el trabajo que hicieron, he tenido malas experiencias con otros fotógrafos pero con Dr. Banner Photography es calidad garantizada",
     "stars": "3"
 },
 {
-    "id":7,
-    "nombre": "Tania",
-    "apellido": "Gayoso",
-    "foto": "https://reqres.in/img/faces/8-image.jpg",
-    "comentario": "quisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magniquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni loremquisquam provident vitae facere? Sequi nihil ratione eum beatae nostrum architecto enim molestiae molestias magnam magni.",
+    "id":5,
+    "nombre": "Aarón",
+    "apellido": " Fernández Rodríguez",
+    "foto": "https://reqres.in/img/faces/1-image.jpg",
+    "comentario": "Cuando te comunicas con el equipo te brindan esa confianza que en otros lugares no encuentras, los paquetes me parecen excelentes y ni se diga de la calidad que manejan, sabía que no iban a decepcionarme, hermosas fotos que logran, están para presumirse en todos lados.",
+    "stars": "2"
+},
+{
+    "id":6,
+    "nombre": "Marco Antonio",
+    "apellido": "Flores Avellaneda ",
+    "foto": "https://reqres.in/img/faces/5-image.jpg",
+    "comentario": "Un amigo me recomendó su servicio de fotografía, mire que hacían un buen trabajo y no dudé en ponerme en contacto, se ve que aman lo que hacen, el equipo muy amable y servicial, me encanto como trabajan 10/10",
     "stars": "2"
 }
 ]
