@@ -801,7 +801,7 @@ function resultadoPago(flag){
     //Compra se realizó con exito
     if(flag){ 
         spinner.style.display="none";
-        messageC.innerHTML="El pago se ha realizado con éxito. Gracias por tu compra.";
+        messageC.innerHTML="El pago se ha realizado con éxito. Gracias por tú compra.";
         checkC.style.display="inline-block";
         
     }else{

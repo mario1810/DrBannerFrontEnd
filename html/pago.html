@@ -4,147 +4,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Favicon-->
+    <title>Pago</title>
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
+   
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/css/stylesFonts.css" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/ingresar.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/general.css"/>
-    <link  rel="stylesheet" href="/css/pagos.css">
-    
+
+   
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <title>Pago</title>
 </head>
 <body>
-    <!--========================================================== -->
-                              <!-- NAVBAR -->
-    <!--========================================================== -->
-
+    <!--------------------------------------------------------------NAVBAR------------------------------------------------------------------------------------->
     <header class="container-max-width text-center color5 colorTextNavBar">
-        <!--Renglón que contiene todos los elementos de la navBar-->
-        <div class="row align-items-center">
-          <!--Columna del nombre de la empresa-->
-          <div class="col-12 col-lg-5">
-            <a href="/index.html" class="navbarbrand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
-          </div>
-          <!--Columna que contiene el resto de elementos del navbar
-                  carrito, user, menu-->
-          <div class="col-12 col-lg-7">
-          </div>
-        </div>
-      </header>
-    <main class="container-max-width text-center color2">
-        <div class="row">
-            <section class="container col-12 col-md-6 col-lx-5 justify-content-center align-items-center color2 tamContainer">
-                <form class="row" id="formPago">
-                  <h2 class="fs-2 fw-semibold mt-3">Proceso de compra</h2>
-                  <div class="col-12  mb-2">
-                    <label for="Name" class="form-label">Nombre Completo</label>
-                    <input type="text" class="form-control textInputPos" id="Name" >                    
-                    <div class="invalid-feedback">Ingresa un nombre y apellido</div>
-                  </div>
-                  <!--<div class="col-12 col-sm-6">
-                    <label for="lastName" class="form-label">Apellido(s)</label>
-                    <input type="text" class="form-control textInputPos" id="lastName" >                    
-                  </div>-->
-              
-                  <div class="col-12 mb-2 ">
-                    <label for="cardNumber" class="form-label">Número de tarjeta</label>
-                    <input type="text" class="form-control textInputPos" id="cardNumber">
-                    <div class="invalid-feedback ">Deben ser de 16 dígitos</div>
-                    </div>
-                  <div class="col-12  col-sm-4 mb-2">
-                      <label for="cardMonth" class="form-label">Mes</label>
-                      <input type="text" class="form-control tamInput textInputPos" id="cardMonth"  placeholder="mm">
-                      <div class="invalid-feedback " id="messageMonth">Deben ser dos dígitos</div>
-                  </div>
-                  <div class="col-12  col-sm-4 mb-2 ">
-                      <label for="cardYear" class="form-label">Año</label>
-                      <input type="text" class="form-control tamInput textInputPos" id="cardYear" placeholder="yy">
-                      <div class="invalid-feedback ">Deben ser dos digitos</div>
-                  </div>
-                  
-                  <div class="col-12 col-sm-4 mb-2 ">
-                      <label for="cvvNumber" class="form-label">CVV</label>
-                      <input type="text" class="form-control tamInput textInputPos" id="cvvNumber" placeholder="cvv">
-                      <div class="invalid-feedback ">Deben ser 3 dígitos</div>
-                  </div>        
-                  <div class="col-12 col-sm-12 text-start mb-4 mt-1 ">        
-                      <input class="form-check-input" type="radio" name="tarjeta" value="Credito" id="TC" checked="checked"> <label class="form-label" for="TC">Crédito</label>
-                      <br>
-                      <input  class="form-check-input" type="radio" name="tarjeta" value="Debito" id="TD"> <label class="form-label" for="TD">Dédito</label>
-                      <br>
-                      <label class="form-label" for="Check3"><input class="form-check-input" type="checkbox" value="" id="Check3"> Recordar tipo y número de tarjeta</label> 
-                  </div>
-                  <!--
-                  <div class="col-12 col-sm-6 align-items-center">
-                    <div class=" input-group contenedorList">                        
-                      
-                      <label class="input-group-text text-bg-light" for="inputGroupSelect01">Meses</label>
-                      <select class="form-select" id="inputGroupMeses">
-                        <option value="1">3</option>
-                        <option value="2">6</option>
-                        <option value="3">12</option>
-                      </select>
-                    </div>
-                  </div>-->  
-                  <hr>
-                  <div class="col-12 mb-4">
-                    <div class="input-group mb-3 totalP">
-                      <span class="input-group-text text-bg-light">Cargo $</span>
-                      <input type="text" class="form-control" id="totalPagar" disabled style="background-color: white;">
-                    </div>
-                  </div>                  
-                  <div class="col-12">
-                    <button class="btn btn-dark botonesEstilo" type="button" id="bComprar"> <i class="bi bi-check-circle"></i> Pagar</button>
-                  </div>
-                  <div class="col-12 mb-3">
-                    <button class="btn btn-dark botonesEstilo" type="button" id="bCancelar"><i class="bi bi-x-circle"></i> Cancelar </button>
-                  </div>
-                </form>              
-              </section>
-            <section class="col-12 col-md-6 col-xl-7 color3 paddingContenedor">
-              <!--https://i.ibb.co/bJDffXZ/XV.jpg-->
-                <div class="marginControl ocultarImagen"><img src="https://i.ibb.co/MNVNSyD/XV52.jpg" class="imagen"></div>
-                <h1 class="my-5 display-4 display-lg-3 fw-bold  ocultarTextoProm">
-                  Las mejores fotos están <br>en <br>
-                  <span class="fw-bold" id="fotos">Dr. Banner Photography</span>
-                </h1>
-            </section>
-        </div>
-    </main>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" data-bs-backdrop="static">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Dr Banner Photography</h5>
-              </div>
-              <div class="modal-body text-center contenedorPadre">
-                  <p class="textoCompraF" id="mensajeCompra">El pago se está procesando</p>   
-                  <div class="spinner-border tamSpinner" role="status" id="checkProceso">
-                    <span class="visually-hidden"></span>
-                  </div>
-                  <div>
-                    <i class="bi bi-check-circle-fill tamCheck" id="checkCompra"></i>
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary btn-dark btnCompraFin"  id="botonFinCompra">Continuar</button>
-              </div>
-          </div>
-      </div>
-    </div>
-  
+           <!--Renglón que contiene todos los elementos de la navBar-->
+           <div class="row align-items-center">
+             <!--Columna del nombre de la empresa-->
+             <div class="col-12 col-lg-5">
+               <a href="/index.html" class="navbar-brand"><div class="drBannerPadding text-lg-start text-center" id="Dr">Dr. Banner Photography</div></a>
+             </div>
+             <!--Columna que contiene el resto de elementos del navbar
+                     carrito, user, menu-->
+             <div class="col-12 col-lg-7">
+             </div>
+           </div>
+         </header>
+   <!--------------------------------------------------------------NAVBAR------------------------------------------------------------------------------------->
    
-  <!--========================================================== -->
-                              <!-- PIE DE PÁGINA--> 
-    <!--========================================================== -->
-    <footer id="footer">
+   <!--------------------------------------------------------------CUERPO------------------------------------------------------------------------------------->
+   <div class="container">
+    <div class="py-5 text-center">
+   <h2>Realiza tu pedido y paga</h2>
+   <p class="lead text-center" >Ingresa tus datos personales y bancarios para concluir tu pedido.</p>
+  
+
+   <div class="container w-75 bg-light  mb-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg2  d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+    
+        </div>
+        <div class="col bg-light p-2 rounded-end">
+           
+            <form action="" id="formPago">
+                <div class="mb-4">
+                  <label for="Name" class="form-label mt-3  fs-5">Nombre Completo</label>
+                  <input type="text" class="form-control textInputPos"  id="Name" >                    
+                  <div class="invalid-feedback">Ingresa un nombre y apellido</div>
+                </div>
+                <div class="mb-4">
+                  <label for="cardNumber" class="form-label  mt-3  fs-5">Número de tarjeta</label>
+                  <input type="text" class="form-control textInputPos" id="cardNumber">
+                  <div class="invalid-feedback ">Ingresar los 16 digitos de su tarjeta</div>
+                </div>
+                <div class="row g-3">
+                <div class="col-sm-4 mb-2">
+                  <label for="cardMonth" class="form-label  ">Mes</label>
+                  <input type="text" class="form-control tamInput textInputPos" id="cardMonth"  placeholder="mm">
+                  <div class="invalid-feedback " id="messageMonth">Deben ser dos dígitos</div>
+              </div>
+              <div class=" col-sm-4 mb-2 ">
+                  <label for="cardYear" class="form-label   ">Año</label>
+                  <input type="text" class="form-control tamInput textInputPos" id="cardYear" placeholder="yy">
+                  <div class="invalid-feedback ">Deben ser dos digitos</div>
+              </div>
+              
+              <div class="col-sm-4 mb-2 ">
+                  <label for="cvvNumber" class="form-label  ">CVV</label>
+                  <input type="text" class="form-control tamInput textInputPos" id="cvvNumber" placeholder="cvv">
+                  <div class="invalid-feedback ">Deben ser 3 dígitos</div>
+              </div>     
+            </div>   
+              <div class=" col-sm-12 text-start mb-4 mt-3 ">        
+                  <input class="form-check-input bg-dark" type="radio" name="tarjeta" value="Credito" id="TC" checked="checked"> <label class="form-label" for="TC">Crédito</label>
+                  <br>
+                  <input  class="form-check-input bg-dark" type="radio" name="tarjeta" value="Debito" id="TD"> <label class="form-label" for="TD">Débito</label>
+                  <br>
+                  <label class="form-label" for="Check3"><input class="form-check-input bg-dark" type="checkbox" value="" id="Check3"> Recordar tipo y número de tarjeta</label> 
+              </div>
+              <hr>
+              <div class="col-12 mb-4">
+                <div class="input-group mb-3 totalP">
+                  <span class="input-group-text text-bg-light">Costo Total $</span>
+                  <input type="text" class="form-control" id="totalPagar" disabled style="background-color: white;">
+                </div>
+              </div>                  
+              <div class="col-12 mb-3">
+                <button class="btn btn-outline-success custom botonesEstilo" type="button" id="bComprar"> <!-- <i class="bi bi-check-circle"> --></i> Pagar</button>
+              </div>
+              <div class="col-12 mb-3">
+                <button class="btn btn-outline-danger custom botonesEstilo" type="button" id="bCancelar"><!-- <i class="bi bi-x-circle"></i> --> Cancelar </button>
+              </div>
+            </form>  
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dr Banner Photography</h5>
+            </div>
+            <div class="modal-body text-center contenedorPadre">
+                <p class="textoCompraF" id="mensajeCompra">El pago se está procesando</p>   
+                <div class="spinner-border tamSpinner" role="status" id="checkProceso">
+                  <span class="visually-hidden"></span>
+                </div>
+                <div>
+                  <i class="bi bi-check-circle-fill tamCheck" id="checkCompra"></i>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-dark btnCompraFin"  id="botonFinCompra">Continuar</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+   
+   
+   <!--------------------------------------------------------------CUERPO------------------------------------------------------------------------------------->
+    
+     <!--------------------------------------------------------------FOOTER------------------------------------------------------------------------------------->
+     <footer id="footer">
       <div class="footer-container">
      
         <!-- el navbarbrand es para quitarle la linea de hipervinculo -->
