@@ -108,7 +108,12 @@ function mostrarFormaPago(){
 function mostrarComprasAnteriores(){
     document.getElementById('divComprasAnteriores').style.display = 'block';
 }
-/* Funciones ocultar tablas de datos ***************************8***********/
+//Comentarios
+function mostrarComentarios(){
+    document.getElementById('divComentarios').style.display = 'block';
+}
+
+/* Funciones ocultar tablas de datos ********************************************************************/
 //Datos personales
 function ocultarDatosPersonales(){
     document.getElementById('divDatosPesonales').style.display = 'none';
@@ -124,7 +129,10 @@ function ocultarComprasAnteriores(){
     document.getElementById('divComprasAnteriores').style.display = 'none';
   //  document.getElementById('btnHistorialCompra').style.display = 'none';
 }
-
+//comentarios 
+function ocultarComent(){
+    document.getElementById('divComentarios').style.display = 'none';
+}
 //Ocultar Datos Personales boton X=>+
 function ocultarDatosPersonales(){
 
@@ -161,9 +169,22 @@ function ocultarComprasAnteriores(){
     document.getElementById('botonActivoComprasAnteriores').classList.replace("bi-x-lg", "bi-plus-lg");
    }
 }
+//Ocultar comentarios boton X=>+
+function ocultarComent(){
+
+    if(document.getElementById('divComentarios').style.display=='none'){
+       document.getElementById('divComentarios').style.display = 'block';
+       document.getElementById('botonActivo').classList.replace("bi-plus-lg", "bi-x-lg");
+   }
+   else{
+    document.getElementById('divComentarios').style.display = 'none';
+    document.getElementById('botonActivo').classList.replace("bi-x-lg", "bi-plus-lg");
+   }
+}
     cargarDatosPersonales();
     cargarFormaDePago();
     cargarHistorialCompra();
+    
 
  // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
