@@ -262,7 +262,7 @@ async function EnvioInfoAPI() {
   };
 
   if (!SIMULAR_ENVIO) {
-    flag = await requestPut(USER_INFO_PUT_URL, user);
+    //flag = await requestPut(USER_INFO_PUT_URL, user);
   }
   if (flag) { // Envio a la API exitoso
     window.location.assign("/html/pago.html");
