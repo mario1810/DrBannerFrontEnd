@@ -234,3 +234,19 @@ function ocultarComprasAnteriores(){
  //pa cambiar el iconito
  //div.classList.replace("foo", "bar");
  //document get element by id.classlist
+
+function mostrarImagen(event){
+    let imagenSource = event.target.result;
+    let previewImage = document.getElementById('preview');
+
+        previewImage.src = imagenSource;
+}
+function procesarArchivo(event){
+    let imagen = event.target.files[0];
+    let lector = new FileReader();
+
+    lector.addEventListener('load', mostrarImagen, false);
+    lector.readAsDataURL(imagen);
+}
+
+document.getElementById('archivo').addEventListener('change', procesarArchivo, false);
