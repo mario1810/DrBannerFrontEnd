@@ -1,6 +1,7 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 let select = document.getElementById('paquete');
+const btnCompra = document.getElementById("btnCompra");
 
 const expresiones = {
 	//usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -38,6 +39,10 @@ const campos = {
   
   //paquete:true
 }
+
+btnCompra.addEventListener("click", () => {
+	localStorage.setItem('idCompra', '');
+  });
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {

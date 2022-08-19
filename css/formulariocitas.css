@@ -5,7 +5,7 @@
 
 body {
 	/* font-family: 'Roboto', sans-serif; ;*/
-	 background: linear-gradient(45deg, #010D00, #D9D0BF, #F2F2F2, #404040,#0D0D0D);
+	 background: #f2f2f2;
      font-family: 'Montserrat', sans-serif;
 
 }
@@ -61,7 +61,7 @@ main {
 
 .formulario_paquete {
 	width: 100%;
-	background: #fff;
+	background: #f2f2f2;
 	border: 3px solid transparent;
 	border-radius: 10px;
 	height: 45px;
@@ -177,7 +177,7 @@ main {
 
 .botones {
     display: flex;
-    nav-down: ;
+  
 }
 
 
@@ -197,4 +197,8 @@ main {
 		width: 100%;
 	}
 }
+
+.custom {
+    width: 255px !important;
+  }
 
