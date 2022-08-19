@@ -47,12 +47,12 @@ footer{
 
 .fondo{
 
-    background-image:  url("https://i.pinimg.com/originals/46/19/be/4619be728a0c51f292a1fc83224ec8c0.jpg");
+    background-image:  url("https://i.pinimg.com/originals/46/19/be/4619be728a0c51f292a1fc83224ec8c0.jpg") !important;
     background-position: center center;
    
 }
 
-.bg2{
+.bg2 {
 
   background-image:  url("https://i.ibb.co/1vMJC4W/MG-1458-3.jpg");
   background-position: center center;
