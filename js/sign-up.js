@@ -44,7 +44,8 @@ function btnRegistro(){
    inputEmail.classList.contains("is-valid")
   ) {
     //Post
-    localStorage.setItem('userId', '22');
+    localStorage.setItem('userId', '2');
+    localStorage.setItem('compraId', '5');
     window.location.assign("/html/perfil.html");
 
   } else {

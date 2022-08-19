@@ -114,6 +114,7 @@ function muestraPaquetesTabla(arrayPaquetes){
             id++;
         }
         totalPagar.innerHTML="$"+Number.parseFloat(pagar).toFixed(2);
+        localStorage.setItem("CostoTotal",pagar);
     }else{
         btnPagar.disabled=true;        
         mensajeCarritoVacio.innerHTML=MENSAJE_CAR_VACIO;

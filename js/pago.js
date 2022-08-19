@@ -1,7 +1,6 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
-const USER_INFO_POST_URL = "https://a75973a6-cd56-4429-816a-7f6527bc347e.mock.pstmn.io";
 const SERVICE_TYPE = "Json";
-const SIMULAR_POST=true;
+const SIMULAR_POST=false;
 const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global 
@@ -49,7 +48,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         fetch(direccionhttp)
           .then((responseJSON) =>{ return responseJSON.json()})
           .then((usuarioObject) => {
-            resolve(usuarioObject.usuario)
+            resolve(usuarioObject)
           })
           .catch((error) => {
             //console.log(error);
@@ -63,7 +62,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         fetch(direccionhttp)
           .then((responseJSON) => { return responseJSON.json()})
           .then((usuarioObject) => {
-                resolve(usuarioObject.usuario)}
+                resolve(usuarioObject)}
             )
           .catch((error) => {
             //console.log(error);
@@ -77,16 +76,25 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
 
   //Función que llama requetGet para obtener los datos del usuario y los despliega en el formulario
  async function solicitudDatosForm() {
-    let usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
+    let usuario;
+    if(SIMULAR_POST){
+        usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
+    }else{
+        
+        let direccion="http://localhost:8080/api/pago/5";
+        console.log(direccion);
+        usuario = await requestGet("Fetch",direccion);
+    }
+    
     
     if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
         //Relleno los campos de mi formulario.
         //idUser=usuario.id;
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
         //inputApellido.value=usuario.apellido;
-        inputTarjeta.value=addSpacesNumeroTarjeta(usuario.tarjeta.numeroTarjeta);
+        inputTarjeta.value=addSpacesNumeroTarjeta(usuario.numeroTarjeta);
         //Tipo de tarjeta
-        if(usuario.tarjeta.tipo=="debito"){
+        if(usuario.tipoTarjeta=="debito"){
             rbTC.checked=false;
             //inputGroupMeses.disabled=true;
             rbTD.checked=true;
@@ -96,7 +104,12 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
             rbTC.checked=true;
         } 
         //Total a pagar
-        totPagar.value=Number.parseFloat(usuario.total).toFixed(2);
+        
+        let auxPagar=Number(localStorage.getItem("CostoTotal"));
+        if(auxPagar==null || auxPagar==NaN )
+            auxPagar=1200;
+        auxPagar=1200;
+        totPagar.value=Number.parseFloat(auxPagar).toFixed(2);
         //Comprobación de campos que se autorellenaron
         corroborarAutorrelleno();
     }
@@ -759,25 +772,23 @@ function getUserId(){
 
     //Creamos un objeto con la información a enviar
     let user = {
-        id: Number(getUserId()),
-        nombre: String(inputNombre.value),
-        tarjeta:{
-            numeroTarjeta:String(inputTarjeta.value.replace(/ /g, "")),
-            mes:Number(inputMes.value),
-            anio:Number(inputYear.value),
-            cvv:Number(inputCVV),
-            tipo:String(tT),
-            guardar:guardarTarjeta.checked
-        },
+            idUsuario:Number(getUserId()),
+            nombre:String(inputNombre.value),
+            numeroTarjeta:"294646374639479",
+            tipoTarjeta:"debito",
+            mes:String(inputMes.value),
+            anio:String(inputYear.value),
+            cvv:String(inputCVV),
+            guardarTarjeta:guardarTarjeta.checked,
+            idCompra:5,
+            costoTotal:Number(localStorage.getItem("CostoTotal"))
+        }
         //Ya está el costo total en la base de datos
         //total: Number(totPagar.value),
-        pagar:"true"
-    };
     let flag=PAGO_EXITOSO;
     if(SIMULAR_POST){
         console.log(JSON.stringify(user));
-    }else{
-        let flag = await requestPost(USER_INFO_POST_URL,user);
+        flag = await requestPut("http://localhost:8080/api/pago",user);
     }
     //Retraso para ver la aimación
     syncDelay(5000);
@@ -812,7 +823,7 @@ function resultadoPago(flag){
     btnFinCompra.style.visibility="visible";
     btnFinCompra.addEventListener("click",()=>{
         if(flag){
-            localStorage.remove('userId');
+            localStorage.removeItem('userId');
             window.location.assign("/index.html"); 
         }else{
             myModal.hide();
@@ -833,7 +844,32 @@ function resultadoPago(flag){
     // No se puede realizar el proceso, porque hay un campo mal
  }
 
-
+ /**
+  *     FUnción que realiza un post a la api
+  * @param {*} direccionhttp  // dirección de la API
+  * @param {*} json  // JSON que se adjunta en el post
+  */
+  async function requestPut(direccionhttp, data){
+    return new Promise((resolve, reject) => {
+      fetch(direccionhttp, {
+        method: "PUT",
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify(data)
+      })
+      .then(response =>{ //Opcional
+          if(response.ok){
+            //console.log("HTTP request successful");
+            return resolve(true);
+          }else{
+            //console.log("HTTP request unsuccessful");
+            return resolve(false);
+          }
+      }) 
+      .catch(err =>{
+        //console.log(err);
+        reject(false);});
+  });
+  }
 //eventos de ingreso de texto (despues de que el valor ha llegado al input)
 inputNombre.addEventListener("keyup",(event)=>{corroborarNombre(true)});
 //inputApellido.addEventListener("keyup",(event)=>{corroborarTexto(true,inputApellido)});
