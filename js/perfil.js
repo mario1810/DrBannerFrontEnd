@@ -164,3 +164,73 @@ function ocultarComprasAnteriores(){
     cargarDatosPersonales();
     cargarFormaDePago();
     cargarHistorialCompra();
+
+ // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
+
+ btnComent.addEventListener('click',()=>{leeEstrella();enviaComentario()});
+
+ function leeEstrella() {
+     //Lee si da un true o false porque las estrellas es como una lista
+     let five= document.getElementById("five").checked;
+
+     let four= document.getElementById("four").checked;
+     let three= document.getElementById("three").checked;
+     let two= document.getElementById("two").checked;
+     let one= document.getElementById("one").checked;
+     
+     //Envia el true/false y el valor numero correcpondiente a otra funcion
+     enviarEstrella(five,5);
+     enviarEstrella(four,4);
+     enviarEstrella(three,3);
+     enviarEstrella(two,2);
+     enviarEstrella(one,1);
+    
+     console.log("------------");
+     
+ }
+
+ function enviarEstrella(estrella,numero) {
+   console.log("valor estrella "+numero+" es: "+ estrella);
+
+   if (estrella){
+     console.log("Numero de estrellas: "+numero);
+     //aqui debe ir el post que manda el valor de "numero"
+   }
+
+   //Creamos el objeto a enviar como json
+     // let user = {
+     //     id: Number(userId),
+     //     total: Number(totalC.substring(1, totalC.length)),
+     // };
+ }
+ 
+ let comentario= document.getElementById("cajitaComent");
+
+ comentario.addEventListener("keydown",(event)=>{filtroTexto(event)});
+
+ function filtroTexto(e){
+     
+     //test es un método de la expresión regular (como length) para comprobar si tiene un caracter fuera de la expresión regulr o no
+    //console.log(e.key.charCodeAt(0));
+     if((comentario.value.length+1)<120||e.key.charCodeAt(0)==66||e.key.charCodeAt(0)==65){
+         //esta instruccion es para limitar los caracteres en el input de comentarios
+         //tambien se necesitan los ekey para que el caracter de las flechitas
+         //no se cuenten como caracteres
+     }else{
+         /**
+          Una llamada a preventDefault() del evento keydown impide la emisión del consiguiente evento keypress
+          //En otras palabras, el input no notará que se ha presionado una tecla, y por tanto no aparece
+          */
+         e.preventDefault();
+     }
+ }
+
+ function enviaComentario() {
+     let comentario= document.getElementById("cajitaComent").value;
+     console.log(comentario);
+     //aqui debe ir el post que manda el valor de "numero"
+ }
+ 
+ //pa cambiar el iconito
+ //div.classList.replace("foo", "bar");
+ //document get element by id.classlist
