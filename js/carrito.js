@@ -134,7 +134,7 @@ async function obtenerPaquetesUsuario() {
     if(SIMLAR){
       usuario = await requestGet(SERVICE_TYPE, USER_INFO_GET_URL);
     }else{
-       usuario = await requestGet("Fetch","http://localhost:8080/api/carrito/5");
+       usuario = await requestGet("Fetch","http://localhost:8080/api/carrito/11");
     }
     
     // El fetch se realizó de manera correcta?

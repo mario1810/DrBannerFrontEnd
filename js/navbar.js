@@ -30,7 +30,7 @@ async function actualizarIconos(){
       if(SIMULAR_NAV){
         response = await requestGet(SERVICE_TYPE_NAV,CAR_NAV_GET_URL);
       }else{
-        response = await requestGet("fetch","http://localhost:8080/api/carrito/5");
+        response = await requestGet("fetch","http://localhost:8080/api/carrito/11");
       }
         
         if(response!=null){
