@@ -1,6 +1,17 @@
 
 //Buscar servicio por el nombre
-const fetchServiceByName = name => fetch(`/assets/json/packages/${name}.json`).then(response => response.json());;
+const packagesMap = { xv: 1, boda: 2, familiar: 3 };
+
+const fetchServiceByName = name => fetch(`https://lit-falls-71538.herokuapp.com/api/paquetes/${ packagesMap[name.toLowerCase()]}`)
+    .then(response => response.json())
+    .then( data => {
+        data.services.forEach(service => {
+            service.items = service.items.map( item  => item.name);
+        });
+        return data;
+    })
+    .catch(() => fetch(`/assets/json/packages/${name.toLowerCase()}.json`).then(response => response.json()))
+    
 
 //Dinamico
 const setTitle = (title) => {
@@ -10,16 +21,16 @@ const setTitle = (title) => {
 //Dinamico
 
 const createImageColTemplate = (image, isActive) => {
-    //image: {"title", "src"}, isActive: Boolean
+    //image: {"title", "url"}, isActive: Boolean
     return `
         <div class="col-sm-4 ${ isActive ?  '' : 'd-none d-sm-block'}"> 
-            <img title="${ image.title }" src="${ image.src }" class="img-fluid rounded-2" alt="...">
+            <img title="${ image.title }" src="${ image.url }" class="img-fluid rounded-2" alt="...">
         </div>
     `;
 };
 const createCarouselItemTemplate = (images, isActive) => {
     /**
-     * images: [{title, src}, {title, src}, {title, src}]
+     * images: [{title, url}, {title, url}, {title, url}]
      * isActive:Boolean
      * 
     */
@@ -65,9 +76,9 @@ const setCarouselItems = (images) => {
 
     /*
         [
-            [{title, src}, {title, src}, {title, src}] slide1 3 images
-            [{title, src}, {title, src}, {title, src}] slide2 3 images
-            [{title, src}, {title, src}, {title, src}] slide4 3 images
+            [{title, url}, {title, url}, {title, url}] slide1 3 images
+            [{title, url}, {title, url}, {title, url}] slide2 3 images
+            [{title, url}, {title, url}, {title, url}] slide4 3 images
         ]
     
     */
@@ -90,11 +101,10 @@ const setPage = async (pageName) => {
     setServices(data.services);
 };
 
-
 addEventListener('DOMContentLoaded', () => {
     const url = new URL(window.location.href);
     const service = url.searchParams.get('servicio')
     const serviceName= service || 'xv';
-    setPage(serviceName);
+    setPage(serviceName).catch(console.error);
 });
 
