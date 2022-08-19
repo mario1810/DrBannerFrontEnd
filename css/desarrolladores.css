@@ -82,7 +82,8 @@ section{
     width: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #4070f4;/*hover*/
+    border: 4px solid grey ;/*hover  #4070f4  rgb(170, 11, 170)*/
+   
 }
 
 .name{
@@ -101,11 +102,11 @@ section{
 }
 
 .swiper-navBtn{
-    color: #0D0D0D; /*Color de las pestanas de cambio next/back*/
+    color: rgb(170, 11, 170); /*Color de las pestanas de cambio next/back*/
     transition: color 0.3s ease;
 }
 .swiper-navBtn:hover{
-    color: #0D0D0D; /*Color de las pestanas de cambio next/back*/
+    color: rgb(170, 11, 170); /*Color de las pestanas de cambio next/back*/
 }
 .swiper-navBtn::before,
 .swiper-navBtn::after {
@@ -118,11 +119,12 @@ section{
     left: 0;
 }
 .swiper-pagination.bullet{
-    background-color: #0D0D0D;
+    background-color: rgb(170, 11, 170);
     opacity: 1;
 }
 .swiper-pagination-bullet-active{
-    background-color: #0D0D0D;
+    background-color: rgb(170, 11, 170);
+   
 }
 @media screen and (max-width: 768px){
     .slide-content{
