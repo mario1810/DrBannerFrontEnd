@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citas de Eventos</title>
+    <title>Agenda tu sesión</title>
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
     <!--Favicon-->
     <link rel="icon" href="https://i.ibb.co/J2J0Rh4/icons8-camera-64-2.png">
@@ -122,145 +122,132 @@
                               <!-- Formulario--> 
     <!--========================================================== -->
     <main>
+      <div class="container">
+        <div class="py-5 text-center">
+       <h2>Agenda tu sesión </h2>
+       <p class="lead text-center" >Ingrese sus datos para checar disponibilidad y agendar su sesión fotográfica.</p>
+        </div>
+      </div>
+
+      <div class="container rounded ">
       <form action="" class="formulario" id="formulario">
         <!-- Grupo: Nombre -->
-        <div class="formulario__grupo" id="grupo__nombre">
+        <div class="formulario__grupo mx-4 mt-2" id="grupo__nombre">
           <label for="nombre" class="formulario__label">Nombre</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El usuario tiene que ser de letras.</p>
+          <p class="formulario__input-error">Por favor ingrese un nombre valido.</p>
         </div>
         
         <!-- Grupo: Apellido -->
-        <div class="formulario__grupo" id="grupo__apellido">
+        <div class="formulario__grupo mx-4  mt-2" id="grupo__apellido">
           <label for="apellido" class="formulario__label">Apellido</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Gonzales Sanchez">
+            <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El apellido tiene que ser de letras.</p>
+          <p class="formulario__input-error">Por favor ingrese un apellido valido.</p>
         </div>
   
         
   
-        <!-- Grupo: Contraseña 
-        <div class="formulario__grupo" id="grupo__password">
-          <label for="password" class="formulario__label">Contraseña</label>
-          <div class="formulario__grupo-input">
-            <input type="password" class="formulario__input" name="password" id="password">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          </div>
-          <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-        </div>
-  
-        <!-- Grupo: Contraseña 2 
-        <div class="formulario__grupo" id="grupo__password2">
-          <label for="password2" class="formulario__label">Repetir Contraseña</label>
-          <div class="formulario__grupo-input">
-            <input type="password" class="formulario__input" name="password2" id="password2">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-          </div>
-          <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-        </div>-->
-  
-        <!-- Grupo: Correo Electronico -->
-        <div class="formulario__grupo" id="grupo__correo">
+        <div class="formulario__grupo mx-4" id="grupo__correo">
           <label for="correo" class="formulario__label">Correo Electrónico</label>
           <div class="formulario__grupo-input">
-            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+          <p class="formulario__input-error">Por favor ingrese un correo valido.</p>
         </div>
   
         <!-- Grupo: Teléfono -->
-        <div class="formulario__grupo" id="grupo__telefono">
+        <div class="formulario__grupo mx-4" id="grupo__telefono">
           <label for="telefono" class="formulario__label">Teléfono</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+          <p class="formulario__input-error">Por favor ingrese su número de teléfono a 10 digitos.</p>
         </div>
   
         <!-- Grupo: Calle -->
-        <div class="formulario__grupo" id="grupo__calle">
-          <label for="calle" class="formulario__label">Calle</label>
+        <div class="formulario__grupo mx-4" id="grupo__calle">
+          <label for="calle" class="formulario__label">Dirección </label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="calle" id="calle" placeholder="Escribe aqui la calle del evento">
+            <input type="text" class="formulario__input" name="calle" id="calle" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El calle tiene solo letras.</p>
+          <p class="formulario__input-error">Por favor ingrese una dirección valida para su sesión.</p>
         </div>
   
         <!-- Grupo: Codigo Postal -->
-        <div class="formulario__grupo" id="grupo__codigoPostal">
-          <label for="codigoPostal" class="formulario__label">Codigo Postal</label>
+        <div class="formulario__grupo mx-4" id="grupo__codigoPostal">
+          <label for="codigoPostal" class="formulario__label">Código Postal</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="codigoPostal" id="codigoPostal" placeholder="Escribe el codigo postal C.P 00000 ">
+            <input type="text" class="formulario__input" name="codigoPostal" id="codigoPostal" placeholder=" ">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El Codigo Postal debe de ser de Cinco a 8 números</p>
+          <p class="formulario__input-error">Por favor de ingresas un código postal valido a 5 números.</p>
         </div>
   
   
         <!-- Grupo: colonia -->
-        <div class="formulario__grupo" id="grupo__municipio">
-          <label for="municipio" class="formulario__label">Municipio</label>
+        <div class="formulario__grupo mx-4" id="grupo__municipio">
+          <label for="municipio" class="formulario__label">Ciudad o Municipio</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="municipio" id="municipio" placeholder="Colonia del evento">
+            <input type="text" class="formulario__input" name="municipio" id="municipio" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El municipio tiene que ser solo letras</p>
+          <p class="formulario__input-error">Por favor ingrese un municipio o ciudad valido.</p>
         </div>
   
   
         <!-- Grupo: Estado -->
-        <div class="formulario__grupo" id="grupo__estado">
+        <div class="formulario__grupo mx-4" id="grupo__estado">
           <label for="estado" class="formulario__label">Estado</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="estado" id="estado" placeholder="El estado del evento">
+            <input type="text" class="formulario__input" name="estado" id="estado" placeholder="">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El estado tiene que ser de letras</p>
+          <p class="formulario__input-error">Por favor ingrese un estado de la república mexicana.</p>
         </div>
   
   
         <!-- Grupo: Fecha -->
-        <div class="formulario__grupo" id="grupo__fecha">
+        <div class="formulario__grupo mx-4" id="grupo__fecha">
           <label for="fecha" class="formulario__label">Fecha</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="fecha" id="fecha" placeholder="Ingresa este formato dd/mm/aaaa">
+            <input type="text" class="formulario__input" name="fecha" id="fecha" placeholder=" dd/mm/aaaa">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario__input-error">El fecha tiene que ser solo números en este formato dd/mm/aaaa</p>
+          <p class="formulario__input-error">Por favor ingrese la fecha deseada en el sigueinte formato dd/mm/aaaa</p>
         </div>
   
   
         <!-- Grupo: Hora -->
-        <div class="formulario__grupo" id="grupo__hora">
+        <div class="formulario__grupo mx-4" id="grupo__hora">
           <label for="hora" class="formulario__label">Hora</label>
           <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="hora" id="hora" placeholder="Ingresa este formato hh:mm">
+            <input type="text" class="formulario__input" name="hora" id="hora" placeholder="hh:mm">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
           <p class="formulario__input-error">La hora debe de llevar solo números separados por ":"</p>
         </div>
   
         <!-- Grupo: Paquete -->
-        <div class="formulario__grupo" id="grupo__paquete">
+        <div class="formulario__grupo mx-4" id="grupo__paquete">
           <label for="paquete" class="formulario__label">Paquete</label>
           <div class="formulario__grupo-input">
             <!--<input type="text" class="formulario__input" name="paquete" id="paquete" placeholder="4491234567">
             -->
-            <select type="option" class="formulario__input" id="paquete" name="paquete" >
-              <option value=""> Selecciona una opcion</option>
+            <select type="option" class="formulario__input " id="paquete" name="paquete" >
+              <option value=""> Selecciona una opción</option>
               <option value="Boda">Boda</option>
               <option value="XV años">XV años</option>
-              <option value="Familiares">Familiares</option>
-              <option value="Bock">Bock</option>
+              <option value="Familiares">Familia</option>
+              
             </select>
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
@@ -272,15 +259,17 @@
         
   
         <!-- Grupo: Subpaquete -->
-        <div class="formulario__grupo" id="grupo__subpaquete">
+        <div class="formulario__grupo mx-4" id="grupo__subpaquete">
           <label for="subpaquete" class="formulario__label">Subpaquete</label>
           <div class="formulario__grupo-input">
             <!--<input type="text" class="formulario__input" name="subpaquete" id="subpaquete" placeholder="4491234567">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>-->
-            <select class="formulario__input" id="paquete">
-              <option>prime</option>
-              <option>full</option>
-              <option>basis</option>
+            <select class="formulario__input " id="paquete">
+              <option value=""> Selecciona una opción</option>
+              <option>Básico</option>
+              <option>Elite</option>
+              <option>Pre-Evento</option>
+              <option>Evento</option>
             
             </select>
           </div>
@@ -291,28 +280,31 @@
         
   
         <!-- Grupo: Terminos y Condiciones -->
-        <div class="formulario__grupo" id="grupo__terminos">
+        <div class="formulario__grupo mx-4 " id="grupo__terminos">
           <label class="formulario__label">
-            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-            <a href="/terminos.html">Acepto los Terminos y Condiciones</a> 
+
+            <input class="formulario__checkbox " type="checkbox" name="terminos" id="terminos">
+            <a href="/html/terminosyCondiciones.html" style="color:black">Acepto los Terminos y Condiciones</a> 
+
           </label>
         </div>
   
-        <div class="formulario__mensaje" id="formulario__mensaje">
+       <!--  <div class="formulario__mensaje" id="formulario__mensaje">
           <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-        </div>
+        </div> -->
   
         <div class="formulario__grupo formulario__grupo-btn-enviar botones">
-          <button type="submit" class="formulario__btn">añadir paquete</buttobrn>
+          <button type="submit" class=" btn btn-dark custom" id="procederCompra">Añadir paquete</button>
           
           <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
 
-        <div class="formulario__grupo formulario__grupo-btn-enviar botones">
-          <button type="button" class="formulario__btn">Ir a carrito</button>
+        <div class="formulario__grupo formulario__grupo-btn-enviar botones ">
+          <button type="button" class=" btn btn-dark custom mb-3 btnCompra " id="finalizarCompra"> <a href="/html/carrito.html"> Proceder con la compra</a></button>
           <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
       </form>
+    </div>
     </main>
 
     
@@ -348,7 +340,6 @@
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/navbar.js"></script>
-    <script src="/js/carrito.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="/js/formulariocitas.js"></script>
     

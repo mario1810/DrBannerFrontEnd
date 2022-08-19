@@ -1,6 +1,10 @@
-{
-    "usuario": {
-        "idusuario": 1,
-        "carritoitems":6
+[
+    {
+        "fecha": "2022-04-15",
+        "dirección": "Segunda Pte. Nte. 11, Centro, 30140 Centro, Chis.",
+        "idPedido": 7,
+        "nombrePaquete": "Pre Evento",
+        "nombreCategoria": "XV",
+        "costo": "2000"
     }
-}
+]

@@ -1,16 +1,7 @@
 {
-    "usuario": {
-        "id": 1,
-        "nombre": "Mario",
-        "apellido": "Alvarez",
-        "tarjeta":{
-                "numeroTarjeta":"1234567890123456",
-                "tipo":"credito"            
-            },
-        "total": 1200,
-        "support": {
-            "url": "https://reqres.in/#support-heading",
-            "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
-        }
-    }
+    "nombre": "Gerardo Ramiro",
+    "apellido": "Ruiz Andrade",
+    "numeroTarjeta": "4198220007580929",
+    "tipoTarjeta": "debito"
+    
 }
