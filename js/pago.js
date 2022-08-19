@@ -1,6 +1,6 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
 const SERVICE_TYPE = "Json";
-const SIMULAR_POST=false;
+const SIMULAR_POST=true;
 const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global 
@@ -77,7 +77,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
   //Función que llama requetGet para obtener los datos del usuario y los despliega en el formulario
  async function solicitudDatosForm() {
     let usuario;
-    if(SIMULAR_POST){
+    if(true){
         usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
     }else{
         

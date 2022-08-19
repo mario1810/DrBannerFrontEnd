@@ -4,7 +4,6 @@ const USER_INFO_DELETE_URL = "";
 const SERVICE_TYPE = "Json"; //Fetch
 const MENSAJE_CAR_VACIO="Vive tu momento,<br>nosotros lo capturamos<br><br>¿Ya has visto nuestros paquetes?<br><br>";
 const SIMULAR_ENVIO=true;
-const SIMLAR=false;
 let arrayCarrito;
 //let idUser=0; //temporalmente global 
 
@@ -131,7 +130,7 @@ async function obtenerPaquetesUsuario() {
   if (userId != null && isUserLogged() === true) {
     //Realizamos un fetch
     let usuario;
-    if(SIMLAR){
+    if(true){
       usuario = await requestGet(SERVICE_TYPE, USER_INFO_GET_URL);
     }else{
        usuario = await requestGet("Fetch","http://localhost:8080/api/carrito/11");

@@ -1,6 +1,6 @@
 const CAR_NAV_GET_URL = "/assets/json/navbar.json";
 const SERVICE_TYPE_NAV = "Json"; //Fetch
-const SIMULAR_NAV="false"
+const SIMULAR_NAV=true;
 
 
 //id  del elemento para mostrar 
@@ -27,7 +27,7 @@ async function actualizarIconos(){
 
     if(userID!=null && logged === true){
       let response;
-      if(SIMULAR_NAV){
+      if(true){
         response = await requestGet(SERVICE_TYPE_NAV,CAR_NAV_GET_URL);
       }else{
         response = await requestGet("fetch","http://localhost:8080/api/carrito/11");
