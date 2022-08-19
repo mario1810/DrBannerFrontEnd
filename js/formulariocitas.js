@@ -1,7 +1,8 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 let select = document.getElementById('paquete');
-const btnCompra = document.getElementById("btnCompra");
+let continuarCompra= document.getElementById('procederCompra');
+
 
 const expresiones = {
 	//usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -40,10 +41,15 @@ const campos = {
   //paquete:true
 }
 
-btnCompra.addEventListener("click", () => {
+/* btnCompra.addEventListener("click", () => {
 	localStorage.setItem('idCompra', '');
   });
-
+ */
+continuarCompra.addEventListener("click", () => {
+	let cantidad=Number(iconoCarrito.innerHTML);
+  iconoCarrito.innerHTML=String(cantidad+1);
+  });
+ 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
@@ -160,11 +166,11 @@ formulario.addEventListener('submit', (e) => {
 
 
 //Hacer post
-window.addEventListener('DOMContentLoaded', ()=> {
+/* window.addEventListener('DOMContentLoaded', ()=> {
     solicitudDatosForm();
 });
 
 
 
-
+ */
 
