@@ -50,6 +50,7 @@ inputEmail.addEventListener("keyup", () => {
           redirectTo = getCookie('post_login_redirect'); 
           deleteCookie('post_login_redirect'); 
       } 
+      localStorage.setItem('userId', '22');
       window.location.href = redirectTo; 
       //code - success 
   })
