@@ -7,93 +7,67 @@
             {
                 "id": 1,
                 "paquete": "XV años",
-                "tipo": "Básico",
+                "tipo": "Pre-evento",
                 "costo": "500",
-                "fecha": "01/02/23",
+                "fecha": "05/12/22",
                 "hora": "12:20:00",
-                "direccion":"Colonia Luz"
+                "direccion":"Calle 15, Veracruz "
             },
             {
                 "id": 2,
                 "paquete": "XV años",
-                "tipo": "Premium",
+                "tipo": "Evento",
                 "costo": "800",
-                "fecha": "01/04/23",
+                "fecha": "05/12/22",
                 "hora": "23:20:00",
                 "direccion":"Colonia Luz, Chiapas"
             },
             {
                 "id": 3,
                 "paquete": "Familiar",
-                "tipo": "completo",
+                "tipo": "Básico",
                 "costo": "900",
-                "fecha": "12/03/23",
-                "hora": "05:20:00",
-                "direccion":"Colonia Luz, Chiapas"
+                "fecha": "12/09/22",
+                "hora": "16:00:00",
+                "direccion":"Av Independencia, Tuxtla Gtz"
             },
             {
                 "id": 4,
-                "paquete": "XV años",
-                "tipo": "Básico",
-                "costo": "500",
-                "fecha": "30/05/23",
-                "hora": "03:20:00",
-                "direccion":"Colonia Luz, Chiapas"
+                "paquete": "Boda",
+                "tipo": "Elite",
+                "costo": "3300",
+                "fecha": "30/02/23",
+                "hora": "20:00:00",
+                "direccion":"Jardin Orquideas, Chiapas "
             },
             {
                 "id": 5,
                 "paquete": "Familiar",
-                "tipo": "Normal",
-                "costo": "900",
+                "tipo": "Elite",
+                "costo": "1500",
                 "fecha": "01/12/22",
-                "hora": "18:20:00",
-                "direccion":"Colonia Luz, Chiapas"
+                "hora": "18:00:00",
+                "direccion":"Parque Buenaventura"
             },
             {
                 "id": 6,
-                "paquete": "Familiar",
-                "tipo": "Chido",
-                "costo": "300",
-                "fecha": "21/11/23",
-                "hora": "13:25:00",
-                "direccion":"Colonia Luz, Chiapas"
+                "paquete": "XV años",
+                "tipo": "Evento",
+                "costo": "2800",
+                "fecha": "21/11/22",
+                "hora": "21:00:00",
+                "direccion":"Salon Luxury"
             },
             {
                 "id": 7,
-                "paquete": "Familiar",
-                "tipo": "Normal",
-                "costo": "900",
-                "fecha": "01/12/22",
-                "hora": "18:20:00",
-                "direccion":"Colonia Luz, Chiapas"
-            },
-            {
-                "id": 8,
-                "paquete": "Familiar",
-                "tipo": "Chido",
-                "costo": "300",
-                "fecha": "21/11/23",
-                "hora": "13:25:00",
-                "direccion":"Colonia Luz, Chiapas"
-            },
-            {
-                "id": 9,
-                "paquete": "Familiar",
-                "tipo": "Normal",
-                "costo": "900",
-                "fecha": "01/12/22",
-                "hora": "18:20:00",
-                "direccion":"Colonia Luz, Chiapas"
-            },
-            {
-                "id": 10,
-                "paquete": "Familiar",
-                "tipo": "Chido",
-                "costo": "300",
-                "fecha": "21/11/23",
-                "hora": "13:25:00",
-                "direccion":"Colonia Luz, Chiapas"
+                "paquete": "Boda",
+                "tipo": "Elite",
+                "costo": "3500",
+                "fecha": "07/02/23",
+                "hora": "20:00:00",
+                "direccion":"WTC Veracruz"
             }
+           
         ],
         "support": {
             "url": "https://reqres.in/#support-heading",

@@ -4,6 +4,7 @@ let select = document.getElementById('paquete');
 let continuarCompra= document.getElementById('procederCompra');
 
 
+
 const expresiones = {
 	//usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -49,6 +50,9 @@ continuarCompra.addEventListener("click", () => {
 	let cantidad=Number(iconoCarrito.innerHTML);
   iconoCarrito.innerHTML=String(cantidad+1);
   });
+
+  
+ 
  
 const validarFormulario = (e) => {
 	switch (e.target.name) {

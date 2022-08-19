@@ -202,6 +202,7 @@ main {
     width: 255px !important;
   }
 
+<<<<<<< HEAD
   .cuerpopoliticas {
 	margin: 20%;
 	text-align: justify;
@@ -209,3 +210,20 @@ main {
 
   
 
+=======
+a:link{
+	text-decoration: none;
+	color: white;
+}
+a:hover{
+	text-decoration: none;
+	color: white;
+}
+a:visited{
+	text-decoration: none;
+	color: white;
+}
+a{
+	color: white;
+}
+>>>>>>> 2ff9583f15198aa4465452bf04c2e173bd5ae52f

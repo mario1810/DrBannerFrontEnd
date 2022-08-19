@@ -9,7 +9,7 @@ footer{
 }
 .bg{
 
-    background-image:  url(https://i.pinimg.com/originals/46/19/be/4619be728a0c51f292a1fc83224ec8c0.jpg);
+    background-image:  url(https://i.ibb.co/fF4TVtD/ni-e.jpg);
     background-position: center center;
 }
 
@@ -44,9 +44,10 @@ footer{
     color: #f2f2f2;
     background-color: #404040;
 }
-.bg{
 
-    background-image:  url(https://i.pinimg.com/originals/46/19/be/4619be728a0c51f292a1fc83224ec8c0.jpg);
+.fondo{
+
+    background-image:  url("https://i.pinimg.com/originals/46/19/be/4619be728a0c51f292a1fc83224ec8c0.jpg");
     background-position: center center;
    
 }

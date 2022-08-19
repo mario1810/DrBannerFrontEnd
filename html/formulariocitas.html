@@ -282,23 +282,28 @@
         <!-- Grupo: Terminos y Condiciones -->
         <div class="formulario__grupo mx-4 " id="grupo__terminos">
           <label class="formulario__label">
+<<<<<<< HEAD
             <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
             <a href="/html/terminosyCondiciones.html">Acepto los Terminos y Condiciones</a> 
+=======
+            <input class="formulario__checkbox " type="checkbox" name="terminos" id="terminos">
+            <a href="/terminos.html" style="color:black">Acepto los Terminos y Condiciones</a> 
+>>>>>>> 2ff9583f15198aa4465452bf04c2e173bd5ae52f
           </label>
         </div>
   
-        <div class="formulario__mensaje" id="formulario__mensaje">
+       <!--  <div class="formulario__mensaje" id="formulario__mensaje">
           <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-        </div>
+        </div> -->
   
         <div class="formulario__grupo formulario__grupo-btn-enviar botones">
-          <button type="submit" class=" btn btn-dark custom">Añadir paquete</button>
+          <button type="submit" class=" btn btn-dark custom" id="procederCompra">Añadir paquete</button>
           
           <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
 
         <div class="formulario__grupo formulario__grupo-btn-enviar botones ">
-          <button type="button" class=" btn btn-dark custom mb-3 btnCompra " id="procederCompra">Proceder con la compra</button>
+          <button type="button" class=" btn btn-dark custom mb-3 btnCompra " id="finalizarCompra"> <a href="/html/carrito.html"> Proceder con la compra</a></button>
           <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
       </form>

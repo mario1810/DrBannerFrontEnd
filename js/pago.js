@@ -812,6 +812,7 @@ function resultadoPago(flag){
     btnFinCompra.style.visibility="visible";
     btnFinCompra.addEventListener("click",()=>{
         if(flag){
+            localStorage.remove('userId');
             window.location.assign("/index.html"); 
         }else{
             myModal.hide();
