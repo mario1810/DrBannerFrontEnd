@@ -232,10 +232,10 @@
         <div class="formulario__grupo" id="grupo__fecha">
           <label for="fecha" class="formulario__label">Fecha</label>
           <div class="formulario__grupo-input">
-            <input type="date" class="formulario__input" name="fecha" id="fecha" placeholder="Gonzales Sanchez">
+            <input type="text" class="formulario__input" name="fecha" id="fecha" placeholder="Ingresa este formato dd/mm/aaaa">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <!--<p class="formulario__input-error">El fecha tiene que ser de letras.</p>-->
+          <p class="formulario__input-error">El fecha tiene que ser solo números en este formato dd/mm/aaaa</p>
         </div>
   
   
@@ -243,10 +243,10 @@
         <div class="formulario__grupo" id="grupo__hora">
           <label for="hora" class="formulario__label">Hora</label>
           <div class="formulario__grupo-input">
-            <input type="time" class="formulario__input" name="hora" id="hora" placeholder="Gonzales Sanchez">
+            <input type="text" class="formulario__input" name="hora" id="hora" placeholder="Ingresa este formato hh:mm">
             <i class="formulario__validacion-estado fas fa-times-circle"></i>
           </div>
-          <!--<p class="formulario__input-error">El hora tiene que ser de letras.</p>-->
+          <p class="formulario__input-error">La hora debe de llevar solo números separados por ":"</p>
         </div>
   
         <!-- Grupo: Paquete -->
@@ -255,8 +255,8 @@
           <div class="formulario__grupo-input">
             <!--<input type="text" class="formulario__input" name="paquete" id="paquete" placeholder="4491234567">
             -->
-            <select class="formulario__input" id="paquete" name="paquete" required>
-              <option> Selecciona una opcion</option>
+            <select type="option" class="formulario__input" id="paquete" name="paquete" >
+              <option value=""> Selecciona una opcion</option>
               <option value="Boda">Boda</option>
               <option value="XV años">XV años</option>
               <option value="Familiares">Familiares</option>

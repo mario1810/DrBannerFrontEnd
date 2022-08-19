@@ -1,5 +1,6 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+let select = document.getElementById('paquete');
 
 const expresiones = {
 	//usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -12,8 +13,11 @@ const expresiones = {
 	codigoPostal:/^[0-9]\d{4,7}$/,
 	municipio:/^[a-zA-ZÀ-ÿ\s]{4,40}$/,
 	estado:/^[a-zA-ZÀ-ÿ\s]{4,40}$/,
-    fecha:/^[0-9]\d{2}+[/]+[0-9]\d{2}[/]+[0-9]\d{4}$/
+    fecha: /^\d{1,2}\/\d{1,2}\/\d{4}$/,
+	hora: /^\d{1,2}\:\d{1,2}$/ 
     //paquete:true
+	//paquete: select.value
+
 
 }
 
@@ -28,7 +32,9 @@ const campos = {
 	codigoPostal:false,
 	municipio:false,
 	estado:false,
-	fecha: false
+	fecha: false,
+	hora: false
+	//paquete: false
   
   //paquete:true
 }
@@ -69,12 +75,18 @@ const validarFormulario = (e) => {
 		case "estado":
 			validarCampo(expresiones.estado, e.target, 'estado');
 		break;
-    case "fecha":
-      validarCampo(expresiones.fecha, e.target, 'fecha');
-    break;
-    case "paquete":
-      validarCampo(expresiones.paquete, e.target, 'paquete');
-    break;
+        /*
+		case "paquete":
+			validarCampo(expresiones.paquete, e.target, 'paquete');
+		break; */
+		
+        case "fecha":
+      		validarCampo(expresiones.fecha, e.target, 'fecha');
+   		 break;
+		 
+    	case "hora":
+      		validarCampo(expresiones.hora, e.target, 'hora');
+    	break; 
 	}
 }
 const validarCampo = (expresion, input, campo) => {
@@ -125,7 +137,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(/*campos.usuario &&*/ campos.nombre && campos.apellido && /*campos.password && */campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && campos.paquete && terminos.checked ){
+	if(/*campos.usuario &&*/ campos.nombre && campos.apellido && /*campos.password && */campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && campos.paquete && campos.fecha && campos.hora/*&& campos.paquete*/ && terminos.checked ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -140,5 +152,8 @@ formulario.addEventListener('submit', (e) => {
 		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
 	}
 });
+
+
+
 
 
