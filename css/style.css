@@ -195,3 +195,23 @@ text-decoration: none;
 color: #F2F2F2;
 text-decoration: none;
 }
+
+.botonoutline {
+  color: black;
+  text-decoration: none;
+  
+  
+}
+
+/* visited link */
+.botonoutline a:hover{
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+.botonoutline {
+  color: black;
+  text-decoration: none;
+  
+}

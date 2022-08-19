@@ -159,6 +159,12 @@ formulario.addEventListener('submit', (e) => {
 });
 
 
+//Hacer post
+window.addEventListener('DOMContentLoaded', ()=> {
+    solicitudDatosForm();
+});
+
+
 
 
 
