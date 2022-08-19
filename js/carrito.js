@@ -106,7 +106,7 @@ function muestraPaquetesTabla(arrayPaquetes){
                                     <td scope="row" >${paquete.nombreCategoria}</td>
                                     <td>${paquete.nombrePaquete}</td>
                                     <td>$${Number.parseFloat(paquete.costo).toFixed(2)}</td>
-                                    <td>${paquete.fecha}<br>${paquete.fecha}</td>
+                                    <td>${paquete.fecha}</td>
                                     <td>${paquete.dirección}</td>
                                     <td onclick="borrarRow(${id},${paquete.idPedido})"><i class="bi bi-trash3"></i></td>
                                     

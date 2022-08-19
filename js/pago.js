@@ -1,6 +1,6 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
 const SERVICE_TYPE = "Json";
-const SIMULAR_POST=true;
+const SIMULAR_POST=false;
 const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global 
