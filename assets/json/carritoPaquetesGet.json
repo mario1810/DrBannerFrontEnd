@@ -1,77 +1,10 @@
-{
-    "usuario": {
-        "idusuario": 1,
-        "nombre": "Mario Ivan",
-        "apellido": "Alvarez Bautista",
-        "carrito": [
-            {
-                "id": 1,
-                "paquete": "XV años",
-                "tipo": "Pre-evento",
-                "costo": "500",
-                "fecha": "05/12/22",
-                "hora": "12:20:00",
-                "direccion":"Calle 15, Veracruz "
-            },
-            {
-                "id": 2,
-                "paquete": "XV años",
-                "tipo": "Evento",
-                "costo": "800",
-                "fecha": "05/12/22",
-                "hora": "23:20:00",
-                "direccion":"Colonia Luz, Chiapas"
-            },
-            {
-                "id": 3,
-                "paquete": "Familiar",
-                "tipo": "Básico",
-                "costo": "900",
-                "fecha": "12/09/22",
-                "hora": "16:00:00",
-                "direccion":"Av Independencia, Tuxtla Gtz"
-            },
-            {
-                "id": 4,
-                "paquete": "Boda",
-                "tipo": "Elite",
-                "costo": "3300",
-                "fecha": "30/02/23",
-                "hora": "20:00:00",
-                "direccion":"Jardin Orquideas, Chiapas "
-            },
-            {
-                "id": 5,
-                "paquete": "Familiar",
-                "tipo": "Elite",
-                "costo": "1500",
-                "fecha": "01/12/22",
-                "hora": "18:00:00",
-                "direccion":"Parque Buenaventura"
-            },
-            {
-                "id": 6,
-                "paquete": "XV años",
-                "tipo": "Evento",
-                "costo": "2800",
-                "fecha": "21/11/22",
-                "hora": "21:00:00",
-                "direccion":"Salon Luxury"
-            },
-            {
-                "id": 7,
-                "paquete": "Boda",
-                "tipo": "Elite",
-                "costo": "3500",
-                "fecha": "07/02/23",
-                "hora": "20:00:00",
-                "direccion":"WTC Veracruz"
-            }
-           
-        ],
-        "support": {
-            "url": "https://reqres.in/#support-heading",
-            "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
-        }
+[
+    {
+        "fecha": "2022-04-15",
+        "dirección": "Segunda Pte. Nte. 11, Centro, 30140 Centro, Chis.",
+        "idPedido": 7,
+        "nombrePaquete": "Pre Evento",
+        "nombreCategoria": "XV",
+        "costo": "2000"
     }
-}
+]

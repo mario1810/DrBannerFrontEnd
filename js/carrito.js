@@ -4,6 +4,7 @@ const USER_INFO_DELETE_URL = "";
 const SERVICE_TYPE = "Json"; //Fetch
 const MENSAJE_CAR_VACIO="Vive tu momento,<br>nosotros lo capturamos<br><br>¿Ya has visto nuestros paquetes?<br><br>";
 const SIMULAR_ENVIO=true;
+const SIMLAR=false;
 let arrayCarrito;
 //let idUser=0; //temporalmente global 
 
@@ -55,7 +56,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         fetch(direccionhttp)
           .then((responseJSON) =>{ return responseJSON.json()})
           .then((usuarioObject) => {
-            resolve(usuarioObject.usuario)
+            resolve(usuarioObject)
           })
           .catch((error) => {
             //console.log(error);
@@ -69,7 +70,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         fetch(direccionhttp)
           .then((responseJSON) => { return responseJSON.json()})
           .then((usuarioObject) => {
-                resolve(usuarioObject.usuario)}
+                resolve(usuarioObject)}
             )
           .catch((error) => {
             //console.log(error);
@@ -102,12 +103,12 @@ function muestraPaquetesTabla(arrayPaquetes){
         for(let paquete of arrayPaquetes){
             //Creamos nuevo renglón, con la información
             tablaBody.innerHTML+=`<tr>
-                                    <td scope="row" >${paquete.paquete}</td>
-                                    <td>${paquete.tipo}</td>
+                                    <td scope="row" >${paquete.nombreCategoria}</td>
+                                    <td>${paquete.nombrePaquete}</td>
                                     <td>$${Number.parseFloat(paquete.costo).toFixed(2)}</td>
-                                    <td>${paquete.fecha}<br>${paquete.hora}</td>
-                                    <td>${paquete.direccion}</td>
-                                    <td onclick="borrarRow(${id},${paquete.id})"><i class="bi bi-trash3"></i></td>
+                                    <td>${paquete.fecha}<br>${paquete.fecha}</td>
+                                    <td>${paquete.dirección}</td>
+                                    <td onclick="borrarRow(${id},${paquete.idPedido})"><i class="bi bi-trash3"></i></td>
                                     
                                 </tr>`;                            
             pagar+=Number(paquete.costo);//*Number(paquete.cantidad);
@@ -129,11 +130,17 @@ async function obtenerPaquetesUsuario() {
   let userId = getUserId();
   if (userId != null && isUserLogged() === true) {
     //Realizamos un fetch
-    let usuario = await requestGet(SERVICE_TYPE, USER_INFO_GET_URL);
+    let usuario;
+    if(SIMLAR){
+      usuario = await requestGet(SERVICE_TYPE, USER_INFO_GET_URL);
+    }else{
+       usuario = await requestGet("Fetch","http://localhost:8080/api/carrito/5");
+    }
+    
     // El fetch se realizó de manera correcta?
     if (usuario != null) {
       //Guardamos al información del carrito localmente
-      arrayCarrito = usuario.carrito;
+      arrayCarrito = usuario;
       //Mostramos la info en la tabla
       muestraPaquetesTabla(arrayCarrito);
       return;

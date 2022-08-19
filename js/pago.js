@@ -1,6 +1,6 @@
 const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
 const SERVICE_TYPE = "Json";
-const SIMULAR_POST=false;
+const SIMULAR_POST=true;
 const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global 
@@ -108,7 +108,7 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         let auxPagar=Number(localStorage.getItem("CostoTotal"));
         if(auxPagar==null || auxPagar==NaN )
             auxPagar=1200;
-        auxPagar=1200;
+        //auxPagar=1200;
         totPagar.value=Number.parseFloat(auxPagar).toFixed(2);
         //Comprobación de campos que se autorellenaron
         corroborarAutorrelleno();
