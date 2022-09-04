@@ -1,6 +1,7 @@
 
 
-const URL_COMENT_LOCAL="/assets/json/comentarios.json";
+//const URL_COMENT_LOCAL="/assets/json/comentarios.json";
+const URL_COMENT_LOCAL="http://localhost:8080/api/comentarios";
 
 function solicitudBtn() {
 
@@ -12,12 +13,12 @@ function solicitudBtn() {
     //info es la información de la instrucción anterior, es el resultado de respuesta.json()
     .then((info) => {
         //Se imprime la informacion en consola
-        console.log(info.data);
+        console.log(info);
         //Se guarda la informacion en localstorage
-        localStorage.setItem("Información de comentarios",JSON.stringify(info.data));
+        //localStorage.setItem("Información de comentarios",JSON.stringify(info.data));
         //se muestra la información en el html con la siguiente función (ver más abajo la función)
 
-        return mostrarInfo(info.data);
+        return mostrarInfo(info);
         
     })
 
