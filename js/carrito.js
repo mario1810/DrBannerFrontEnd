@@ -116,7 +116,6 @@ function muestraPaquetesTabla(arrayPaquetes){
             id++;
         }
         totalPagar.innerHTML="$"+Number.parseFloat(pagar).toFixed(2);
-        localStorage.setItem("CostoTotal",pagar);
     }else{
         btnPagar.disabled=true;        
         mensajeCarritoVacio.innerHTML=MENSAJE_CAR_VACIO;
@@ -171,7 +170,9 @@ function borrarRow(id, pedidoId) {
   if (arrayCarrito.length > 0) {
     if (!SIMULAR_ENVIO) {
       console.log(USER_INFO_DELETE_URL+"/"+pedidoId)
-      requestDelete(USER_INFO_DELETE_URL,pedidoId);
+      let resp=requestDelete(USER_INFO_DELETE_URL,pedidoId);
+      if(resp==null || resp.resultado==false)
+        window.location.reload(); //recargamos la página porque hubo un error al tratar de elminar el paquete
     }
     arrayCarrito.splice(id, 1);
     //Actualizamos localmente, el icono de carrito, cuantos elementos tiene el carrito

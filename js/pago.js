@@ -1,6 +1,6 @@
-const USER_INFO_GET_URL = "/assets/json/pagoInfoUserGet.json";
-const SERVICE_TYPE = "Json";
-const SIMULAR_POST=true;
+const USER_INFO_GET_URL = "http://localhost:8080/api/pago";
+const USER_INFO_PUT_URL = "http://localhost:8080/api/pago";
+const SIMULAR=false;
 const PAGO_EXITOSO=true;
 
 let idUser=0; //temporalmente global 
@@ -77,38 +77,33 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
   //Función que llama requetGet para obtener los datos del usuario y los despliega en el formulario
  async function solicitudDatosForm() {
     let usuario;
-    if(true){
-        usuario = await requestGet(SERVICE_TYPE,USER_INFO_GET_URL);
+    if(SIMULAR){
+        usuario = await requestGet("json",USER_INFO_GET_URL);
     }else{
-        
-        let direccion="http://localhost:8080/api/pago/5";
-        console.log(direccion);
-        usuario = await requestGet("Fetch",direccion);
+        usuario = await requestGet("Fetch",String(USER_INFO_GET_URL+"/"+localStorage.getItem("userId")));
     }
     
     
-    if(usuario!=null){ // Si el fetcjh se realizó de manera correcta 
+    if(usuario!=null){ // Si el fetch se realizó de manera correcta 
         //Relleno los campos de mi formulario.
         //idUser=usuario.id;
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
         //inputApellido.value=usuario.apellido;
-        inputTarjeta.value=addSpacesNumeroTarjeta(usuario.numeroTarjeta);
-        //Tipo de tarjeta
-        if(usuario.tipoTarjeta=="debito"){
-            rbTC.checked=false;
-            //inputGroupMeses.disabled=true;
-            rbTD.checked=true;
-        }else{
-            rbTD.checked=false;
-           // inputGroupMeses.disabled=false;
-            rbTC.checked=true;
-        } 
+        if(usuario.datosDisponibles){
+            inputTarjeta.value=addSpacesNumeroTarjeta(usuario.numeroTarjeta);
+            //Tipo de tarjeta
+            if(usuario.tipoTarjeta=="debito"){
+                rbTC.checked=false;
+                //inputGroupMeses.disabled=true;
+                rbTD.checked=true;
+            }else{
+                rbTD.checked=false;
+            // inputGroupMeses.disabled=false;
+                rbTC.checked=true;
+            } 
+        }
         //Total a pagar
-        
-        let auxPagar=Number(localStorage.getItem("CostoTotal"));
-        if(auxPagar==null || auxPagar==NaN )
-            auxPagar=1200;
-        //auxPagar=1200;
+        let auxPagar=Number(usuario.totalPagar);
         totPagar.value=Number.parseFloat(auxPagar).toFixed(2);
         //Comprobación de campos que se autorellenaron
         corroborarAutorrelleno();
@@ -765,35 +760,35 @@ function getUserId(){
     let tT=null;
     //let tMeses=inputGroupMeses.value;
     if(rbTC.checked){
-        tT=rbTC.value;
+        tT="credito";
     }else{
-        tT=rbTD.value;
+        tT="debito";
     }
 
     //Creamos un objeto con la información a enviar
     let user = {
             idUsuario:Number(getUserId()),
-            nombre:String(inputNombre.value),
-            numeroTarjeta:"294646374639479",
-            tipoTarjeta:"debito",
+            numeroTarjeta:String(inputTarjeta.value),
+            tipoTarjeta:tT,
             mes:String(inputMes.value),
             anio:String(inputYear.value),
-            cvv:String(inputCVV),
-            guardarTarjeta:guardarTarjeta.checked,
-            idCompra:5,
-            costoTotal:Number(localStorage.getItem("CostoTotal"))
+            cvv:String(inputCVV.value),
+            guardarTarjeta:Boolean(guardarTarjeta.checked),
+            idCompra:String(localStorage.getItem("compraId")),
+            costoTotal:Number(totPagar.value)
         }
-        //Ya está el costo total en la base de datos
-        //total: Number(totPagar.value),
-    let flag=PAGO_EXITOSO;
-    if(SIMULAR_POST){
+    if(!SIMULAR){
         console.log(JSON.stringify(user));
-        flag = await requestPut("http://localhost:8080/api/pago",user);
+        flag = await requestPutJson(USER_INFO_PUT_URL,user);
     }
     //Retraso para ver la aimación
     syncDelay(5000);
+    
+    //actualizamos el id de compra
+    if(flag.resultado)
+        localStorage.setItem("compraId",flag.idCompra)
     //Actualizamos el modal despues de hacer el pago
-    resultadoPago(flag);
+    resultadoPago(flag.resultado);
 }
 
 
@@ -822,8 +817,7 @@ function resultadoPago(flag){
     }
     btnFinCompra.style.visibility="visible";
     btnFinCompra.addEventListener("click",()=>{
-        if(flag){
-            localStorage.removeItem('userId');
+        if(flag){        
             window.location.assign("/index.html"); 
         }else{
             myModal.hide();
@@ -849,7 +843,7 @@ function resultadoPago(flag){
   * @param {*} direccionhttp  // dirección de la API
   * @param {*} json  // JSON que se adjunta en el post
   */
-  async function requestPut(direccionhttp, data){
+  async function requestPutJson(direccionhttp, data){
     return new Promise((resolve, reject) => {
       fetch(direccionhttp, {
         method: "PUT",
@@ -859,12 +853,17 @@ function resultadoPago(flag){
       .then(response =>{ //Opcional
           if(response.ok){
             //console.log("HTTP request successful");
-            return resolve(true);
           }else{
             //console.log("HTTP request unsuccessful");
-            return resolve(false);
+            //return resolve(false);
           }
+          return response;
       }) 
+      .then(response =>response.json()) 
+      .then(json =>{
+       // console.log(JSON.stringify(json));  // Imprimir todo el json que nos regresa
+        resolve(json);// devuelve la parte de products del json
+      })
       .catch(err =>{
         //console.log(err);
         reject(false);});
