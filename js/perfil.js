@@ -4,6 +4,7 @@ const URL_COMENT_LOCAL3="/assets/json/carritoPaquetesGet.json";
 //const URL_COMENT_LOCAL="/assets/json/perfilprueba.json";
 //const URL_COMENT_LOCAL2="/assets/json/perfilpagoprueba.json";
 //const URL_COMENT_LOCAL3="/assets/json/perfilpaquetesprueba.json";
+const saludoM= document.getElementById("saludo");
 
 function cargarDatosPersonales(){
     fetch(URL_COMENT_LOCAL) //el nombre del archivo JSON donde se extraeran los datos
@@ -30,6 +31,7 @@ function cargarDatosPersonales(){
             </tr>`;
         }
         document.getElementById("datosPersonales").innerHTML = datos;
+        saludoM.innerHTML="Bienvenid@ "+arreglo[0].nombre;
     }
         
 
@@ -181,11 +183,15 @@ function ocultarComent(){
     document.getElementById('botonActivo').classList.replace("bi-x-lg", "bi-plus-lg");
    }
 }
+
+window.addEventListener('DOMContentLoaded', ()=> {
+    
     cargarDatosPersonales();
     cargarFormaDePago();
     cargarHistorialCompra();
-    
 
+});
+    
  // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
  btnComent.addEventListener('click',()=>{leeEstrella();enviaComentario()});
@@ -271,3 +277,12 @@ function procesarArchivo(event){
 }
 
 document.getElementById('archivo').addEventListener('change', procesarArchivo, false);
+
+const btnClose = document.getElementById("btnCerrarSesion");
+btnClose.addEventListener("click",()=>{
+    //setCookie('session_id', sessionId, 3); // cookie name, valor, numero de dias para expirar 
+    deleteCookie('session_id'); 
+    //Eliminamos todo el local storage
+    localStorage.clear();
+    window.location.assign("/index.html"); 
+})
