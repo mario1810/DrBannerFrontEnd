@@ -1,6 +1,7 @@
 const URL_COMENT_LOCAL="http://localhost:8080/api/usuario";
 const URL_COMENT_LOCAL2="http://localhost:8080/api/usuario/tarjeta";
 const URL_COMENT_LOCAL3="http://localhost:8080/api/usuario/historial";
+const URL_COMENT_LOCAL4="http://localhost:8080/api/usuario/comentario";
 //const URL_COMENT_LOCAL="/assets/json/perfil.json";
 //const URL_COMENT_LOCAL2="/assets/json/perfil.pago.json";
 //const URL_COMENT_LOCAL3="/assets/json/carritoPaquetesGet.json";
@@ -226,7 +227,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
     
  // MOSTRAR EN CONSOLA LAS ENTRADAS DE ESTRELLAS 
 
- btnComent.addEventListener('click',()=>{leeEstrella();enviaComentario()});
+ btnComent.addEventListener('click',()=>{enviaComentario()});
 
  function leeEstrella() {
      //Lee si da un true o false porque las estrellas es como una lista
@@ -284,11 +285,91 @@ window.addEventListener('DOMContentLoaded', ()=> {
      }
  }
 
- function enviaComentario() {
-     let comentario= document.getElementById("cajitaComent").value;
-     console.log(comentario);
+ async function enviaComentario() {
+     let comentarioUser= document.getElementById("cajitaComent");
+      //Lee si da un true o false porque las estrellas es como una lista
+      let five= document.getElementById("five").checked;
+      let four= document.getElementById("four").checked;
+      let three= document.getElementById("three").checked;
+      let two= document.getElementById("two").checked;
+      let one= document.getElementById("one").checked;
+    
+    let numero="0";
+      if(five)
+        numero="5";
+    else if(four)
+        numero="4";
+    else if(three)
+        numero="3";
+    else if(two)
+        numero="2";
+    else if(one)
+        numero="1";
+    else
+        numero="0";
+
+
+
+    let todaysDate = new Date();
+    todaysDate=convertDate(todaysDate);
+    let data={
+            comentario:comentarioUser.value,
+            estrellas:numero,
+            fechaComentario:String(todaysDate)
+        }
+
+     let resp= await requestPostJson((URL_COMENT_LOCAL4+"/"+String(localStorage.getItem("userId"))), data);
+     five.checked=false;
+     four.checked=false;
+     three.checked=false;
+     two.checked=false;
+     one.checked=false;
+     comentarioUser.value="";
+
      //aqui debe ir el post que manda el valor de "numero"
  }
+
+ function convertDate(date) {
+    var yyyy = date.getFullYear().toString();
+    var mm = (date.getMonth()+1).toString();
+    var dd  = date.getDate().toString();
+  
+    var mmChars = mm.split('');
+    var ddChars = dd.split('');
+  
+    return yyyy + '-' + (mmChars[1]?mm:"0"+mmChars[0]) + '-' + (ddChars[1]?dd:"0"+ddChars[0]);
+  }
+
+ //Si el servidor, responde con un json al post
+ async function requestPostJson(direccionhttp, data){
+    return new Promise((resolve, reject) => {
+      fetch(direccionhttp, {
+        method: "POST",
+        headers: {"Content-type": "application/json; charset=UTF-8"},
+        body: JSON.stringify(data)
+      })
+      .then(response =>{ //Opcional
+          if(response.ok){
+            //console.log("HTTP request successful");
+          }else{
+            //console.log("HTTP request unsuccessful");
+            //return resolve(false);
+          }
+          return response;
+      }) 
+      .then(response =>response.json()) 
+      .then(json =>{
+       // console.log(JSON.stringify(json)); // Imprimir todo el json que nos regresa
+        resolve(json);// devuelve la parte de products del json
+      })
+      .catch(err =>{
+        //console.log(err);
+        reject(null);});
+  });
+  }
+
+
+
  
  //pa cambiar el iconito
  //div.classList.replace("foo", "bar");
