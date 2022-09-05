@@ -1,6 +1,6 @@
 const CAR_NAV_GET_URL = "/assets/json/navbar.json";
-const SERVICE_TYPE_NAV = "Json"; //Fetch
-const SIMULAR_NAV=true;
+const CAR_NAV_GET="http://localhost:8080/api/carrito/cantidad";
+const SIMULAR_NAV=false;
 
 
 //id  del elemento para mostrar 
@@ -27,14 +27,14 @@ async function actualizarIconos(){
 
     if(userID!=null && logged === true){
       let response;
-      if(true){
-        response = await requestGet(SERVICE_TYPE_NAV,CAR_NAV_GET_URL);
+      if(SIMULAR_NAV){
+        response = await requestGet("json",CAR_NAV_GET_URL);
       }else{
-        response = await requestGet("fetch","http://localhost:8080/api/carrito/11");
+        response = await requestGet("Fetch",String(CAR_NAV_GET+"/"+localStorage.getItem("compraId")));
       }
         
         if(response!=null){
-            iconoCarrito.innerHTML=response.length;
+            iconoCarrito.innerHTML=response;
             return;
         }
         //else{
@@ -61,7 +61,7 @@ async function actualizarIconos(){
             }
             return response.json()})
           .then((json) => {
-            resolve(json)
+            resolve(json.cantidad)
           })
           .catch((error) => {
             reject(null);
