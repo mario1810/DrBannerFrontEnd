@@ -1,3 +1,7 @@
+const URL_COMENT_LOCAL="http://localhost:8080/api/agenda";
+const URL_COMENT_LOCAL2="http://localhost:8080/api/agenda/addPaquete";
+
+
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 //let select = document.getElementById('paquete');
@@ -6,21 +10,63 @@ let continuarCompra= document.getElementById('procederCompra');
 const categoriaIn=document.getElementById("categoria");
 const paqueteIn=document.getElementById("paquete");
 
+
+window.addEventListener('DOMContentLoaded', ()=> {
+	cargarDatosPersonales()
+});
+
+let nombreIn= document.getElementById("nombre");
+let apellidoIn= document.getElementById("apellido");
+let correoIn= document.getElementById("correo");
+let telefonoIn= document.getElementById("telefono");
+let calleIn= document.getElementById("calle");
+let codigoPIn= document.getElementById("codigoPostal");
+let municipioIn= document.getElementById("municipio");
+let estadoIn= document.getElementById("estado");
+let fechaIn= document.getElementById("fecha");
+let horaIn= document.getElementById("hora");
+
+
+function cargarDatosPersonales(){
+    fetch((URL_COMENT_LOCAL+"/"+String(localStorage.getItem("userId")))) //el nombre del archivo JSON donde se extraeran los datos
+    .then(respuesta=> respuesta.json()) //indica formato en el que se desea obtener la info
+    .then(datos=> {               //datos=respuesta.json (array)
+        return mostrarDatos(datos);
+    })
+           
+}
+
+    function mostrarDatos(usuario) {
+        
+		nombreIn.value=usuario.nombre;
+		apellidoIn.value=usuario.apellido;
+		correoIn.value=usuario.correo;
+		telefonoIn.value=usuario.telefono;
+    }
+
+
+
+
+
+
+
 categoriaIn.addEventListener("change",()=>{
 
-	console.log(categoriaIn.value);
 	if(categoriaIn.value=="Familiar"){
-		paqueteIn.innerHTML=`<option value=""> Selecciona una opción</option>
-		<option>Básico</option>
-		<option>Elite</option>`;
+		paqueteIn.innerHTML=`
+		<option >Selecciona una Opción</option>
+		<option value="Básico">Básico</option>
+		<option value="Elite">Elite</option>`;
 	}else{
-		paqueteIn.innerHTML=`<option value=""> Selecciona una opción</option>
-		<option>Pre-Evento</option>
-		<option>Evento</option>`;
+		paqueteIn.innerHTML=`
+		<option >Selecciona una Opción</option>
+		<option value="Pre Evento">Pre-Evento</option>
+		<option value="Evento">Evento</option>`;
 	}
 })
 
 
+/*
 const expresiones = {
 	//usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -56,20 +102,74 @@ const campos = {
 	//paquete: false
   
   //paquete:true
-}
+}*/
 
 /* btnCompra.addEventListener("click", () => {
 	localStorage.setItem('idCompra', '');
   });
  */
-continuarCompra.addEventListener("click", () => {
-	let cantidad=Number(iconoCarrito.innerHTML);
-  iconoCarrito.innerHTML=String(cantidad+1);
-  });
 
+continuarCompra.addEventListener("click", () => {
+
+	//Se tienen que validar todos el formulario (que tenga info y esté correcta antes)
+
+	// si todo está bien, se incia el proceso del post
+	enviaPost();
+});
   
- 
- 
+
+async function enviaPost() {
+	let comentarioUser= document.getElementById("cajitaComent");
+   let data={
+		   direccion:String(calleIn.value+" "+codigoPIn.value+" "+municipioIn.value+" "+estadoIn.value),
+		   fecha:String(fechaIn.value),
+		   compraId:String(localStorage.getItem("compraId")),
+		   userId:String(localStorage.getItem("userId")),
+		   nombrePaquete:paqueteIn.value,
+		   nombreCategoria:categoriaIn.value,
+		   telefono:telefonoIn.value,
+	   }
+	let resp= await requestPostJson(URL_COMENT_LOCAL2, data);
+	//Significa que huo un fallo
+	if(resp==null)
+	   return;
+	let cantidad=Number(iconoCarrito.innerHTML);
+	iconoCarrito.innerHTML=String(cantidad+1);
+}
+
+
+
+async function requestPostJson(direccionhttp, data){
+return new Promise((resolve, reject) => {
+  fetch(direccionhttp, {
+	method: "POST",
+	headers: {"Content-type": "application/json; charset=UTF-8"},
+	body: JSON.stringify(data)
+  })
+  .then(response =>{ //Opcional
+	  if(response.ok){
+		//console.log("HTTP request successful");
+	  }else{
+		//console.log("HTTP request unsuccessful");
+		//return resolve(false);
+	  }
+	  return response;
+  }) 
+  .then(response =>response.json()) 
+  .then(json =>{
+   // console.log(JSON.stringify(json)); // Imprimir todo el json que nos regresa
+	resolve(json);// devuelve la parte de products del json
+  })
+  .catch(err =>{
+	//console.log(err);
+	reject(null);});
+});
+}
+
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+});
+ /*
 const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
@@ -78,13 +178,7 @@ const validarFormulario = (e) => {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
-		/*case "password":
-			validarCampo(expresiones.password, e.target, 'password');
-			validarPassword2();
-		break;
-		case "password2":
-			validarPassword2();
-		break;*/
+	
 		case "apellido":
 			validarCampo(expresiones.apellido, e.target, 'apellido');
 		break;
@@ -106,10 +200,7 @@ const validarFormulario = (e) => {
 		case "estado":
 			validarCampo(expresiones.estado, e.target, 'estado');
 		break;
-        /*
-		case "paquete":
-			validarCampo(expresiones.paquete, e.target, 'paquete');
-		break; */
+        
 		
         case "fecha":
       		validarCampo(expresiones.fecha, e.target, 'fecha');
@@ -120,6 +211,7 @@ const validarFormulario = (e) => {
     	break; 
 	}
 }
+/*
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -159,16 +251,13 @@ const validarPassword2 = () => {
 	}
 }
 
-inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
-});
 
+/*
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(/*campos.usuario &&*/ campos.nombre && campos.apellido && /*campos.password && */campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && campos.paquete && campos.fecha && campos.hora/*&& campos.paquete*/ && terminos.checked ){
+	if(campos.nombre && campos.apellido && campos.correo && campos.telefono && campos.calle && campos.codigoPostal && campos.municipio && campos.estado && campos.paquete && campos.fecha && campos.hora && terminos.checked ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
