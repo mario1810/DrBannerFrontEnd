@@ -1,8 +1,24 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
-let select = document.getElementById('paquete');
+//let select = document.getElementById('paquete');
 let continuarCompra= document.getElementById('procederCompra');
 
+const categoriaIn=document.getElementById("categoria");
+const paqueteIn=document.getElementById("paquete");
+
+categoriaIn.addEventListener("change",()=>{
+
+	console.log(categoriaIn.value);
+	if(categoriaIn.value=="Familiar"){
+		paqueteIn.innerHTML=`<option value=""> Selecciona una opción</option>
+		<option>Básico</option>
+		<option>Elite</option>`;
+	}else{
+		paqueteIn.innerHTML=`<option value=""> Selecciona una opción</option>
+		<option>Pre-Evento</option>
+		<option>Evento</option>`;
+	}
+})
 
 
 const expresiones = {
