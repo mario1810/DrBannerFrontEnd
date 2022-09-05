@@ -90,7 +90,8 @@ async function requestGet(proveedor = "Fetch", direccionhttp) {
         inputNombre.value=usuario.nombre+" "+usuario.apellido;
         //inputApellido.value=usuario.apellido;
         if(usuario.datosDisponibles){
-            inputTarjeta.value=addSpacesNumeroTarjeta(usuario.numeroTarjeta);
+           // console.log(JSON.stringify(usuario.numerTarjeta.replace(/ /+g,"")));
+            inputTarjeta.value=addSpacesNumeroTarjeta(usuario.numeroTarjeta.replace(/ /g,""));
             //Tipo de tarjeta
             if(usuario.tipoTarjeta=="debito"){
                 rbTC.checked=false;
@@ -768,7 +769,7 @@ function getUserId(){
     //Creamos un objeto con la información a enviar
     let user = {
             idUsuario:Number(getUserId()),
-            numeroTarjeta:String(inputTarjeta.value),
+            numeroTarjeta:String(inputTarjeta.value.replace(/ /g,"")),
             tipoTarjeta:tT,
             mes:String(inputMes.value),
             anio:String(inputYear.value),
