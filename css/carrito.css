@@ -169,7 +169,9 @@ h3{
      top: 0px;
  }
 
-
+ .basura:hover{
+    cursor:pointer;
+}
 
 
  

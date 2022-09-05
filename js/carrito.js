@@ -109,7 +109,7 @@ function muestraPaquetesTabla(arrayPaquetes){
                                     <td>$${Number.parseFloat(paquete.costo).toFixed(2)}</td>
                                     <td>${paquete.fecha}</td>
                                     <td>${paquete.direccion}</td>
-                                    <td onclick="borrarRow(${id},${paquete.idPedido})"><i class="bi bi-trash3"></i></td>
+                                    <td onclick="borrarRow(${id},${paquete.idPedido})"><i class="bi bi-trash3 basura"></i></td>
                                     
                                 </tr>`;                            
             pagar+=Number(paquete.costo);//*Number(paquete.cantidad);
@@ -128,7 +128,7 @@ function muestraPaquetesTabla(arrayPaquetes){
  */
 async function obtenerPaquetesUsuario() {
 
-  let userId = getUserId();
+  let userId = localStorage.getItem("userId");
   if (userId != null && isUserLogged() === true) {
     //Realizamos un fetch
     let usuario;
@@ -137,11 +137,13 @@ async function obtenerPaquetesUsuario() {
     }else{
        usuario = await requestGet("Fetch",(USER_INFO_GET_URL+"/"+String(localStorage.getItem("compraId"))));
     }
-    console.log(JSON.stringify(usuario));
+    //console.log(JSON.stringify(usuario));
     // El fetch se realizó de manera correcta?
     if (usuario != null) {
       //Mostramos la info en la tabla
-      muestraPaquetesTabla(usuario);
+      //Guardamos localmente
+      arrayCarrito=usuario;
+      muestraPaquetesTabla(arrayCarrito);
       return;
     }
   }
@@ -162,12 +164,13 @@ async function obtenerPaquetesUsuario() {
  * Función que crea evento  listener para cada bote de basura
  */
 function borrarRow(id, pedidoId) {
-  let userId=getUserId();
+  let userId=localStorage.getItem("userId");
   if(userId==null || isUserLogged() === false){
     window.location.reload(); //recargamos la página porque ya vencio la sesión
   }
   if (arrayCarrito.length > 0) {
     if (!SIMULAR_ENVIO) {
+      console.log(USER_INFO_DELETE_URL+"/"+pedidoId)
       requestDelete(USER_INFO_DELETE_URL,pedidoId);
     }
     arrayCarrito.splice(id, 1);
