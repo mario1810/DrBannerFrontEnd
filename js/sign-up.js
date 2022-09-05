@@ -1,11 +1,11 @@
-//Validación
+const MyURL="http://localhost:8080/api/registrate";
 
 //Sign In
 const inputNombre = document.getElementById("validarNombre");
 const inputApellido = document.getElementById("validarApellido");
 const inputEmail = document.getElementById("validarEmail");
 const inputContra = document.querySelector("#psw");
-const btnRegistrarme = document.getElementById("btnRegistrarme");
+const btnRegistrarme1 = document.getElementById("btnRegistrarme");
 
 //-------------------------------------------------------------
 
@@ -33,8 +33,6 @@ inputEmail.addEventListener("keyup", () => {
   corroborarEmail();
 });
 
-btnRegistrarme.addEventListener("click", ()=>{btnRegistro()
-});
 
 function btnRegistro(){
   if (
@@ -43,10 +41,8 @@ function btnRegistro(){
     inputContra.classList.contains("is-valid") &&
    inputEmail.classList.contains("is-valid")
   ) {
-    //Post
-    localStorage.setItem('userId', '2');
-    localStorage.setItem('compraId', '5');
-    window.location.assign("/html/perfil.html");
+    msjAlerta.innerHTML="";
+    sendInformation();
 
   } else {
     if (!inputNombre.classList.contains("is-valid")) {
@@ -219,22 +215,70 @@ function mostrarContraseña() {
   } else {
     visible.type = "password";
   }
-}
-
-const formSignin = document.getElementById('form-signin'); 
+} 
  
-  formSignin.addEventListener('submit', (event) => { 
-      event.preventDefault(); 
-      //enviar request para  iniciar sesion en el backend; 
-   
-      const sessionId = Date.now();// solo para probar, esto debe venir del backend 
-       //code - success  
-      setCookie('session_id', sessionId, 3); // cookie name, valor, numero de dias para expirar 
-      let redirectTo = document.referrer;// de donde venias caso 1 
-      if (getCookie('post_login_redirect') ) { //caso2 
-          redirectTo = getCookie('post_login_redirect'); 
-          deleteCookie('post_login_redirect'); 
-      } 
-      window.location.href = redirectTo; 
-      //code - success 
+btnRegistrarme1.addEventListener('click', () => { 
+      //enviar request para  iniciar sesion en el backend;
+      btnRegistro(); 
+      
+      
   })
+
+  const msjAlerta=document.getElementById("msjError");
+  async function sendInformation(){
+
+    let data={
+      nombre:String(inputNombre.value),
+      apellido:String(inputApellido.value),
+      correo: String(inputEmail.value),
+      password:String(inputContra.value)
+    };
+    let res= await requestPostJson(MyURL, data)
+    console.log(res);
+    console.log("1");
+    if(res==null || res.userId== null || res.compraId==null){
+      msjAlerta.innerHTML=" Ya hay un usuario registrado con ese correo";
+      return;
+    }
+    console.log("2");
+    const sessionId = Date.now();// solo para probar, esto debe venir del backend 
+     //code - success  
+    setCookie('session_id', sessionId, 3); // cookie name, valor, numero de dias para expirar 
+    let redirectTo = document.referrer;// de donde venias caso 1 
+    if (getCookie('post_login_redirect') ) { //caso2 
+        redirectTo = getCookie('post_login_redirect'); 
+        deleteCookie('post_login_redirect'); 
+    } 
+    localStorage.setItem('userId', res.userId);
+    localStorage.setItem('compraId', res.compraId);
+    window.location.assign("/html/perfil.html"); 
+  }
+
+
+  //Si el servidor, responde con un json al post
+ async function requestPostJson(direccionhttp, data){
+  return new Promise((resolve, reject) => {
+    fetch(direccionhttp, {
+      method: "POST",
+      headers: {"Content-type": "application/json; charset=UTF-8"},
+      body: JSON.stringify(data)
+    })
+    .then(response =>{ //Opcional
+        if(response.ok){
+          //console.log("HTTP request successful");
+        }else{
+          //console.log("HTTP request unsuccessful");
+          //return resolve(false);
+        }
+        return response;
+    }) 
+    .then(response =>response.json()) 
+    .then(json =>{
+     // console.log(JSON.stringify(json)); // Imprimir todo el json que nos regresa
+      resolve(json);// devuelve la parte de products del json
+    })
+    .catch(err =>{
+      //console.log(err);
+      reject(false);});
+});
+}
