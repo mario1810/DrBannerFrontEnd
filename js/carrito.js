@@ -1,9 +1,11 @@
-const USER_INFO_GET_URL = "/assets/json/carritoPaquetesGet.json";
-const USER_INFO_PUT_URL = "";
-const USER_INFO_DELETE_URL = "";
-const SERVICE_TYPE = "Json"; //Fetch
+const USER_INFO_GET_URL = "http://localhost:8080/api/carrito";
+const USER_INFO_DELETE_URL = "http://localhost:8080/api/carrito";
+
+//const USER_INFO_GET_URL = "/assets/json/carritoPaquetesGet.json";
+//const USER_INFO_PUT_URL = "";
+//const USER_INFO_DELETE_URL = "";
 const MENSAJE_CAR_VACIO="Vive tu momento,<br>nosotros lo capturamos<br><br>¿Ya has visto nuestros paquetes?<br><br>";
-const SIMULAR_ENVIO=true;
+const SIMULAR_ENVIO=false;
 let arrayCarrito;
 //let idUser=0; //temporalmente global 
 
@@ -106,7 +108,7 @@ function muestraPaquetesTabla(arrayPaquetes){
                                     <td>${paquete.nombrePaquete}</td>
                                     <td>$${Number.parseFloat(paquete.costo).toFixed(2)}</td>
                                     <td>${paquete.fecha}</td>
-                                    <td>${paquete.dirección}</td>
+                                    <td>${paquete.direccion}</td>
                                     <td onclick="borrarRow(${id},${paquete.idPedido})"><i class="bi bi-trash3"></i></td>
                                     
                                 </tr>`;                            
@@ -130,18 +132,16 @@ async function obtenerPaquetesUsuario() {
   if (userId != null && isUserLogged() === true) {
     //Realizamos un fetch
     let usuario;
-    if(true){
-      usuario = await requestGet(SERVICE_TYPE, USER_INFO_GET_URL);
+    if(SIMULAR_ENVIO){
+      usuario = await requestGet("Json", USER_INFO_GET_URL);
     }else{
-       usuario = await requestGet("Fetch","http://localhost:8080/api/carrito/11");
+       usuario = await requestGet("Fetch",(USER_INFO_GET_URL+"/"+String(localStorage.getItem("compraId"))));
     }
-    
+    console.log(JSON.stringify(usuario));
     // El fetch se realizó de manera correcta?
     if (usuario != null) {
-      //Guardamos al información del carrito localmente
-      arrayCarrito = usuario;
       //Mostramos la info en la tabla
-      muestraPaquetesTabla(arrayCarrito);
+      muestraPaquetesTabla(usuario);
       return;
     }
   }
@@ -161,15 +161,14 @@ async function obtenerPaquetesUsuario() {
 /**
  * Función que crea evento  listener para cada bote de basura
  */
-function borrarRow(id, paqueteId) {
+function borrarRow(id, pedidoId) {
   let userId=getUserId();
   if(userId==null || isUserLogged() === false){
     window.location.reload(); //recargamos la página porque ya vencio la sesión
   }
   if (arrayCarrito.length > 0) {
     if (!SIMULAR_ENVIO) {
-      let data = String(userId + "&" + paqueteId);
-      requestDelete(USER_INFO_DELETE_URL, data);
+      requestDelete(USER_INFO_DELETE_URL,pedidoId);
     }
     arrayCarrito.splice(id, 1);
     //Actualizamos localmente, el icono de carrito, cuantos elementos tiene el carrito

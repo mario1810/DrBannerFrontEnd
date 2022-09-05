@@ -32,9 +32,8 @@ async function actualizarIconos(){
       }else{
         response = await requestGet("Fetch",String(CAR_NAV_GET+"/"+localStorage.getItem("compraId")));
       }
-        
         if(response!=null){
-            iconoCarrito.innerHTML=response;
+            iconoCarrito.innerHTML=String(response.cantidad);
             return;
         }
         //else{
@@ -61,7 +60,7 @@ async function actualizarIconos(){
             }
             return response.json()})
           .then((json) => {
-            resolve(json.cantidad)
+            resolve(json)
           })
           .catch((error) => {
             reject(null);
